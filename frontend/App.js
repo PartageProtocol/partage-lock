@@ -1,77 +1,100 @@
-import 'regenerator-runtime/runtime'
-import { useEffect, useState } from 'react'
-import ListEvents from './components/ListEvents.js'
-import CreateEvent from './components/CreateEvents.js'
-import React from 'react'
-import { login, logout } from './utils'
-import './assets/global.css'
+import "regenerator-runtime/runtime";
+import React, { useEffect } from "react";
 
-import getConfig from './config'
+// import './assets/vendor/purecounter/purecounter_vanilla.js';
+// import './assets/vendor/aos/aos.js';
+// import './assets/vendor/bootstrap/js/bootstrap.bundle.min.js';
+// import './assets/vendor/glightbox/js/glightbox.min.js';
+// import './assets/vendor/swiper/swiper-bundle.min.js';
+// import './assets/js/main.js';
+import GLightbox from "glightbox";
+import Swiper from "swiper";
+import Isotope from "isotope-layout";
+import AOS from "aos";
 
-const { networkId } = getConfig(process.env.NODE_ENV || 'development')
+// import './assets/global.css';
+import "./assets/css/style.css";
+import "./assets/vendor/aos/aos.css";
+import "./assets/vendor/bootstrap/css/bootstrap.min.css";
+import "./assets/vendor/bootstrap-icons/bootstrap-icons.css";
+import "./assets/vendor/boxicons/css/boxicons.min.css";
+import "./assets/vendor/glightbox/css/glightbox.min.css";
+import "./assets/vendor/remixicon/remixicon.css";
+import "./assets/vendor/swiper/swiper-bundle.min.css";
 
-export default function App() {
+import { SignInPrompt, SignOutButton } from "./ui-components";
 
-  const [events, setEvents] = useState([])
-  const [toggleModal, setToggleModal] = useState(false)
+export default function App({ isSignedIn, contractId, wallet }) {
+  AOS.init({
+    duration: 1000,
+    easing: "ease-in-out",
+    once: true,
+    mirror: false,
+  });
+  const glightbox = GLightbox({
+    selector: ".glightbox",
+  });
 
+  const [valueFromBlockchain, setValueFromBlockchain] = React.useState();
 
-  function addProject() {
-    setToggleModal(!toggleModal)
+  const [uiPleaseWait, setUiPleaseWait] = React.useState(true);
+
+  // Get blockchian state once on component load
+  React.useEffect(() => {
+    getGreeting()
+      .then(setValueFromBlockchain)
+      .catch(alert)
+      .finally(() => {
+        setUiPleaseWait(false);
+      });
+  }, []);
+
+  /// If user not signed-in with wallet - show prompt
+  if (!isSignedIn) {
+    // Sign-in flow will reload the page later
+    return (
+      <SignInPrompt
+        greeting={valueFromBlockchain}
+        onClick={() => wallet.signIn()}
+      />
+    );
   }
 
-  
-  useEffect(
-    () => {
+  function changeGreeting(e) {
+    e.preventDefault();
+    setUiPleaseWait(true);
+    const { greetingInput } = e.target.elements;
 
-      if (window.walletConnection.isSignedIn()) {
+    // use the wallet to send the greeting to the contract
+    wallet
+      .callMethod({
+        method: "set_greeting",
+        args: { message: greetingInput.value },
+        contractId,
+      })
+      .then(async () => {
+        return getGreeting();
+      })
+      .then(setValueFromBlockchain)
+      .finally(() => {
+        setUiPleaseWait(false);
+      });
+  }
 
-        window.contract.list_events().then((eventprojects) => {
-          const eventList = [...eventprojects]
-          setEvents(eventList)
-        })
-      }
-    },
-
-    [],
-  )
-
-  if (!window.walletConnection.isSignedIn()) {
-    return (
-      <main className='signin'>
-        <h1>Welcome to Awesome Events</h1>
-        <p style={{ textAlign: 'center' }}>
-          Click the button below to sign in:
-        </p>
-        <p style={{ textAlign: 'center', marginTop: '2.5em' }}>
-          <button onClick={login}>Sign in</button>
-        </p>
-      </main>
-    )
+  function getGreeting() {
+    // use the wallet to query the contract's greeting
+    return wallet.viewMethod({ method: "get_greeting", contractId });
   }
 
   return (
 
     <>
-      <header>
-        <div className="logo"></div>
-        <button className="link" style={{ float: 'right' }} onClick={logout}>
-          Sign out <span className="id">{window.accountId}</span>
-        </button>
-      </header>
-      <button onClick={addProject}>Add an event</button>
-      <main>
-        <CreateEvent toggleModal={toggleModal} />
-        <section className='events'>
-          {events.map((project, id) => {
-            return (
-              <div key={id}>
-                <ListEvents project={project} />
-              </div>
-            )
-          })}
-        </section>
-      </main>
+      <SignOutButton
+        accountId={wallet.accountId}
+        onClick={() => wallet.signOut()}
+      />
+      
+      
     </>
   )
 }
