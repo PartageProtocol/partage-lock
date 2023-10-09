@@ -6,6 +6,7 @@ The partage lock is built on the Near Blockchain.
 - A slides deck presenting the teammates and our proof of concept is available at: https://docs.google.com/presentation/d/1NSlpmjlvIirzLaNsZy6ndhA5ZV40h5ATqszn9FavYn8/edit?usp=sharing 
 
 You can reach us on our Discord: https://discord.gg/aKBB8WgC9V.
+
 You're welcome to follow our activities on our social media channels:
 - twitter: https://twitter.com/partage_btc
 - instagram: https://www.instagram.com/partage.btc/
