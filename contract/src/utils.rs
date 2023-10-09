@@ -3,11 +3,6 @@ use near_sdk::{
     PromiseResult,
 };
 
-pub type AccountId = String;
-
-pub type Timestamp = u64;
-
-
 pub fn assert_self() {
     let caller = env::predecessor_account_id();
     let current = env::current_account_id();

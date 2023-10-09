@@ -4,18 +4,34 @@ import Footer from './components/footer';
 import Contact from './components/contact';
 import Services from './components/services';
 import About from './components/About';
+import Calendar from "./components/Calendar";
 
 
-export function SignInPrompt({greeting, onClick}) {
+export function SignInPrompt({
+  greeting, 
+  onClick,
+  isSignedIn,
+  disconnectWallet,
+}) {
   return (
     <main>
-      <Header onClick={onClick} />
+      <Header 
+      isSignedIn={isSignedIn}
+      disconnectWallet={disconnectWallet}
+      onClick={onClick} 
+      />
+      {isSignedIn ? (
+        <>
+          <Calendar />
+        </>
+      ) : (
+        <>
       <About />
       <Services />
       <Contact />
+      </>
+      )}
       <Footer />
-
-
       
       {/* <p style={{ textAlign: 'center' }}>
         <button onClick={onClick}>Sign in with NEAR Wallet</button>

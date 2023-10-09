@@ -1,13 +1,6 @@
 use near_sdk::borsh::{self, BorshDeserialize, BorshSerialize};
-#[allow(unused_imports)]
-use near_sdk::{env, near_bindgen};
+use near_sdk::{env, AccountId, Timestamp, near_bindgen};
 use near_sdk::serde::{Deserialize, Serialize};
-
-
-use crate::utils::{
-    AccountId,
-    Timestamp
-};
 
 #[derive(Clone, Serialize, Deserialize, BorshDeserialize, BorshSerialize)]
 #[serde(crate = "near_sdk::serde")]
@@ -17,52 +10,36 @@ pub struct Booking {
   pub creator: AccountId,
     created_at: Timestamp,
     name: String,
+    pub email: String,
     nbr_days: u128,
     // starting_date: DateTime,
     total_price: u128,
     description: String,
+    pub passwords: String
 }
 
-// pub struct Calendar {
-//     id: i32,
-//   pub creator: AccountId,
-//     created_at: Timestamp,
-//     title: String,
-//     estimated_budget: u128,
-//    pub total_votes: i64,
-//     description: String,
-//    pub votes: Vec<String>
-// }
-
-
 impl Booking {
-    pub fn new(id:i32, name: String, nbr_days:u128, /* starting_date: DateTime, */ total_price:u128, description: String) -> Self {
-        
+    pub fn new(
+        id:i32, 
+        name: String,
+        email: String, 
+        nbr_days:u128, 
+        /* starting_date: DateTime, */ 
+        total_price:u128, 
+        description: String, 
+        passwords: String
+    ) -> Self {   
         Booking {
             id,
-            creator: env::signer_account_id().to_string(),
+            creator: env::signer_account_id(),
             created_at: env::block_timestamp(),
             name,
+            email,
             nbr_days,
             // starting_date,
             total_price,
             description,
+            passwords,
         }
     }
 }
-
-// impl Calendar {
-//     pub fn new(id:i32, title: String, estimated_budget:u128, description: String) -> Self {
-        
-//         Event {
-//             id,
-//             creator: env::signer_account_id().to_string(),
-//             created_at: env::block_timestamp(),
-//             title,
-//             estimated_budget,
-//             total_votes : 0,
-//             description,
-//             votes: vec![],
-//         }
-//     }
-// }
