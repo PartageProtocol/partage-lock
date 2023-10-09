@@ -4,7 +4,6 @@ The partage lock is built on the Near Blockchain.
 - A technical paper including a full tutorial for you to build your own smart lock using our open-source repository is available here: https://juliencarbonnell.medium.com/blockchain-for-smart-cities-tutorial-building-a-blockchain-controlled-smart-lock-on-near-100-d97b19ca7a86.
 - A video demo of the Partage Lock is available on our YouTube channel: https://www.youtube.com/channel/UCBPzLLbzxVMNdzfR2Z-xnsw.
 - A slides deck presenting the teammates and the project is available at: https://docs.google.com/presentation/d/1NSlpmjlvIirzLaNsZy6ndhA5ZV40h5ATqszn9FavYn8/edit?usp=sharing 
-- Our app is available after connecting your wallet at: https://lock.hellopartage.xyz.
 
 You can reach us on our Discord: https://discord.gg/aKBB8WgC9V.
 You're welcome to follow our activities on our social media channels:
