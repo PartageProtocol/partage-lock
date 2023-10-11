@@ -5,6 +5,16 @@
 // author: Julien Carbonnell @JCarbonnell for Partage @partage.btc
 // all rights goes to CivicTech OÜ.
 
+mod utils;
+mod models;
+
+use std::convert::TryInto;
+use std::borrow::Borrow;
+use std::ptr::null;
+use std::str;
+
+use crate::models::Booking;
+
 use near_sdk::borsh::{self, BorshDeserialize, BorshSerialize};
 use near_sdk::serde::Serialize;
 //#[allow(unused_imports)]
@@ -17,26 +27,15 @@ use near_sdk::env::current_account_id;
 use near_sdk::env::attached_deposit;
 near_sdk::setup_alloc!();
 
-mod utils;
-mod models;
-use crate::models::Booking;
-
-use std::convert::TryInto;
-use std::borrow::Borrow;
-use std::ptr::null;
-use std::str;
-
 use rand::Rng;
 use pwhash::bcrypt;
 use pwhash::unix;
 
 #[near_bindgen]
-#[derive(Clone, BorshDeserialize, BorshSerialize)]
+#[derive(Clone, Default, BorshDeserialize, BorshSerialize)]
 
 pub struct Contract {
     // owner owns the locked utility, buyer buys an access to it
-    owner: AccountId,
-    buyer: AccountId,
     bookings: Vec<Booking>,
 }
 
@@ -51,8 +50,6 @@ impl Contract{
         // creating a new booking vector within the contract struct
         let bookings: Vec<Booking> = Vec::new();
         Contract{
-            owner,
-            buyer,
             bookings
         }
     }
@@ -60,7 +57,6 @@ impl Contract{
     pub fn add_booking(
         &mut self, 
         name: String, 
-        email: String,
         nbr_days: u128, 
         /* starting_date: DateTime, */ 
         total_price: u128, 
@@ -73,7 +69,6 @@ impl Contract{
         self.bookings.push(Booking::new(
             id,
             name,
-            email,
             nbr_days,
             // starting_date,
             total_price,
@@ -84,12 +79,12 @@ impl Contract{
         let owner = env::current_account_id();
         let buyer = env::predecessor_account_id();
         let payment: Balance = total_price;
-        Promise::new(self.buyer.clone()).transfer(payment);
+        Promise::new(buyer.clone()).transfer(payment);
         println!("Thank you! you just sent {}.", total_price);
         // generate random 4-digit password
         let mut rng = rand::thread_rng();
         let pwd: u16 = rng.gen_range(1000..9999);
-        // do not print password in production
+        // display the unhashed password on a client-side window
         println!("Generated password: {}", pwd);
         // hash password
         let hashed = bcrypt::hash(pwd.to_string()).unwrap();
@@ -99,10 +94,6 @@ impl Contract{
         // push hashed password in the booking data on-chain
         self.add_password(&hashed, id.try_into().unwrap());
         env::log("Password added successfully to the booking's data on-chain!".as_bytes());
-        // send email w/ password to buyer
-        let email = &self.bookings[id as usize].email;
-        send_email(&pwd.to_string(), &email);
-        env::log("Email with password sent to buyer!".as_bytes());
         // confirm the new booking in the console
         env::log("New booking created!".as_bytes());
     }
@@ -127,53 +118,6 @@ impl Contract{
     // }
 }
 
-use lettre::{
-    transport::smtp::authentication::Credentials, 
-    Transport, SmtpTransport, Message,
-    Tokio1Executor,
-};
-
-#[tokio::main]
-
-// Creating basic data structure for the email
-async fn send_email(pwd: &str, email: &str) -> Result<(), Box<dyn std::error::Error>> {
-    let smtp_credentials =
-        Credentials::new("partagelock@gmail.com".to_string(), "gxbxlhovdrtumdpq".to_string());
-
-    let mailer = SmtpTransport::relay("smtp.gmail.com")?
-        .credentials(smtp_credentials)
-        .build();
-
-    let from = "Partage Lock <partagelock@gmail.com>";
-    let to = &email;
-    let subject = "Your Partage Lock access";
-    let mut body: String = "Hi, this is the 4-digit password that will open the Partage Lock related to your purchase. ".to_string();
-    let disclaimer: &str = ". Be careful, there is no other copy of this password, thus we strongly incentivize you to save it somewhere safe. If you ever lose it, you won't be able to recover it elsewhere.";
-
-    body.push_str(&pwd);
-    body.push_str(disclaimer);
-    send_email_smtp(&mailer, from, to, subject, body.to_string()).await
-}
-
-// Email sending function
-async fn send_email_smtp(
-    mailer: &SmtpTransport,
-    from: &str,
-    to: &str,
-    subject: &str,
-    body: String,
-) -> Result<(), Box<dyn std::error::Error>> {
-    let msg = Message::builder()
-        .from(from.parse()?)
-        .to(to.parse()?)
-        .subject(subject)
-        .body(body.to_string())?;
-
-    mailer.send(&msg);
-
-    Ok(())
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;
@@ -192,7 +136,7 @@ mod tests {
         let context = get_context(apoline.borrow().clone());
         testing_env!(context.build());
         let mut contract = Contract::new(owner, apoline);
-        contract.add_booking("Apoline".to_string(), "julien.carbonnell@gmail.com".to_string(), 6, /* 2023-10-02T16:47:45, */ 600, "Hey it's me Apo, I would like to use the flat at my Easter holidays from March 20th to April 1st. Everybody OK with it?".to_string(), "".to_string());
+        contract.add_booking("Apoline".to_string(), 6, /* 2023-10-02T16:47:45, */ 600, "Hey it's me Apo, I would like to use the flat at my Easter holidays from March 20th to April 1st. Everybody OK with it?".to_string(), "".to_string());
         let result = contract.booking_count();
         assert_eq!(result, 1);
     }

@@ -14,8 +14,6 @@ near-sdk = "4.0.0"
 pwhash = "1"
 rand = "0.8.5"
 uint = { version = "0.9.3", default-features = false }
-tokio = { version = "1", features = ["full"] }
-lettre = { version = "0.10.0-beta.2", default-features = false, features = ["smtp-transport", "tokio1-rustls-tls", "hostname", "r2d2", "builder"] }
 
 [profile.release]
 codegen-units = 1

@@ -10,7 +10,6 @@ pub struct Booking {
   pub creator: AccountId,
     created_at: Timestamp,
     name: String,
-    pub email: String,
     nbr_days: u128,
     // starting_date: DateTime,
     total_price: u128,
@@ -22,7 +21,6 @@ impl Booking {
     pub fn new(
         id:i32, 
         name: String,
-        email: String, 
         nbr_days:u128, 
         /* starting_date: DateTime, */ 
         total_price:u128, 
@@ -34,7 +32,6 @@ impl Booking {
             creator: env::signer_account_id(),
             created_at: env::block_timestamp(),
             name,
-            email,
             nbr_days,
             // starting_date,
             total_price,
