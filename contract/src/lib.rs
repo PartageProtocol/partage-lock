@@ -25,9 +25,12 @@ use near_sdk::env::predecessor_account_id;
 use near_sdk::env::current_account_id;
 // amount in NEAR attached to the call by the predecessor
 use near_sdk::env::attached_deposit;
+// near-specific function to generate random numbers
+use near_sdk::env::random_seed;
 near_sdk::setup_alloc!();
 
-use rand::Rng;
+use rand::rngs::StdRng;
+use rand::{Rng, SeedableRng};
 use pwhash::bcrypt;
 use pwhash::unix;
 
@@ -82,8 +85,9 @@ impl Contract{
         Promise::new(buyer.clone()).transfer(payment);
         println!("Thank you! you just sent {}.", total_price);
         // generate random 4-digit password
-        let mut rng = rand::thread_rng();
-        let pwd: u16 = rng.gen_range(1000..9999);
+        let seed: [u8; 32] = env::random_seed().try_into().unwrap();
+        let mut rng: StdRng = SeedableRng::from_seed(seed);
+        let pwd = rng.gen_range(1000..9999);
         // display the unhashed password on a client-side window
         println!("Generated password: {}", pwd);
         // hash password
