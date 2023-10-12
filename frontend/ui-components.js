@@ -32,6 +32,7 @@ export function SignOutButton({ isSignedIn, accountId, onClick }) {
         <Signheader onClick={onClick} />
 
         <Calendar />
+        <Contact />
 
         <Footer />
       </main>
