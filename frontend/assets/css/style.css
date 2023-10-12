@@ -101,6 +101,27 @@ iframe {
 }
 
 /*--------------------------------------------------------------
+# pin display
+--------------------------------------------------------------*/
+
+.pin-display {
+  text-align: center;
+  padding: 20px;
+}
+
+.pin-display h5 {
+  font-size: 16px;
+}
+
+.pin-display p {
+  font-size: 36px;
+  color: #c5f801;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 1px solid #c5f801;
+}
+
+/*--------------------------------------------------------------
 # Preloader
 --------------------------------------------------------------*/
 #preloader {
