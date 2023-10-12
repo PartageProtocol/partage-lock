@@ -142,11 +142,7 @@
       this[globalName] = mainExports;
     }
   }
-<<<<<<< HEAD
 })({"2UeK4":[function(require,module,exports) {
-=======
-})({"i5PzX":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
@@ -577,15 +573,9 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     });
 }
 
-<<<<<<< HEAD
 },{}],"1xC6H":[function(require,module,exports) {
 var Refresh = require("6d18d6bd340e7473");
 var ErrorOverlay = require("74ad5ea14201648c");
-=======
-},{}],"9pFvS":[function(require,module,exports) {
-var Refresh = require("e3daedbd352fccbb");
-var ErrorOverlay = require("5ba6fd152f7c7303");
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 Refresh.injectIntoGlobalHook(window);
 window.$RefreshReg$ = function() {};
 window.$RefreshSig$ = function() {
@@ -604,19 +594,11 @@ window.addEventListener("parcelhmraccept", ()=>{
     ErrorOverlay.dismissRuntimeErrors();
 });
 
-<<<<<<< HEAD
 },{"6d18d6bd340e7473":"786KC","74ad5ea14201648c":"1dldy"}],"786KC":[function(require,module,exports) {
-=======
-},{"e3daedbd352fccbb":"4oGIK","5ba6fd152f7c7303":"jedS9"}],"4oGIK":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 "use strict";
 module.exports = require("96622d495519d4e");
 
-<<<<<<< HEAD
 },{"96622d495519d4e":"hdge7"}],"hdge7":[function(require,module,exports) {
-=======
-},{"2031a7b6a954c38":"aFTQ5"}],"aFTQ5":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 /** @license React v0.9.0
  * react-refresh-runtime.development.js
  *
@@ -1076,13 +1058,8 @@ module.exports = require("96622d495519d4e");
     exports.setSignature = setSignature;
 })();
 
-<<<<<<< HEAD
 },{}],"1dldy":[function(require,module,exports) {
 var process = require("d1546958eb39fdcf");
-=======
-},{}],"jedS9":[function(require,module,exports) {
-var process = require("1bf9926b731937f");
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 !function(e, t) {
     module.exports = t();
 }(window, function() {
@@ -2993,11 +2970,7 @@ window.onload = async ()=>{
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-<<<<<<< HEAD
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom":"j6uA9","./App":"2Ew96","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./utils":"bIDtH"}],"iTorj":[function(require,module,exports) {
-=======
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom":"j6uA9","./App":"2Ew96","./near-wallet":"dg9wB","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"kO4xs"}],"iTorj":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom":"j6uA9","./App":"2Ew96","./utils":"bIDtH","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -27174,164 +27147,51 @@ parcelHelpers.export(exports, "default", ()=>App);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _runtime = require("regenerator-runtime/runtime");
 var _react = require("react");
-var _listEventsJs = require("./components/ListEvents.js");
-var _listEventsJsDefault = parcelHelpers.interopDefault(_listEventsJs);
-var _createEventsJs = require("./components/CreateEvents.js");
-var _createEventsJsDefault = parcelHelpers.interopDefault(_createEventsJs);
 var _reactDefault = parcelHelpers.interopDefault(_react);
-var _utils = require("./utils");
-var _globalCss = require("./assets/global.css");
-var _config = require("./config");
-var _configDefault = parcelHelpers.interopDefault(_config);
+// import './assets/vendor/purecounter/purecounter_vanilla.js';
+// import './assets/vendor/aos/aos.js';
+// import './assets/vendor/bootstrap/js/bootstrap.bundle.min.js';
+// import './assets/vendor/glightbox/js/glightbox.min.js';
+// import './assets/vendor/swiper/swiper-bundle.min.js';
+// import './assets/js/main.js';
+var _glightbox = require("glightbox");
+var _glightboxDefault = parcelHelpers.interopDefault(_glightbox);
+var _swiper = require("swiper");
+var _swiperDefault = parcelHelpers.interopDefault(_swiper);
+var _isotopeLayout = require("isotope-layout");
+var _isotopeLayoutDefault = parcelHelpers.interopDefault(_isotopeLayout);
+var _aos = require("aos");
+var _aosDefault = parcelHelpers.interopDefault(_aos);
+// import './assets/global.css';
+var _styleCss = require("./assets/css/style.css");
+var _aosCss = require("./assets/vendor/aos/aos.css");
+var _bootstrapMinCss = require("./assets/vendor/bootstrap/css/bootstrap.min.css");
+var _bootstrapIconsCss = require("./assets/vendor/bootstrap-icons/bootstrap-icons.css");
+var _boxiconsMinCss = require("./assets/vendor/boxicons/css/boxicons.min.css");
+var _glightboxMinCss = require("./assets/vendor/glightbox/css/glightbox.min.css");
+var _remixiconCss = require("./assets/vendor/remixicon/remixicon.css");
+var _swiperBundleMinCss = require("./assets/vendor/swiper/swiper-bundle.min.css");
+var _uiComponents = require("./ui-components");
 var _s = $RefreshSig$();
-const { networkId } = (0, _configDefault.default)("development");
-function App() {
+function App({ isSignedIn, contractId, wallet }) {
     _s();
-    const [events, setEvents] = (0, _react.useState)([]);
-    const [toggleModal, setToggleModal] = (0, _react.useState)(false);
-    function addProject() {
-        setToggleModal(!toggleModal);
-    }
-    (0, _react.useEffect)(()=>{
-        if (window.walletConnection.isSignedIn()) window.contract.list_events().then((eventprojects)=>{
-            const eventList = [
-                ...eventprojects
-            ];
-            setEvents(eventList);
+    (0, _aosDefault.default).init({
+        duration: 1000,
+        easing: "ease-in-out",
+        once: true,
+        mirror: false
+    });
+    const glightbox = (0, _glightboxDefault.default)({
+        selector: ".glightbox"
+    });
+    const [valueFromBlockchain, setValueFromBlockchain] = (0, _reactDefault.default).useState();
+    const [uiPleaseWait, setUiPleaseWait] = (0, _reactDefault.default).useState(true);
+    // Get blockchian state once on component load
+    (0, _reactDefault.default).useEffect(()=>{
+        getGreeting().then(setValueFromBlockchain).catch(alert).finally(()=>{
+            setUiPleaseWait(false);
         });
     }, []);
-<<<<<<< HEAD
-    if (!window.walletConnection.isSignedIn()) return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("main", {
-        className: "signin",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                children: "Welcome to Awesome Events"
-            }, void 0, false, {
-                fileName: "App.js",
-                lineNumber: 42,
-                columnNumber: 9
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                style: {
-                    textAlign: "center"
-                },
-                children: "Click the button below to sign in:"
-            }, void 0, false, {
-                fileName: "App.js",
-                lineNumber: 43,
-                columnNumber: 9
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                style: {
-                    textAlign: "center",
-                    marginTop: "2.5em"
-                },
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                    onClick: (0, _utils.login),
-                    children: "Sign in"
-                }, void 0, false, {
-                    fileName: "App.js",
-                    lineNumber: 47,
-                    columnNumber: 11
-                }, this)
-            }, void 0, false, {
-                fileName: "App.js",
-                lineNumber: 46,
-                columnNumber: 9
-            }, this)
-        ]
-    }, void 0, true, {
-        fileName: "App.js",
-        lineNumber: 41,
-        columnNumber: 7
-    }, this);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "logo"
-                    }, void 0, false, {
-                        fileName: "App.js",
-                        lineNumber: 57,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                        className: "link",
-                        style: {
-                            float: "right"
-                        },
-                        onClick: (0, _utils.logout),
-                        children: [
-                            "Sign out ",
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                                className: "id",
-                                children: window.accountId
-                            }, void 0, false, {
-                                fileName: "App.js",
-                                lineNumber: 59,
-                                columnNumber: 20
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "App.js",
-                        lineNumber: 58,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "App.js",
-                lineNumber: 56,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                onClick: addProject,
-                children: "Add an event"
-            }, void 0, false, {
-                fileName: "App.js",
-                lineNumber: 62,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("main", {
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _createEventsJsDefault.default), {
-                        toggleModal: toggleModal
-                    }, void 0, false, {
-                        fileName: "App.js",
-                        lineNumber: 64,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
-                        className: "events",
-                        children: events.map((project, id)=>{
-                            return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _listEventsJsDefault.default), {
-                                    project: project
-                                }, void 0, false, {
-                                    fileName: "App.js",
-                                    lineNumber: 69,
-                                    columnNumber: 17
-                                }, this)
-                            }, id, false, {
-                                fileName: "App.js",
-                                lineNumber: 68,
-                                columnNumber: 15
-                            }, this);
-                        })
-                    }, void 0, false, {
-                        fileName: "App.js",
-                        lineNumber: 65,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "App.js",
-                lineNumber: 63,
-                columnNumber: 7
-            }, this)
-        ]
-    }, void 0, true);
-=======
     /// If user not signed-in with wallet - show prompt
     if (!isSignedIn) // Sign-in flow will reload the page later
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _uiComponents.SignInPrompt), {
@@ -27372,13 +27232,12 @@ function App() {
             onClick: ()=>wallet.signOut()
         }, void 0, false, {
             fileName: "App.js",
-            lineNumber: 91,
+            lineNumber: 92,
             columnNumber: 7
         }, this)
     }, void 0, false);
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 }
-_s(App, "hi5ojh1xELsFoi4+q0w5oND91uk=");
+_s(App, "kS24ka7QLm9/xaObsbkZiE5+6uE=");
 _c = App;
 var _c;
 $RefreshReg$(_c, "App");
@@ -27388,11 +27247,7 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-<<<<<<< HEAD
-},{"react/jsx-dev-runtime":"iTorj","regenerator-runtime/runtime":"dXNgZ","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./components/ListEvents.js":"g6RLm","./components/CreateEvents.js":"6NHoY","./utils":"bIDtH","./assets/global.css":"1hP5v","./config":"bSr8D"}],"dXNgZ":[function(require,module,exports) {
-=======
-},{"react/jsx-dev-runtime":"iTorj","regenerator-runtime/runtime":"dXNgZ","react":"21dqq","glightbox":"kBGcU","swiper":"iM6UL","isotope-layout":"aHntc","aos":"eRzTM","./assets/css/style.css":"8r2D8","./assets/vendor/aos/aos.css":"8LmR1","./assets/vendor/bootstrap/css/bootstrap.min.css":"C1LtY","./assets/vendor/bootstrap-icons/bootstrap-icons.css":"9VyyL","./assets/vendor/boxicons/css/boxicons.min.css":"mlhn4","./assets/vendor/glightbox/css/glightbox.min.css":"irvEs","./assets/vendor/remixicon/remixicon.css":"erQec","./assets/vendor/swiper/swiper-bundle.min.css":"58byD","./ui-components":"4LIXu","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"kO4xs"}],"dXNgZ":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
+},{"react/jsx-dev-runtime":"iTorj","regenerator-runtime/runtime":"dXNgZ","react":"21dqq","glightbox":"kBGcU","swiper":"iM6UL","isotope-layout":"aHntc","aos":"eRzTM","./assets/css/style.css":"8r2D8","./assets/vendor/aos/aos.css":"8LmR1","./assets/vendor/bootstrap/css/bootstrap.min.css":"C1LtY","./assets/vendor/bootstrap-icons/bootstrap-icons.css":"9VyyL","./assets/vendor/boxicons/css/boxicons.min.css":"mlhn4","./assets/vendor/glightbox/css/glightbox.min.css":"irvEs","./assets/vendor/remixicon/remixicon.css":"erQec","./assets/vendor/swiper/swiper-bundle.min.css":"58byD","./ui-components":"4LIXu","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dXNgZ":[function(require,module,exports) {
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
  *
@@ -27979,9 +27834,6 @@ try {
     else Function("r", "regeneratorRuntime = r")(runtime);
 }
 
-<<<<<<< HEAD
-},{}],"gkKU3":[function(require,module,exports) {
-=======
 },{}],"kBGcU":[function(require,module,exports) {
 !function(e, t) {
     module.exports = t();
@@ -29649,7 +29501,7 @@ parcelHelpers.export(exports, "Swiper", ()=>(0, _swiperCoreMjs.S));
 parcelHelpers.export(exports, "default", ()=>(0, _swiperCoreMjs.S));
 var _swiperCoreMjs = require("./shared/swiper-core.mjs");
 
-},{"./shared/swiper-core.mjs":"c1Vcv","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"c1Vcv":[function(require,module,exports) {
+},{"./shared/swiper-core.mjs":"c1Vcv","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"c1Vcv":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "S", ()=>Swiper);
@@ -32409,7 +32261,7 @@ Swiper.use([
     Observer
 ]);
 
-},{"./ssr-window.esm.mjs":"th8PY","./utils.mjs":"9mU7V","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"th8PY":[function(require,module,exports) {
+},{"./ssr-window.esm.mjs":"th8PY","./utils.mjs":"9mU7V","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"th8PY":[function(require,module,exports) {
 /**
  * SSR Window 4.0.2
  * Better handling for window object in SSR environment
@@ -32549,8 +32401,7 @@ function getWindow() {
     return win;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"gV57s":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -32580,9 +32431,6 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-<<<<<<< HEAD
-},{}],"km3Ru":[function(require,module,exports) {
-=======
 },{}],"9mU7V":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
@@ -32839,7 +32687,7 @@ function elementOuterSize(el, size, includeMargins) {
     return el.offsetWidth;
 }
 
-},{"./ssr-window.esm.mjs":"th8PY","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"aHntc":[function(require,module,exports) {
+},{"./ssr-window.esm.mjs":"th8PY","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aHntc":[function(require,module,exports) {
 /*!
  * Isotope v3.0.6
  *
@@ -35874,7 +35722,7 @@ $RefreshReg$(_c1, "SignOutButton");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./components/header":"gMwGB","./components/footer":"4psvf","./components/contact":"6sEDB","./components/services":"i4peN","./components/About":"hGILx","./components/Calendar":"9iZ3i","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"kO4xs","./components/Signheader":"izsrV"}],"gMwGB":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./components/header":"gMwGB","./components/Signheader":"izsrV","./components/footer":"4psvf","./components/contact":"6sEDB","./components/services":"i4peN","./components/About":"hGILx","./components/Calendar":"9iZ3i","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"gMwGB":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$e7c5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -36010,7 +35858,7 @@ $RefreshReg$(_c, "Header");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../assets/js/headerScrolled":"gaYUV","../ui-components":"4LIXu","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"kO4xs"}],"gaYUV":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../assets/js/headerScrolled":"gaYUV","../ui-components":"4LIXu","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"gaYUV":[function(require,module,exports) {
 // headerScrolled.js
 /**
  * Easy selector helper function
@@ -36041,8 +35889,7 @@ const initHeaderScrolled = ()=>{
     }
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"kO4xs":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"km3Ru":[function(require,module,exports) {
 "use strict";
 var Refresh = require("7422ead32dcc1e6b");
 function debounce(func, delay) {
@@ -36180,16 +36027,11 @@ function registerExportsForReactRefresh(module1) {
     }
 }
 
-<<<<<<< HEAD
-},{"7422ead32dcc1e6b":"786KC"}],"g6RLm":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$865c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-=======
-},{"73a6a3361f7f06f4":"4oGIK"}],"4psvf":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$a8dc = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
+},{"7422ead32dcc1e6b":"786KC"}],"izsrV":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$a44e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$865c.prelude(module);
+$parcel$ReactRefreshHelpers$a44e.prelude(module);
 
 try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -36197,23 +36039,159 @@ parcelHelpers.defineInteropFlag(exports);
 var _jsxDevRuntime = require("react/jsx-dev-runtime");
 var _react = require("react");
 var _reactDefault = parcelHelpers.interopDefault(_react);
-function ListEvents({ project }) {
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        className: "project",
+var _headerScrolled = require("../assets/js/headerScrolled");
+var _uiComponents = require("../ui-components");
+var _uiComponentsDefault = parcelHelpers.interopDefault(_uiComponents);
+var _s = $RefreshSig$();
+const Signheader = ({ onClick, accountId })=>{
+    _s();
+    (0, _react.useEffect)(()=>{
+        (0, _headerScrolled.initHeaderScrolled)();
+    }, []);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
+            id: "header",
+            className: "fixed-top",
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "container d-flex align-items-center justify-content-between",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                        className: "logo",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                            style: {
+                                color: "#c5f801"
+                            },
+                            href: "",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
+                                children: "PARTAGE LOCK"
+                            }, void 0, false, {
+                                fileName: "components/Signheader.js",
+                                lineNumber: 16,
+                                columnNumber: 15
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "components/Signheader.js",
+                            lineNumber: 15,
+                            columnNumber: 13
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "components/Signheader.js",
+                        lineNumber: 14,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("nav", {
+                        id: "navbar",
+                        className: "navbar",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                            className: "nav-link scrollto",
+                                            href: "https://juliencarbonnell.medium.com/blockchain-for-smart-cities-tutorial-building-a-blockchain-controlled-smart-lock-on-near-100-d97b19ca7a86",
+                                            children: "Documentation"
+                                        }, void 0, false, {
+                                            fileName: "components/Signheader.js",
+                                            lineNumber: 23,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "components/Signheader.js",
+                                        lineNumber: 22,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                            className: "",
+                                            children: accountId
+                                        }, void 0, false, {
+                                            fileName: "components/Signheader.js",
+                                            lineNumber: 31,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "components/Signheader.js",
+                                        lineNumber: 30,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                            onClick: onClick,
+                                            className: "getstarted scrollto",
+                                            children: "Disconnect"
+                                        }, void 0, false, {
+                                            fileName: "components/Signheader.js",
+                                            lineNumber: 37,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "components/Signheader.js",
+                                        lineNumber: 36,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/Signheader.js",
+                                lineNumber: 21,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                className: "bi bi-list mobile-nav-toggle"
+                            }, void 0, false, {
+                                fileName: "components/Signheader.js",
+                                lineNumber: 42,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                fileName: "components/Signheader.js",
+                                lineNumber: 43,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "components/Signheader.js",
+                        lineNumber: 20,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "components/Signheader.js",
+                lineNumber: 13,
+                columnNumber: 9
+            }, undefined)
+        }, void 0, false, {
+            fileName: "components/Signheader.js",
+            lineNumber: 12,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false);
+};
+_s(Signheader, "OD7bBpZva5O2jO+Puf00hKivP7c=");
+_c = Signheader;
+exports.default = Signheader;
+var _c;
+$RefreshReg$(_c, "Signheader");
+
+  $parcel$ReactRefreshHelpers$a44e.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../assets/js/headerScrolled":"gaYUV","../ui-components":"4LIXu","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4psvf":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$a8dc = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$a8dc.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const Footer = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
         children: [
-<<<<<<< HEAD
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                children: project.title
-            }, void 0, false, {
-                fileName: "components/ListEvents.js",
-                lineNumber: 7,
-                columnNumber: 7
-            }, this),
-            " ",
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("span", {
-                className: "creator",
-                children: project.creator
-=======
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("footer", {
                 id: "footer",
                 children: [
@@ -36578,7 +36556,7 @@ $RefreshReg$(_c, "Footer");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"kO4xs"}],"6sEDB":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6sEDB":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$0e66 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -36935,7 +36913,7 @@ $RefreshReg$(_c, "Contact");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"kO4xs"}],"i4peN":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"i4peN":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$445b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -37225,10 +37203,10 @@ $RefreshReg$(_c, "Services");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../assets/img/connect-wallet.jpg":"5cCti","../assets/img/send-payment.jpg":"cX3dQ","../assets/img/receive-password.jpg":"9UUov","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"kO4xs"}],"5cCti":[function(require,module,exports) {
-module.exports = require("e81e242a3628a8d").getBundleURL("UckoE") + "connect-wallet.2b771d86.jpg" + "?" + Date.now();
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../assets/img/connect-wallet.jpg":"8EkwD","../assets/img/send-payment.jpg":"5V67e","../assets/img/receive-password.jpg":"bxlg9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8EkwD":[function(require,module,exports) {
+module.exports = require("18b155ef857eabc4").getBundleURL("UckoE") + "connect-wallet.2b771d86.jpg" + "?" + Date.now();
 
-},{"e81e242a3628a8d":"gLrc5"}],"gLrc5":[function(require,module,exports) {
+},{"18b155ef857eabc4":"lgJ39"}],"lgJ39":[function(require,module,exports) {
 "use strict";
 var bundleURL = {};
 function getBundleURLCached(id) {
@@ -37263,13 +37241,13 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"cX3dQ":[function(require,module,exports) {
-module.exports = require("4ee771a4df51c25f").getBundleURL("UckoE") + "send-payment.6afce8c8.jpg" + "?" + Date.now();
+},{}],"5V67e":[function(require,module,exports) {
+module.exports = require("24a21002d59734e9").getBundleURL("UckoE") + "send-payment.6afce8c8.jpg" + "?" + Date.now();
 
-},{"4ee771a4df51c25f":"gLrc5"}],"9UUov":[function(require,module,exports) {
-module.exports = require("95bf72b8b2df7459").getBundleURL("UckoE") + "receive-password.af5862f0.jpg" + "?" + Date.now();
+},{"24a21002d59734e9":"lgJ39"}],"bxlg9":[function(require,module,exports) {
+module.exports = require("1a18b13726d6bb4").getBundleURL("UckoE") + "receive-password.af5862f0.jpg" + "?" + Date.now();
 
-},{"95bf72b8b2df7459":"gLrc5"}],"hGILx":[function(require,module,exports) {
+},{"1a18b13726d6bb4":"lgJ39"}],"hGILx":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$266e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -37475,70 +37453,9 @@ const About = ()=>{
                     lineNumber: 9,
                     columnNumber: 11
                 }, undefined)
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
             }, void 0, false, {
-                fileName: "components/ListEvents.js",
+                fileName: "components/About.js",
                 lineNumber: 8,
-<<<<<<< HEAD
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                children: "description:"
-            }, void 0, false, {
-                fileName: "components/ListEvents.js",
-                lineNumber: 9,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                children: project.description
-            }, void 0, false, {
-                fileName: "components/ListEvents.js",
-                lineNumber: 10,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                children: [
-                    "target: ",
-                    project.estimated_budget,
-                    " NEAR"
-                ]
-            }, void 0, true, {
-                fileName: "components/ListEvents.js",
-                lineNumber: 11,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                children: [
-                    "Votes: ",
-                    project.total_votes
-                ]
-            }, void 0, true, {
-                fileName: "components/ListEvents.js",
-                lineNumber: 12,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                onClick: ()=>{
-                    window.contract.add_vote({
-                        id: project.id
-                    });
-                },
-                children: "Vote"
-            }, void 0, false, {
-                fileName: "components/ListEvents.js",
-                lineNumber: 13,
-                columnNumber: 7
-            }, this)
-        ]
-    }, void 0, true, {
-        fileName: "components/ListEvents.js",
-        lineNumber: 6,
-        columnNumber: 5
-    }, this);
-}
-_c = ListEvents;
-exports.default = ListEvents;
-=======
                 columnNumber: 9
             }, undefined)
         }, void 0, false, {
@@ -37550,28 +37467,18 @@ exports.default = ListEvents;
 };
 _c = About;
 exports.default = About;
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 var _c;
-$RefreshReg$(_c, "ListEvents");
+$RefreshReg$(_c, "About");
 
-  $parcel$ReactRefreshHelpers$865c.postlude(module);
+  $parcel$ReactRefreshHelpers$266e.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-<<<<<<< HEAD
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6NHoY":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$e4a7 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$e4a7.prelude(module);
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../assets/img/arduino-lock.jpg":"5IPwv","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"5IPwv":[function(require,module,exports) {
+module.exports = require("bb42f158cdc27431").getBundleURL("UckoE") + "arduino-lock.2b1ee7b3.jpg" + "?" + Date.now();
 
-try {
-=======
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../assets/img/arduino-lock.jpg":"4ySJ2","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"kO4xs"}],"4ySJ2":[function(require,module,exports) {
-module.exports = require("6ea272ba9799e049").getBundleURL("UckoE") + "arduino-lock.2b1ee7b3.jpg" + "?" + Date.now();
-
-},{"6ea272ba9799e049":"gLrc5"}],"9iZ3i":[function(require,module,exports) {
+},{"bb42f158cdc27431":"lgJ39"}],"9iZ3i":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$e412 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -37900,317 +37807,6 @@ $RefreshReg$(_c, "Calendar");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"kO4xs"}],"izsrV":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$a44e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$a44e.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _headerScrolled = require("../assets/js/headerScrolled");
-var _uiComponents = require("../ui-components");
-var _uiComponentsDefault = parcelHelpers.interopDefault(_uiComponents);
-var _s = $RefreshSig$();
-const Signheader = ({ onClick, accountId })=>{
-    _s();
-    (0, _react.useEffect)(()=>{
-        (0, _headerScrolled.initHeaderScrolled)();
-    }, []);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
-            id: "header",
-            className: "fixed-top",
-            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "container d-flex align-items-center justify-content-between",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                        className: "logo",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                            style: {
-                                color: "#c5f801"
-                            },
-                            href: "",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
-                                children: "PARTAGE LOCK"
-                            }, void 0, false, {
-                                fileName: "components/Signheader.js",
-                                lineNumber: 16,
-                                columnNumber: 15
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "components/Signheader.js",
-                            lineNumber: 15,
-                            columnNumber: 13
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "components/Signheader.js",
-                        lineNumber: 14,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("nav", {
-                        id: "navbar",
-                        className: "navbar",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                            className: "nav-link scrollto",
-                                            href: "https://medium.com/@juliencarbonnell/democratizing-access-to-utilities-blockchain-for-smart-cities-25eefb0348e7",
-                                            children: "Documentation"
-                                        }, void 0, false, {
-                                            fileName: "components/Signheader.js",
-                                            lineNumber: 23,
-                                            columnNumber: 17
-                                        }, undefined)
-                                    }, void 0, false, {
-                                        fileName: "components/Signheader.js",
-                                        lineNumber: 22,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                            className: "",
-                                            children: accountId
-                                        }, void 0, false, {
-                                            fileName: "components/Signheader.js",
-                                            lineNumber: 31,
-                                            columnNumber: 17
-                                        }, undefined)
-                                    }, void 0, false, {
-                                        fileName: "components/Signheader.js",
-                                        lineNumber: 30,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                            onClick: onClick,
-                                            className: "getstarted scrollto",
-                                            children: "Disconnect"
-                                        }, void 0, false, {
-                                            fileName: "components/Signheader.js",
-                                            lineNumber: 37,
-                                            columnNumber: 17
-                                        }, undefined)
-                                    }, void 0, false, {
-                                        fileName: "components/Signheader.js",
-                                        lineNumber: 36,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "components/Signheader.js",
-                                lineNumber: 21,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                className: "bi bi-list mobile-nav-toggle"
-                            }, void 0, false, {
-                                fileName: "components/Signheader.js",
-                                lineNumber: 42,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                                fileName: "components/Signheader.js",
-                                lineNumber: 43,
-                                columnNumber: 13
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "components/Signheader.js",
-                        lineNumber: 20,
-                        columnNumber: 11
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "components/Signheader.js",
-                lineNumber: 13,
-                columnNumber: 9
-            }, undefined)
-        }, void 0, false, {
-            fileName: "components/Signheader.js",
-            lineNumber: 12,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false);
-};
-_s(Signheader, "OD7bBpZva5O2jO+Puf00hKivP7c=");
-_c = Signheader;
-exports.default = Signheader;
-var _c;
-$RefreshReg$(_c, "Signheader");
-
-  $parcel$ReactRefreshHelpers$a44e.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../assets/js/headerScrolled":"gaYUV","../ui-components":"4LIXu","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"kO4xs"}],"dg9wB":[function(require,module,exports) {
-/* A helper file that simplifies using the wallet selector */ // near api js
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _s = $RefreshSig$();
-function CreateEvent({ toggleModal }) {
-    _s();
-    const [title, setTitle] = (0, _react.useState)("");
-    const [description, setDescription] = (0, _react.useState)("");
-    const [target, setTarget] = (0, _react.useState)(0);
-    const [showNotification, setShowNotification] = (0, _react.useState)(false);
-    const handleSubmit = (event)=>{
-        event.preventDefault();
-        window.contract.add_event({
-            title: title,
-            estimated_budget: target * 1,
-            description: description
-        });
-        setShowNotification(!showNotification);
-        alert(`event info: ${title} ${target} ${description}`);
-    };
-    console.log(`its ${toggleModal}`);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-        children: [
-            toggleModal == true && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "addevent",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
-                    onSubmit: handleSubmit,
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                            children: [
-                                "Enter event title:",
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                    type: "text",
-                                    value: title,
-                                    onChange: (e)=>setTitle(e.target.value)
-                                }, void 0, false, {
-                                    fileName: "components/CreateEvents.js",
-                                    lineNumber: 21,
-                                    columnNumber: 19
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "components/CreateEvents.js",
-                            lineNumber: 19,
-                            columnNumber: 17
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                            children: [
-                                "Enter budget:",
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                    type: "number",
-                                    value: target,
-                                    onChange: (e)=>setTarget(e.target.value)
-                                }, void 0, false, {
-                                    fileName: "components/CreateEvents.js",
-                                    lineNumber: 30,
-                                    columnNumber: 19
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "components/CreateEvents.js",
-                            lineNumber: 28,
-                            columnNumber: 17
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                            children: [
-                                "Enter event description:",
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                    type: "text",
-                                    value: description,
-                                    onChange: (e)=>setDescription(e.target.value)
-                                }, void 0, false, {
-                                    fileName: "components/CreateEvents.js",
-                                    lineNumber: 39,
-                                    columnNumber: 19
-                                }, this)
-                            ]
-                        }, void 0, true, {
-                            fileName: "components/CreateEvents.js",
-                            lineNumber: 37,
-                            columnNumber: 17
-                        }, this),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                            type: "submit",
-                            className: "submit"
-                        }, void 0, false, {
-                            fileName: "components/CreateEvents.js",
-                            lineNumber: 45,
-                            columnNumber: 17
-                        }, this)
-                    ]
-                }, void 0, true, {
-                    fileName: "components/CreateEvents.js",
-                    lineNumber: 18,
-                    columnNumber: 15
-                }, this)
-            }, void 0, false, {
-                fileName: "components/CreateEvents.js",
-                lineNumber: 17,
-                columnNumber: 13
-            }, this),
-            showNotification && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)(Notification, {}, void 0, false, {
-                fileName: "components/CreateEvents.js",
-                lineNumber: 50,
-                columnNumber: 32
-            }, this)
-        ]
-    }, void 0, true, {
-        fileName: "components/CreateEvents.js",
-        lineNumber: 15,
-        columnNumber: 9
-    }, this);
-}
-_s(CreateEvent, "nIR9LvrleRObZqWso++MGLtrN/0=");
-_c = CreateEvent;
-function Notification() {
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("aside", {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("footer", {
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    children: "✔ Succeeded "
-                }, void 0, false, {
-                    fileName: "components/CreateEvents.js",
-                    lineNumber: 59,
-                    columnNumber: 13
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    children: "Added new event just now"
-                }, void 0, false, {
-                    fileName: "components/CreateEvents.js",
-                    lineNumber: 60,
-                    columnNumber: 13
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "components/CreateEvents.js",
-            lineNumber: 58,
-            columnNumber: 11
-        }, this)
-    }, void 0, false, {
-        fileName: "components/CreateEvents.js",
-        lineNumber: 57,
-        columnNumber: 9
-    }, this);
-}
-_c1 = Notification;
-exports.default = CreateEvent;
-var _c, _c1;
-$RefreshReg$(_c, "CreateEvent");
-$RefreshReg$(_c1, "Notification");
-
-  $parcel$ReactRefreshHelpers$e4a7.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
 },{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bIDtH":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
@@ -38266,8 +37862,7 @@ function login() {
     window.wallet.requestSignIn(nearConfig.contractName);
 }
 
-<<<<<<< HEAD
-},{"near-api-js":"ohc3m","./config":"bSr8D","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","./near-wallet":"dg9wB"}],"ohc3m":[function(require,module,exports) {
+},{"near-api-js":"ohc3m","./config":"bSr8D","./near-wallet":"dg9wB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ohc3m":[function(require,module,exports) {
 "use strict";
 var __createBinding = this && this.__createBinding || (Object.create ? function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
@@ -39081,9 +38676,6 @@ function deserializeUnchecked(schema, classType, buffer, Reader = BinaryReader) 
 exports.deserializeUnchecked = deserializeUnchecked;
 
 },{"699c164eb7aea5db":"fCgem","17e7c0a10366aaf7":"VopIn","d1e02929d3f43eae":"4ji3p","b378096fead01c9a":"feCA6"}],"fCgem":[function(require,module,exports) {
-=======
-},{"f82bc9c169fd1dff":"fCgem","near-api-js":"ohc3m","@near-wallet-selector/modal-ui/styles.css":"b4TAP","@near-wallet-selector/modal-ui":"1nDKo","@near-wallet-selector/core":"eEY3a","@near-wallet-selector/my-near-wallet":"bYYGG","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"fCgem":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 /*!
  * The buffer module from node.js, for the browser.
  *
@@ -43442,11 +43034,7 @@ exports.write = function(buffer, value, offset, isLE, mLen, nBytes) {
     };
 })(module, this);
 
-<<<<<<< HEAD
 },{"bd440367abe2ded7":"jhUEF"}],"jhUEF":[function(require,module,exports) {
-=======
-},{"bd440367abe2ded7":"j6g3b"}],"j6g3b":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 "use strict";
 
 },{}],"4ji3p":[function(require,module,exports) {
@@ -46476,11 +46064,7 @@ exports.TextDecoder = TextDecoder;
     })();
 })((0, module.exports) ? module.exports : self.nacl = self.nacl || {});
 
-<<<<<<< HEAD
 },{"64deaebb838d47b8":"jhUEF"}],"1SRGM":[function(require,module,exports) {
-=======
-},{"64deaebb838d47b8":"j6g3b"}],"1SRGM":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 "use strict";
 var __importDefault = this && this.__importDefault || function(mod) {
     return mod && mod.__esModule ? mod : {
@@ -50356,11 +49940,7 @@ function fetchJson(connectionInfoOrUrl, json) {
 }
 exports.fetchJson = fetchJson;
 
-<<<<<<< HEAD
 },{"1cf7b5a6fc3fcbc5":"8V9k6","b67182bc4df93de":"a3NQ3","31af50c783fd52d9":"bwIOA","b3f2e26d8d7b883c":"fiBU8"}],"a3NQ3":[function(require,module,exports) {
-=======
-},{"1cf7b5a6fc3fcbc5":"8V9k6","b67182bc4df93de":"a3NQ3","31af50c783fd52d9":"bwIOA","b3f2e26d8d7b883c":"jida9"}],"a3NQ3":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 /*!
  * http-errors
  * Copyright(c) 2014 Jonathan Ong
@@ -50769,22 +50349,13 @@ module.exports = function inherits(ctor, superCtor) {
     }).join("").replace(/[^ _0-9a-z]/gi, "");
 }
 
-<<<<<<< HEAD
 },{}],"fiBU8":[function(require,module,exports) {
 module.exports = require("27c10c4bae024bcd")(require("8d12c66405c1cee6").getBundleURL("UckoE") + "fetch.5aa4d3e3.js" + "?" + Date.now()).catch((err)=>{
-=======
-},{}],"jida9":[function(require,module,exports) {
-module.exports = require("ba5d359c6e68af47")(require("d2ea842221d15e91").getBundleURL("UckoE") + "fetch.5aa4d3e3.js" + "?" + Date.now()).catch((err)=>{
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
     delete module.bundle.cache[module.id];
     throw err;
 }).then(()=>module.bundle.root("64owv"));
 
-<<<<<<< HEAD
 },{"27c10c4bae024bcd":"61B45","8d12c66405c1cee6":"lgJ39"}],"61B45":[function(require,module,exports) {
-=======
-},{"ba5d359c6e68af47":"4Lnbh","d2ea842221d15e91":"gLrc5"}],"4Lnbh":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 "use strict";
 var cacheLoader = require("ca2a84f7fa4a3bb0");
 module.exports = cacheLoader(function(bundle) {
@@ -50820,11 +50391,7 @@ module.exports = cacheLoader(function(bundle) {
     });
 });
 
-<<<<<<< HEAD
 },{"ca2a84f7fa4a3bb0":"j49pS"}],"j49pS":[function(require,module,exports) {
-=======
-},{"3228afe6e927b910":"8UoBS"}],"8UoBS":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 "use strict";
 var cachedBundles = {};
 var cachedPreloads = {};
@@ -50849,41 +50416,6 @@ module.exports = function(loader, type) {
         });
     };
 };
-
-},{}],"lgJ39":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return "/";
-}
-function getBaseURL(url) {
-    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
-}
-// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
-    if (!matches) throw new Error("Origin not found");
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
 
 },{}],"kzXVU":[function(require,module,exports) {
 "use strict";
@@ -66467,11 +65999,7 @@ let modalInstance = null;
     return modalInstance;
 };
 
-<<<<<<< HEAD
 },{"react/jsx-runtime":"6AEwr","react-dom/client":"lOjBx","react":"21dqq","@near-wallet-selector/core":"eEY3a","qrcode":"lB7MY","copy-to-clipboard":"fLPFI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6AEwr":[function(require,module,exports) {
-=======
-},{"react/jsx-runtime":"6AEwr","react-dom/client":"lOjBx","react":"21dqq","@near-wallet-selector/core":"eEY3a","qrcode":"lB7MY","copy-to-clipboard":"fLPFI","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"6AEwr":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 "use strict";
 module.exports = require("c4c10cbba9862d5f");
 
@@ -73461,11 +72989,7 @@ const translate = (path)=>{
     return text && typeof text === "string" ? text : path;
 };
 
-<<<<<<< HEAD
 },{"a96a7d50dbb8a81e":"fCgem","near-api-js":"ohc3m","events":"1VQLm","rxjs":"lLy7s","borsh":"4JCmN","js-sha256":"ahVaM","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1VQLm":[function(require,module,exports) {
-=======
-},{"a96a7d50dbb8a81e":"fCgem","near-api-js":"ohc3m","events":"1VQLm","rxjs":"lLy7s","borsh":"4JCmN","js-sha256":"ahVaM","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"1VQLm":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -74163,11 +73687,7 @@ var _withLatestFrom = require("./internal/operators/withLatestFrom");
 var _zipAll = require("./internal/operators/zipAll");
 var _zipWith = require("./internal/operators/zipWith");
 
-<<<<<<< HEAD
 },{"./internal/Observable":false,"./internal/observable/ConnectableObservable":false,"./internal/symbol/observable":false,"./internal/observable/dom/animationFrames":false,"./internal/Subject":"94RSe","./internal/BehaviorSubject":"4s6yS","./internal/ReplaySubject":false,"./internal/AsyncSubject":false,"./internal/scheduler/asap":false,"./internal/scheduler/async":false,"./internal/scheduler/queue":false,"./internal/scheduler/animationFrame":false,"./internal/scheduler/VirtualTimeScheduler":false,"./internal/Scheduler":false,"./internal/Subscription":false,"./internal/Subscriber":false,"./internal/Notification":false,"./internal/util/pipe":false,"./internal/util/noop":false,"./internal/util/identity":false,"./internal/util/isObservable":false,"./internal/lastValueFrom":false,"./internal/firstValueFrom":false,"./internal/util/ArgumentOutOfRangeError":false,"./internal/util/EmptyError":false,"./internal/util/NotFoundError":false,"./internal/util/ObjectUnsubscribedError":false,"./internal/util/SequenceError":false,"./internal/operators/timeout":false,"./internal/util/UnsubscriptionError":false,"./internal/observable/bindCallback":false,"./internal/observable/bindNodeCallback":false,"./internal/observable/combineLatest":false,"./internal/observable/concat":false,"./internal/observable/connectable":false,"./internal/observable/defer":false,"./internal/observable/empty":false,"./internal/observable/forkJoin":false,"./internal/observable/from":false,"./internal/observable/fromEvent":false,"./internal/observable/fromEventPattern":false,"./internal/observable/generate":false,"./internal/observable/iif":false,"./internal/observable/interval":false,"./internal/observable/merge":false,"./internal/observable/never":false,"./internal/observable/of":false,"./internal/observable/onErrorResumeNext":false,"./internal/observable/pairs":false,"./internal/observable/partition":false,"./internal/observable/race":false,"./internal/observable/range":false,"./internal/observable/throwError":false,"./internal/observable/timer":false,"./internal/observable/using":false,"./internal/observable/zip":false,"./internal/scheduled/scheduled":false,"./internal/types":false,"./internal/config":false,"./internal/operators/audit":false,"./internal/operators/auditTime":false,"./internal/operators/buffer":false,"./internal/operators/bufferCount":false,"./internal/operators/bufferTime":false,"./internal/operators/bufferToggle":false,"./internal/operators/bufferWhen":false,"./internal/operators/catchError":false,"./internal/operators/combineAll":false,"./internal/operators/combineLatestAll":false,"./internal/operators/combineLatestWith":false,"./internal/operators/concatAll":false,"./internal/operators/concatMap":false,"./internal/operators/concatMapTo":false,"./internal/operators/concatWith":false,"./internal/operators/connect":false,"./internal/operators/count":false,"./internal/operators/debounce":false,"./internal/operators/debounceTime":false,"./internal/operators/defaultIfEmpty":false,"./internal/operators/delay":false,"./internal/operators/delayWhen":false,"./internal/operators/dematerialize":false,"./internal/operators/distinct":false,"./internal/operators/distinctUntilChanged":false,"./internal/operators/distinctUntilKeyChanged":false,"./internal/operators/elementAt":false,"./internal/operators/endWith":false,"./internal/operators/every":false,"./internal/operators/exhaust":false,"./internal/operators/exhaustAll":false,"./internal/operators/exhaustMap":false,"./internal/operators/expand":false,"./internal/operators/filter":false,"./internal/operators/finalize":false,"./internal/operators/find":false,"./internal/operators/findIndex":false,"./internal/operators/first":false,"./internal/operators/groupBy":false,"./internal/operators/ignoreElements":false,"./internal/operators/isEmpty":false,"./internal/operators/last":false,"./internal/operators/map":false,"./internal/operators/mapTo":false,"./internal/operators/materialize":false,"./internal/operators/max":false,"./internal/operators/mergeAll":false,"./internal/operators/flatMap":false,"./internal/operators/mergeMap":false,"./internal/operators/mergeMapTo":false,"./internal/operators/mergeScan":false,"./internal/operators/mergeWith":false,"./internal/operators/min":false,"./internal/operators/multicast":false,"./internal/operators/observeOn":false,"./internal/operators/onErrorResumeNextWith":false,"./internal/operators/pairwise":false,"./internal/operators/pluck":false,"./internal/operators/publish":false,"./internal/operators/publishBehavior":false,"./internal/operators/publishLast":false,"./internal/operators/publishReplay":false,"./internal/operators/raceWith":false,"./internal/operators/reduce":false,"./internal/operators/repeat":false,"./internal/operators/repeatWhen":false,"./internal/operators/retry":false,"./internal/operators/retryWhen":false,"./internal/operators/refCount":false,"./internal/operators/sample":false,"./internal/operators/sampleTime":false,"./internal/operators/scan":"efPFC","./internal/operators/sequenceEqual":false,"./internal/operators/share":false,"./internal/operators/shareReplay":false,"./internal/operators/single":false,"./internal/operators/skip":false,"./internal/operators/skipLast":false,"./internal/operators/skipUntil":false,"./internal/operators/skipWhile":false,"./internal/operators/startWith":false,"./internal/operators/subscribeOn":false,"./internal/operators/switchAll":false,"./internal/operators/switchMap":false,"./internal/operators/switchMapTo":false,"./internal/operators/switchScan":false,"./internal/operators/take":false,"./internal/operators/takeLast":false,"./internal/operators/takeUntil":false,"./internal/operators/takeWhile":false,"./internal/operators/tap":false,"./internal/operators/throttle":false,"./internal/operators/throttleTime":false,"./internal/operators/throwIfEmpty":false,"./internal/operators/timeInterval":false,"./internal/operators/timeoutWith":false,"./internal/operators/timestamp":false,"./internal/operators/toArray":false,"./internal/operators/window":false,"./internal/operators/windowCount":false,"./internal/operators/windowTime":false,"./internal/operators/windowToggle":false,"./internal/operators/windowWhen":false,"./internal/operators/withLatestFrom":false,"./internal/operators/zipAll":false,"./internal/operators/zipWith":false,"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4Jvxr":[function(require,module,exports) {
-=======
-},{"./internal/Observable":false,"./internal/observable/ConnectableObservable":false,"./internal/symbol/observable":false,"./internal/observable/dom/animationFrames":false,"./internal/Subject":"94RSe","./internal/BehaviorSubject":"4s6yS","./internal/ReplaySubject":false,"./internal/AsyncSubject":false,"./internal/scheduler/asap":false,"./internal/scheduler/async":false,"./internal/scheduler/queue":false,"./internal/scheduler/animationFrame":false,"./internal/scheduler/VirtualTimeScheduler":false,"./internal/Scheduler":false,"./internal/Subscription":false,"./internal/Subscriber":false,"./internal/Notification":false,"./internal/util/pipe":false,"./internal/util/noop":false,"./internal/util/identity":false,"./internal/util/isObservable":false,"./internal/lastValueFrom":false,"./internal/firstValueFrom":false,"./internal/util/ArgumentOutOfRangeError":false,"./internal/util/EmptyError":false,"./internal/util/NotFoundError":false,"./internal/util/ObjectUnsubscribedError":false,"./internal/util/SequenceError":false,"./internal/operators/timeout":false,"./internal/util/UnsubscriptionError":false,"./internal/observable/bindCallback":false,"./internal/observable/bindNodeCallback":false,"./internal/observable/combineLatest":false,"./internal/observable/concat":false,"./internal/observable/connectable":false,"./internal/observable/defer":false,"./internal/observable/empty":false,"./internal/observable/forkJoin":false,"./internal/observable/from":false,"./internal/observable/fromEvent":false,"./internal/observable/fromEventPattern":false,"./internal/observable/generate":false,"./internal/observable/iif":false,"./internal/observable/interval":false,"./internal/observable/merge":false,"./internal/observable/never":false,"./internal/observable/of":false,"./internal/observable/onErrorResumeNext":false,"./internal/observable/pairs":false,"./internal/observable/partition":false,"./internal/observable/race":false,"./internal/observable/range":false,"./internal/observable/throwError":false,"./internal/observable/timer":false,"./internal/observable/using":false,"./internal/observable/zip":false,"./internal/scheduled/scheduled":false,"./internal/types":false,"./internal/config":false,"./internal/operators/audit":false,"./internal/operators/auditTime":false,"./internal/operators/buffer":false,"./internal/operators/bufferCount":false,"./internal/operators/bufferTime":false,"./internal/operators/bufferToggle":false,"./internal/operators/bufferWhen":false,"./internal/operators/catchError":false,"./internal/operators/combineAll":false,"./internal/operators/combineLatestAll":false,"./internal/operators/combineLatestWith":false,"./internal/operators/concatAll":false,"./internal/operators/concatMap":false,"./internal/operators/concatMapTo":false,"./internal/operators/concatWith":false,"./internal/operators/connect":false,"./internal/operators/count":false,"./internal/operators/debounce":false,"./internal/operators/debounceTime":false,"./internal/operators/defaultIfEmpty":false,"./internal/operators/delay":false,"./internal/operators/delayWhen":false,"./internal/operators/dematerialize":false,"./internal/operators/distinct":false,"./internal/operators/distinctUntilChanged":false,"./internal/operators/distinctUntilKeyChanged":false,"./internal/operators/elementAt":false,"./internal/operators/endWith":false,"./internal/operators/every":false,"./internal/operators/exhaust":false,"./internal/operators/exhaustAll":false,"./internal/operators/exhaustMap":false,"./internal/operators/expand":false,"./internal/operators/filter":false,"./internal/operators/finalize":false,"./internal/operators/find":false,"./internal/operators/findIndex":false,"./internal/operators/first":false,"./internal/operators/groupBy":false,"./internal/operators/ignoreElements":false,"./internal/operators/isEmpty":false,"./internal/operators/last":false,"./internal/operators/map":false,"./internal/operators/mapTo":false,"./internal/operators/materialize":false,"./internal/operators/max":false,"./internal/operators/mergeAll":false,"./internal/operators/flatMap":false,"./internal/operators/mergeMap":false,"./internal/operators/mergeMapTo":false,"./internal/operators/mergeScan":false,"./internal/operators/mergeWith":false,"./internal/operators/min":false,"./internal/operators/multicast":false,"./internal/operators/observeOn":false,"./internal/operators/onErrorResumeNextWith":false,"./internal/operators/pairwise":false,"./internal/operators/pluck":false,"./internal/operators/publish":false,"./internal/operators/publishBehavior":false,"./internal/operators/publishLast":false,"./internal/operators/publishReplay":false,"./internal/operators/raceWith":false,"./internal/operators/reduce":false,"./internal/operators/repeat":false,"./internal/operators/repeatWhen":false,"./internal/operators/retry":false,"./internal/operators/retryWhen":false,"./internal/operators/refCount":false,"./internal/operators/sample":false,"./internal/operators/sampleTime":false,"./internal/operators/scan":"efPFC","./internal/operators/sequenceEqual":false,"./internal/operators/share":false,"./internal/operators/shareReplay":false,"./internal/operators/single":false,"./internal/operators/skip":false,"./internal/operators/skipLast":false,"./internal/operators/skipUntil":false,"./internal/operators/skipWhile":false,"./internal/operators/startWith":false,"./internal/operators/subscribeOn":false,"./internal/operators/switchAll":false,"./internal/operators/switchMap":false,"./internal/operators/switchMapTo":false,"./internal/operators/switchScan":false,"./internal/operators/take":false,"./internal/operators/takeLast":false,"./internal/operators/takeUntil":false,"./internal/operators/takeWhile":false,"./internal/operators/tap":false,"./internal/operators/throttle":false,"./internal/operators/throttleTime":false,"./internal/operators/throwIfEmpty":false,"./internal/operators/timeInterval":false,"./internal/operators/timeoutWith":false,"./internal/operators/timestamp":false,"./internal/operators/toArray":false,"./internal/operators/window":false,"./internal/operators/windowCount":false,"./internal/operators/windowTime":false,"./internal/operators/windowToggle":false,"./internal/operators/windowWhen":false,"./internal/operators/withLatestFrom":false,"./internal/operators/zipAll":false,"./internal/operators/zipWith":false,"@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"4Jvxr":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Observable", ()=>Observable);
@@ -74265,11 +73785,7 @@ function isSubscriber(value) {
     return value && value instanceof (0, _subscriber.Subscriber) || isObserver(value) && (0, _subscription.isSubscription)(value);
 }
 
-<<<<<<< HEAD
 },{"./Subscriber":"1VFFQ","./Subscription":"lFyhg","./symbol/observable":"byHtV","./util/pipe":"1GN6U","./config":"fX0gC","./util/isFunction":"dEyyK","./util/errorContext":"gU38l","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1VFFQ":[function(require,module,exports) {
-=======
-},{"./Subscriber":"1VFFQ","./Subscription":"lFyhg","./symbol/observable":"byHtV","./util/pipe":"1GN6U","./config":"fX0gC","./util/isFunction":"dEyyK","./util/errorContext":"gU38l","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"1VFFQ":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Subscriber", ()=>Subscriber);
@@ -74426,11 +73942,7 @@ var EMPTY_OBSERVER = {
     complete: (0, _noop.noop)
 };
 
-<<<<<<< HEAD
 },{"tslib":"lRdW5","./util/isFunction":"dEyyK","./Subscription":"lFyhg","./config":"fX0gC","./util/reportUnhandledError":"aVM3K","./util/noop":"l8uEm","./NotificationFactories":"hwqFj","./scheduler/timeoutProvider":"1FR9J","./util/errorContext":"gU38l","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lRdW5":[function(require,module,exports) {
-=======
-},{"tslib":"lRdW5","./util/isFunction":"dEyyK","./Subscription":"lFyhg","./config":"fX0gC","./util/reportUnhandledError":"aVM3K","./util/noop":"l8uEm","./NotificationFactories":"hwqFj","./scheduler/timeoutProvider":"1FR9J","./util/errorContext":"gU38l","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"lRdW5":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
 
@@ -74969,11 +74481,7 @@ exports.default = {
     __disposeResources: __disposeResources
 };
 
-<<<<<<< HEAD
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dEyyK":[function(require,module,exports) {
-=======
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"dEyyK":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "isFunction", ()=>isFunction);
@@ -74981,11 +74489,7 @@ function isFunction(value) {
     return typeof value === "function";
 }
 
-<<<<<<< HEAD
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lFyhg":[function(require,module,exports) {
-=======
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"lFyhg":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Subscription", ()=>Subscription);
@@ -75115,11 +74619,7 @@ function execFinalizer(finalizer) {
     else finalizer.unsubscribe();
 }
 
-<<<<<<< HEAD
 },{"tslib":"lRdW5","./util/isFunction":"dEyyK","./util/UnsubscriptionError":"GSF7Z","./util/arrRemove":"dLHeW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"GSF7Z":[function(require,module,exports) {
-=======
-},{"tslib":"lRdW5","./util/isFunction":"dEyyK","./util/UnsubscriptionError":"GSF7Z","./util/arrRemove":"dLHeW","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"GSF7Z":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "UnsubscriptionError", ()=>UnsubscriptionError);
@@ -75135,11 +74635,7 @@ var UnsubscriptionError = (0, _createErrorClass.createErrorClass)(function(_supe
     };
 });
 
-<<<<<<< HEAD
 },{"./createErrorClass":"i1v8Q","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"i1v8Q":[function(require,module,exports) {
-=======
-},{"./createErrorClass":"i1v8Q","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"i1v8Q":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "createErrorClass", ()=>createErrorClass);
@@ -75154,11 +74650,7 @@ function createErrorClass(createImpl) {
     return ctorFunc;
 }
 
-<<<<<<< HEAD
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dLHeW":[function(require,module,exports) {
-=======
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"dLHeW":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "arrRemove", ()=>arrRemove);
@@ -75169,11 +74661,7 @@ function arrRemove(arr, item) {
     }
 }
 
-<<<<<<< HEAD
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fX0gC":[function(require,module,exports) {
-=======
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"fX0gC":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "config", ()=>config);
@@ -75185,11 +74673,7 @@ var config = {
     useDeprecatedNextContext: false
 };
 
-<<<<<<< HEAD
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aVM3K":[function(require,module,exports) {
-=======
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"aVM3K":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "reportUnhandledError", ()=>reportUnhandledError);
@@ -75203,11 +74687,7 @@ function reportUnhandledError(err) {
     });
 }
 
-<<<<<<< HEAD
 },{"../config":"fX0gC","../scheduler/timeoutProvider":"1FR9J","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1FR9J":[function(require,module,exports) {
-=======
-},{"../config":"fX0gC","../scheduler/timeoutProvider":"1FR9J","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"1FR9J":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "timeoutProvider", ()=>timeoutProvider);
@@ -75233,21 +74713,13 @@ var timeoutProvider = {
     delegate: undefined
 };
 
-<<<<<<< HEAD
 },{"tslib":"lRdW5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"l8uEm":[function(require,module,exports) {
-=======
-},{"tslib":"lRdW5","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"l8uEm":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "noop", ()=>noop);
 function noop() {}
 
-<<<<<<< HEAD
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hwqFj":[function(require,module,exports) {
-=======
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"hwqFj":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "COMPLETE_NOTIFICATION", ()=>COMPLETE_NOTIFICATION);
@@ -75271,11 +74743,7 @@ function createNotification(kind, value, error) {
     };
 }
 
-<<<<<<< HEAD
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gU38l":[function(require,module,exports) {
-=======
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"gU38l":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "errorContext", ()=>errorContext);
@@ -75304,11 +74772,7 @@ function captureError(err) {
     }
 }
 
-<<<<<<< HEAD
 },{"../config":"fX0gC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"byHtV":[function(require,module,exports) {
-=======
-},{"../config":"fX0gC","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"byHtV":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "observable", ()=>observable);
@@ -75316,11 +74780,7 @@ var observable = function() {
     return typeof Symbol === "function" && Symbol.observable || "@@observable";
 }();
 
-<<<<<<< HEAD
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1GN6U":[function(require,module,exports) {
-=======
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"1GN6U":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "pipe", ()=>pipe);
@@ -75341,11 +74801,7 @@ function pipeFromArray(fns) {
     };
 }
 
-<<<<<<< HEAD
 },{"./identity":"8Xfg6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8Xfg6":[function(require,module,exports) {
-=======
-},{"./identity":"8Xfg6","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"8Xfg6":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "identity", ()=>identity);
@@ -75353,11 +74809,7 @@ function identity(x) {
     return x;
 }
 
-<<<<<<< HEAD
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"94RSe":[function(require,module,exports) {
-=======
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"94RSe":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Subject", ()=>Subject);
@@ -75511,11 +74963,7 @@ var AnonymousSubject = function(_super) {
     return AnonymousSubject;
 }(Subject);
 
-<<<<<<< HEAD
 },{"tslib":"lRdW5","./Observable":"4Jvxr","./Subscription":"lFyhg","./util/ObjectUnsubscribedError":"6Gcwa","./util/arrRemove":"dLHeW","./util/errorContext":"gU38l","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6Gcwa":[function(require,module,exports) {
-=======
-},{"tslib":"lRdW5","./Observable":"4Jvxr","./Subscription":"lFyhg","./util/ObjectUnsubscribedError":"6Gcwa","./util/arrRemove":"dLHeW","./util/errorContext":"gU38l","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"6Gcwa":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ObjectUnsubscribedError", ()=>ObjectUnsubscribedError);
@@ -75528,11 +74976,7 @@ var ObjectUnsubscribedError = (0, _createErrorClass.createErrorClass)(function(_
     };
 });
 
-<<<<<<< HEAD
 },{"./createErrorClass":"i1v8Q","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4s6yS":[function(require,module,exports) {
-=======
-},{"./createErrorClass":"i1v8Q","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"4s6yS":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "BehaviorSubject", ()=>BehaviorSubject);
@@ -75569,11 +75013,7 @@ var BehaviorSubject = function(_super) {
     return BehaviorSubject;
 }((0, _subject.Subject));
 
-<<<<<<< HEAD
 },{"tslib":"lRdW5","./Subject":"94RSe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"efPFC":[function(require,module,exports) {
-=======
-},{"tslib":"lRdW5","./Subject":"94RSe","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"efPFC":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "scan", ()=>scan);
@@ -75583,11 +75023,7 @@ function scan(accumulator, seed) {
     return (0, _lift.operate)((0, _scanInternals.scanInternals)(accumulator, seed, arguments.length >= 2, true));
 }
 
-<<<<<<< HEAD
 },{"../util/lift":"7CiSs","./scanInternals":"7fn6o","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7CiSs":[function(require,module,exports) {
-=======
-},{"../util/lift":"7CiSs","./scanInternals":"7fn6o","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"7CiSs":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "hasLift", ()=>hasLift);
@@ -75609,11 +75045,7 @@ function operate(init) {
     };
 }
 
-<<<<<<< HEAD
 },{"./isFunction":"dEyyK","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7fn6o":[function(require,module,exports) {
-=======
-},{"./isFunction":"dEyyK","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"7fn6o":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "scanInternals", ()=>scanInternals);
@@ -75634,11 +75066,7 @@ function scanInternals(accumulator, seed, hasSeed, emitOnNext, emitBeforeComplet
     };
 }
 
-<<<<<<< HEAD
 },{"./OperatorSubscriber":"96z9b","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"96z9b":[function(require,module,exports) {
-=======
-},{"./OperatorSubscriber":"96z9b","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"96z9b":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "createOperatorSubscriber", ()=>createOperatorSubscriber);
@@ -75692,11 +75120,7 @@ var OperatorSubscriber = function(_super) {
     return OperatorSubscriber;
 }((0, _subscriber.Subscriber));
 
-<<<<<<< HEAD
 },{"tslib":"lRdW5","../Subscriber":"1VFFQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lB7MY":[function(require,module,exports) {
-=======
-},{"tslib":"lRdW5","../Subscriber":"1VFFQ","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"lB7MY":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 const canPromise = require("da1f68cc1fc16077");
 const QRCode = require("8c6cf49ef2287430");
 const CanvasRenderer = require("8a60cf7722cc14ce");
@@ -80979,11 +80403,7 @@ function setupMyNearWallet({ walletUrl, iconUrl = icon, deprecated = false, succ
         });
 }
 
-<<<<<<< HEAD
 },{"near-api-js":"ohc3m","@near-wallet-selector/wallet-utils":"5gEB8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5gEB8":[function(require,module,exports) {
-=======
-},{"near-api-js":"ohc3m","@near-wallet-selector/wallet-utils":"5gEB8","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}],"5gEB8":[function(require,module,exports) {
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "createAction", ()=>createAction);
@@ -83419,10 +82839,6 @@ const signTransactions = (transactions, signer, network)=>__awaiter(void 0, void
         return signedTransactions;
     });
 
-<<<<<<< HEAD
-},{"bn.js":"VopIn","near-api-js":"ohc3m","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1hP5v":[function() {},{}]},["2UeK4","1xC6H","bB7Pu"], "bB7Pu", "parcelRequire726c")
-=======
-},{"bn.js":"VopIn","near-api-js":"ohc3m","@parcel/transformer-js/src/esmodule-helpers.js":"gV57s"}]},["i5PzX","9pFvS","bB7Pu"], "bB7Pu", "parcelRequiref931")
->>>>>>> dee0f78f5c051e92ddc063d7852bb22f888479a5
+},{"bn.js":"VopIn","near-api-js":"ohc3m","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["2UeK4","1xC6H","bB7Pu"], "bB7Pu", "parcelRequire726c")
 
 //# sourceMappingURL=index.3d214d75.js.map
