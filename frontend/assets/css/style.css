@@ -50,7 +50,20 @@ iframe {
 #heroiframe {
   margin-top: 3%;
 }
+.pin-display {
+  text-align: center;
+  padding: 20px;
+}
 
+.pin-display h2 {
+  font-size: 24px;
+}
+
+.pin-display p {
+  font-size: 36px;
+  color: #c5f801;
+  font-weight: bold;
+}
 #usebutcases {
   padding-left: 20px;
   padding-right: 20px;
