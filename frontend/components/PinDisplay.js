@@ -17,6 +17,7 @@ function PinDisplay() {
         </div>
       </div>
     </div>
+
   );
 }
 

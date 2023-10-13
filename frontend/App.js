@@ -87,6 +87,7 @@ export default function App({ isSignedIn, contractId, wallet }) {
   }
 
   return (
+
     <>
       <SignOutButton
         accountId={wallet.accountId}
@@ -95,5 +96,5 @@ export default function App({ isSignedIn, contractId, wallet }) {
       
       
     </>
-  );
+  )
 }

@@ -142,7 +142,7 @@
       this[globalName] = mainExports;
     }
   }
-})({"4jANy":[function(require,module,exports) {
+})({"2UeK4":[function(require,module,exports) {
 var global = arguments[3];
 var HMR_HOST = null;
 var HMR_PORT = null;
@@ -573,9 +573,9 @@ function hmrAccept(bundle /*: ParcelRequire */ , id /*: string */ ) {
     });
 }
 
-},{}],"7md93":[function(require,module,exports) {
-var Refresh = require("e3daedbd352fccbb");
-var ErrorOverlay = require("5ba6fd152f7c7303");
+},{}],"1xC6H":[function(require,module,exports) {
+var Refresh = require("6d18d6bd340e7473");
+var ErrorOverlay = require("74ad5ea14201648c");
 Refresh.injectIntoGlobalHook(window);
 window.$RefreshReg$ = function() {};
 window.$RefreshSig$ = function() {
@@ -594,11 +594,11 @@ window.addEventListener("parcelhmraccept", ()=>{
     ErrorOverlay.dismissRuntimeErrors();
 });
 
-},{"e3daedbd352fccbb":"6LKJy","5ba6fd152f7c7303":"hpC8F"}],"6LKJy":[function(require,module,exports) {
+},{"6d18d6bd340e7473":"786KC","74ad5ea14201648c":"1dldy"}],"786KC":[function(require,module,exports) {
 "use strict";
-module.exports = require("2031a7b6a954c38");
+module.exports = require("96622d495519d4e");
 
-},{"2031a7b6a954c38":"aoDze"}],"aoDze":[function(require,module,exports) {
+},{"96622d495519d4e":"hdge7"}],"hdge7":[function(require,module,exports) {
 /** @license React v0.9.0
  * react-refresh-runtime.development.js
  *
@@ -1058,8 +1058,8 @@ module.exports = require("2031a7b6a954c38");
     exports.setSignature = setSignature;
 })();
 
-},{}],"hpC8F":[function(require,module,exports) {
-var process = require("1bf9926b731937f");
+},{}],"1dldy":[function(require,module,exports) {
+var process = require("d1546958eb39fdcf");
 !function(e, t) {
     module.exports = t();
 }(window, function() {
@@ -2789,7 +2789,7 @@ var process = require("1bf9926b731937f");
     ]);
 });
 
-},{"1bf9926b731937f":"d5jf4"}],"d5jf4":[function(require,module,exports) {
+},{"d1546958eb39fdcf":"d5jf4"}],"d5jf4":[function(require,module,exports) {
 // shim for using process in browser
 var process = module.exports = {};
 // cached from whatever global is present so that test runners that stub it
@@ -2950,25 +2950,18 @@ var _reactDom = require("react-dom");
 var _reactDomDefault = parcelHelpers.interopDefault(_reactDom);
 var _app = require("./App");
 var _appDefault = parcelHelpers.interopDefault(_app);
-// NEAR
-var _nearWallet = require("./near-wallet");
-const CONTRACT_ADDRESS = "dev-1692813334115-18963243556435";
-// When creating the wallet you can optionally ask to create an access key
-// Having the key enables to call non-payable methods without interrupting the user to sign
-const wallet = new (0, _nearWallet.Wallet)({
-    createAccessKeyFor: CONTRACT_ADDRESS
-});
+var _utils = require("./utils");
 // Setup on page load
 window.onload = async ()=>{
-    const isSignedIn = await wallet.startUp();
+    const isSignedIn = await (0, _utils.initContract)();
     (0, _reactDomDefault.default).render(/*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _appDefault.default), {
         isSignedIn: isSignedIn,
-        contractId: CONTRACT_ADDRESS,
+        contractId: CONTRACT_NAME,
         wallet: wallet
     }, void 0, false, {
         fileName: "index.js",
-        lineNumber: 20,
-        columnNumber: 5
+        lineNumber: 12,
+        columnNumber: 7
     }, undefined), document.getElementById("root"));
 };
 
@@ -2977,7 +2970,7 @@ window.onload = async ()=>{
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom":"j6uA9","./App":"2Ew96","./near-wallet":"dg9wB","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"kh41a"}],"iTorj":[function(require,module,exports) {
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","react-dom":"j6uA9","./App":"2Ew96","./utils":"bIDtH","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"iTorj":[function(require,module,exports) {
 "use strict";
 module.exports = require("ee51401569654d91");
 
@@ -27239,7 +27232,7 @@ function App({ isSignedIn, contractId, wallet }) {
             onClick: ()=>wallet.signOut()
         }, void 0, false, {
             fileName: "App.js",
-            lineNumber: 91,
+            lineNumber: 92,
             columnNumber: 7
         }, this)
     }, void 0, false);
@@ -27254,2227 +27247,594 @@ $RefreshReg$(_c, "App");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./ui-components":"4LIXu","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"kh41a","./assets/css/style.css":"8r2D8","./assets/vendor/aos/aos.css":"8LmR1","./assets/vendor/bootstrap/css/bootstrap.min.css":"C1LtY","./assets/vendor/bootstrap-icons/bootstrap-icons.css":"9VyyL","./assets/vendor/boxicons/css/boxicons.min.css":"mlhn4","./assets/vendor/glightbox/css/glightbox.min.css":"irvEs","./assets/vendor/remixicon/remixicon.css":"erQec","./assets/vendor/swiper/swiper-bundle.min.css":"58byD","glightbox":"kBGcU","swiper":"iM6UL","isotope-layout":"aHntc","aos":"eRzTM","regenerator-runtime/runtime":"dXNgZ"}],"4LIXu":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$38d8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$38d8.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "SignInPrompt", ()=>SignInPrompt);
-parcelHelpers.export(exports, "SignOutButton", ()=>SignOutButton);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _header = require("./components/header");
-var _headerDefault = parcelHelpers.interopDefault(_header);
-var _signheader = require("./components/Signheader");
-var _signheaderDefault = parcelHelpers.interopDefault(_signheader);
-var _footer = require("./components/footer");
-var _footerDefault = parcelHelpers.interopDefault(_footer);
-var _contact = require("./components/contact");
-var _contactDefault = parcelHelpers.interopDefault(_contact);
-var _services = require("./components/services");
-var _servicesDefault = parcelHelpers.interopDefault(_services);
-var _about = require("./components/About");
-var _aboutDefault = parcelHelpers.interopDefault(_about);
-var _calendar = require("./components/Calendar");
-var _calendarDefault = parcelHelpers.interopDefault(_calendar);
-function SignInPrompt({ greeting, onClick, isSignedIn }) {
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("main", {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {
-                onClick: onClick
-            }, void 0, false, {
-                fileName: "ui-components.js",
-                lineNumber: 13,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _aboutDefault.default), {}, void 0, false, {
-                fileName: "ui-components.js",
-                lineNumber: 15,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _servicesDefault.default), {}, void 0, false, {
-                fileName: "ui-components.js",
-                lineNumber: 16,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contactDefault.default), {}, void 0, false, {
-                fileName: "ui-components.js",
-                lineNumber: 17,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {}, void 0, false, {
-                fileName: "ui-components.js",
-                lineNumber: 19,
-                columnNumber: 7
-            }, this)
-        ]
-    }, void 0, true, {
-        fileName: "ui-components.js",
-        lineNumber: 12,
-        columnNumber: 5
-    }, this);
-}
-_c = SignInPrompt;
-function SignOutButton({ isSignedIn, accountId, onClick }) {
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("main", {
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signheaderDefault.default), {
-                    onClick: onClick
-                }, void 0, false, {
-                    fileName: "ui-components.js",
-                    lineNumber: 32,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _calendarDefault.default), {}, void 0, false, {
-                    fileName: "ui-components.js",
-                    lineNumber: 34,
-                    columnNumber: 9
-                }, this),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {}, void 0, false, {
-                    fileName: "ui-components.js",
-                    lineNumber: 36,
-                    columnNumber: 9
-                }, this)
-            ]
-        }, void 0, true, {
-            fileName: "ui-components.js",
-            lineNumber: 31,
-            columnNumber: 7
-        }, this)
-    }, void 0, false);
-}
-_c1 = SignOutButton;
-var _c, _c1;
-$RefreshReg$(_c, "SignInPrompt");
-$RefreshReg$(_c1, "SignOutButton");
-
-  $parcel$ReactRefreshHelpers$38d8.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./components/header":"gMwGB","./components/footer":"4psvf","./components/contact":"6sEDB","./components/services":"i4peN","./components/About":"hGILx","./components/Calendar":"9iZ3i","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"kh41a","./components/Signheader":"izsrV"}],"gMwGB":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$e7c5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$e7c5.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _headerScrolled = require("../assets/js/headerScrolled");
-var _uiComponents = require("../ui-components");
-var _uiComponentsDefault = parcelHelpers.interopDefault(_uiComponents);
-var _s = $RefreshSig$();
-const Header = ({ onClick, accountId })=>{
-    _s();
-    (0, _react.useEffect)(()=>{
-        (0, _headerScrolled.initHeaderScrolled)();
-    }, []);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
-            id: "header",
-            className: "fixed-top",
-            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "container d-flex align-items-center justify-content-between",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                        className: "logo",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                            style: {
-                                color: "#c5f801"
-                            },
-                            href: "",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
-                                children: "PARTAGE LOCK"
-                            }, void 0, false, {
-                                fileName: "components/header.js",
-                                lineNumber: 16,
-                                columnNumber: 15
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "components/header.js",
-                            lineNumber: 15,
-                            columnNumber: 13
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "components/header.js",
-                        lineNumber: 14,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("nav", {
-                        id: "navbar",
-                        className: "navbar",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                            className: "nav-link scrollto",
-                                            href: "https://medium.com/@juliencarbonnell/democratizing-access-to-utilities-blockchain-for-smart-cities-25eefb0348e7",
-                                            children: "Documentation"
-                                        }, void 0, false, {
-                                            fileName: "components/header.js",
-                                            lineNumber: 23,
-                                            columnNumber: 17
-                                        }, undefined)
-                                    }, void 0, false, {
-                                        fileName: "components/header.js",
-                                        lineNumber: 22,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                            onClick: onClick,
-                                            className: "getstarted scrollto",
-                                            children: "Connect Wallet"
-                                        }, void 0, false, {
-                                            fileName: "components/header.js",
-                                            lineNumber: 31,
-                                            columnNumber: 17
-                                        }, undefined)
-                                    }, void 0, false, {
-                                        fileName: "components/header.js",
-                                        lineNumber: 30,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "components/header.js",
-                                lineNumber: 21,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                className: "bi bi-list mobile-nav-toggle"
-                            }, void 0, false, {
-                                fileName: "components/header.js",
-                                lineNumber: 36,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                                fileName: "components/header.js",
-                                lineNumber: 37,
-                                columnNumber: 13
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "components/header.js",
-                        lineNumber: 20,
-                        columnNumber: 11
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "components/header.js",
-                lineNumber: 13,
-                columnNumber: 9
-            }, undefined)
-        }, void 0, false, {
-            fileName: "components/header.js",
-            lineNumber: 12,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false);
-};
-_s(Header, "OD7bBpZva5O2jO+Puf00hKivP7c=");
-_c = Header;
-exports.default = Header;
-var _c;
-$RefreshReg$(_c, "Header");
-
-  $parcel$ReactRefreshHelpers$e7c5.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../assets/js/headerScrolled":"gaYUV","../ui-components":"4LIXu","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"kh41a"}],"gaYUV":[function(require,module,exports) {
-// headerScrolled.js
+},{"react/jsx-dev-runtime":"iTorj","regenerator-runtime/runtime":"dXNgZ","react":"21dqq","glightbox":"kBGcU","swiper":"iM6UL","isotope-layout":"aHntc","aos":"eRzTM","./assets/css/style.css":"8r2D8","./assets/vendor/aos/aos.css":"8LmR1","./assets/vendor/bootstrap/css/bootstrap.min.css":"C1LtY","./assets/vendor/bootstrap-icons/bootstrap-icons.css":"9VyyL","./assets/vendor/boxicons/css/boxicons.min.css":"mlhn4","./assets/vendor/glightbox/css/glightbox.min.css":"irvEs","./assets/vendor/remixicon/remixicon.css":"erQec","./assets/vendor/swiper/swiper-bundle.min.css":"58byD","./ui-components":"4LIXu","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dXNgZ":[function(require,module,exports) {
 /**
- * Easy selector helper function
- */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "initHeaderScrolled", ()=>initHeaderScrolled);
-const select = (el, all = false)=>{
-    el = el.trim();
-    if (all) return [
-        ...document.querySelectorAll(el)
-    ];
-    else return document.querySelector(el);
-};
-/**
-   * Easy on scroll event listener
-   */ const onscroll = (el, listener)=>{
-    el.addEventListener("scroll", listener);
-};
-const initHeaderScrolled = ()=>{
-    let selectHeader = select("#header");
-    if (selectHeader) {
-        const headerScrolled = ()=>{
-            if (window.scrollY > 100) selectHeader.classList.add("header-scrolled");
-            else selectHeader.classList.remove("header-scrolled");
-        };
-        window.addEventListener("load", headerScrolled);
-        onscroll(document, headerScrolled);
-    }
-};
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"1OlAz":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
+ * Copyright (c) 2014-present, Facebook, Inc.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */ var runtime = function(exports) {
+    "use strict";
+    var Op = Object.prototype;
+    var hasOwn = Op.hasOwnProperty;
+    var defineProperty = Object.defineProperty || function(obj, key, desc) {
+        obj[key] = desc.value;
     };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, "__esModule", {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
+    var undefined; // More compressible than void 0.
+    var $Symbol = typeof Symbol === "function" ? Symbol : {};
+    var iteratorSymbol = $Symbol.iterator || "@@iterator";
+    var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
+    var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
+    function define(obj, key, value) {
+        Object.defineProperty(obj, key, {
+            value: value,
             enumerable: true,
-            get: function() {
-                return source[key];
-            }
+            configurable: true,
+            writable: true
         });
+        return obj[key];
+    }
+    try {
+        // IE 8 has a broken Object.defineProperty that only works on DOM objects.
+        define({}, "");
+    } catch (err) {
+        define = function(obj, key, value) {
+            return obj[key] = value;
+        };
+    }
+    function wrap(innerFn, outerFn, self, tryLocsList) {
+        // If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
+        var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator;
+        var generator = Object.create(protoGenerator.prototype);
+        var context = new Context(tryLocsList || []);
+        // The ._invoke method unifies the implementations of the .next,
+        // .throw, and .return methods.
+        defineProperty(generator, "_invoke", {
+            value: makeInvokeMethod(innerFn, self, context)
+        });
+        return generator;
+    }
+    exports.wrap = wrap;
+    // Try/catch helper to minimize deoptimizations. Returns a completion
+    // record like context.tryEntries[i].completion. This interface could
+    // have been (and was previously) designed to take a closure to be
+    // invoked without arguments, but in all the cases we care about we
+    // already have an existing method we want to call, so there's no need
+    // to create a new function object. We can even get away with assuming
+    // the method takes exactly one argument, since that happens to be true
+    // in every case, so we don't have to touch the arguments object. The
+    // only additional allocation required is the completion record, which
+    // has a stable shape and so hopefully should be cheap to allocate.
+    function tryCatch(fn, obj, arg) {
+        try {
+            return {
+                type: "normal",
+                arg: fn.call(obj, arg)
+            };
+        } catch (err) {
+            return {
+                type: "throw",
+                arg: err
+            };
+        }
+    }
+    var GenStateSuspendedStart = "suspendedStart";
+    var GenStateSuspendedYield = "suspendedYield";
+    var GenStateExecuting = "executing";
+    var GenStateCompleted = "completed";
+    // Returning this object from the innerFn has the same effect as
+    // breaking out of the dispatch switch statement.
+    var ContinueSentinel = {};
+    // Dummy constructor functions that we use as the .constructor and
+    // .constructor.prototype properties for functions that return Generator
+    // objects. For full spec compliance, you may wish to configure your
+    // minifier not to mangle the names of these two functions.
+    function Generator() {}
+    function GeneratorFunction() {}
+    function GeneratorFunctionPrototype() {}
+    // This is a polyfill for %IteratorPrototype% for environments that
+    // don't natively support it.
+    var IteratorPrototype = {};
+    define(IteratorPrototype, iteratorSymbol, function() {
+        return this;
     });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
+    var getProto = Object.getPrototypeOf;
+    var NativeIteratorPrototype = getProto && getProto(getProto(values([])));
+    if (NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol)) // This environment has a native %IteratorPrototype%; use it instead
+    // of the polyfill.
+    IteratorPrototype = NativeIteratorPrototype;
+    var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype);
+    GeneratorFunction.prototype = GeneratorFunctionPrototype;
+    defineProperty(Gp, "constructor", {
+        value: GeneratorFunctionPrototype,
+        configurable: true
     });
-};
-
-},{}],"kh41a":[function(require,module,exports) {
-"use strict";
-var Refresh = require("73a6a3361f7f06f4");
-function debounce(func, delay) {
-    {
-        let timeout = undefined;
-        let lastTime = 0;
-        return function(args) {
-            // Call immediately if last call was more than the delay ago.
-            // Otherwise, set a timeout. This means the first call is fast
-            // (for the common case of a single update), and subsequent updates
-            // are batched.
-            let now = Date.now();
-            if (now - lastTime > delay) {
-                lastTime = now;
-                func.call(null, args);
-            } else {
-                clearTimeout(timeout);
-                timeout = setTimeout(function() {
-                    timeout = undefined;
-                    lastTime = Date.now();
-                    func.call(null, args);
-                }, delay);
+    defineProperty(GeneratorFunctionPrototype, "constructor", {
+        value: GeneratorFunction,
+        configurable: true
+    });
+    GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction");
+    // Helper for defining the .next, .throw, and .return methods of the
+    // Iterator interface in terms of a single ._invoke method.
+    function defineIteratorMethods(prototype) {
+        [
+            "next",
+            "throw",
+            "return"
+        ].forEach(function(method) {
+            define(prototype, method, function(arg) {
+                return this._invoke(method, arg);
+            });
+        });
+    }
+    exports.isGeneratorFunction = function(genFun) {
+        var ctor = typeof genFun === "function" && genFun.constructor;
+        return ctor ? ctor === GeneratorFunction || // For the native GeneratorFunction constructor, the best we can
+        // do is to check its .name property.
+        (ctor.displayName || ctor.name) === "GeneratorFunction" : false;
+    };
+    exports.mark = function(genFun) {
+        if (Object.setPrototypeOf) Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
+        else {
+            genFun.__proto__ = GeneratorFunctionPrototype;
+            define(genFun, toStringTagSymbol, "GeneratorFunction");
+        }
+        genFun.prototype = Object.create(Gp);
+        return genFun;
+    };
+    // Within the body of any async function, `await x` is transformed to
+    // `yield regeneratorRuntime.awrap(x)`, so that the runtime can test
+    // `hasOwn.call(value, "__await")` to determine if the yielded value is
+    // meant to be awaited.
+    exports.awrap = function(arg) {
+        return {
+            __await: arg
+        };
+    };
+    function AsyncIterator(generator, PromiseImpl) {
+        function invoke(method, arg, resolve, reject) {
+            var record = tryCatch(generator[method], generator, arg);
+            if (record.type === "throw") reject(record.arg);
+            else {
+                var result = record.arg;
+                var value = result.value;
+                if (value && typeof value === "object" && hasOwn.call(value, "__await")) return PromiseImpl.resolve(value.__await).then(function(value) {
+                    invoke("next", value, resolve, reject);
+                }, function(err) {
+                    invoke("throw", err, resolve, reject);
+                });
+                return PromiseImpl.resolve(value).then(function(unwrapped) {
+                    // When a yielded Promise is resolved, its final value becomes
+                    // the .value of the Promise<{value,done}> result for the
+                    // current iteration.
+                    result.value = unwrapped;
+                    resolve(result);
+                }, function(error) {
+                    // If a rejected Promise was yielded, throw the rejection back
+                    // into the async generator function so it can be handled there.
+                    return invoke("throw", error, resolve, reject);
+                });
+            }
+        }
+        var previousPromise;
+        function enqueue(method, arg) {
+            function callInvokeWithMethodAndArg() {
+                return new PromiseImpl(function(resolve, reject) {
+                    invoke(method, arg, resolve, reject);
+                });
+            }
+            return previousPromise = // If enqueue has been called before, then we want to wait until
+            // all previous Promises have been resolved before calling invoke,
+            // so that results are always delivered in the correct order. If
+            // enqueue has not been called before, then it is important to
+            // call invoke immediately, without waiting on a callback to fire,
+            // so that the async generator function has the opportunity to do
+            // any necessary setup in a predictable way. This predictability
+            // is why the Promise constructor synchronously invokes its
+            // executor callback, and why async functions synchronously
+            // execute code before the first await. Since we implement simple
+            // async functions in terms of async generators, it is especially
+            // important to get this right, even though it requires care.
+            previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, // Avoid propagating failures to Promises returned by later
+            // invocations of the iterator.
+            callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg();
+        }
+        // Define the unified helper method that is used to implement .next,
+        // .throw, and .return (see defineIteratorMethods).
+        defineProperty(this, "_invoke", {
+            value: enqueue
+        });
+    }
+    defineIteratorMethods(AsyncIterator.prototype);
+    define(AsyncIterator.prototype, asyncIteratorSymbol, function() {
+        return this;
+    });
+    exports.AsyncIterator = AsyncIterator;
+    // Note that simple async functions are implemented on top of
+    // AsyncIterator objects; they just return a Promise for the value of
+    // the final result produced by the iterator.
+    exports.async = function(innerFn, outerFn, self, tryLocsList, PromiseImpl) {
+        if (PromiseImpl === void 0) PromiseImpl = Promise;
+        var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl);
+        return exports.isGeneratorFunction(outerFn) ? iter // If outerFn is a generator, return the full iterator.
+         : iter.next().then(function(result) {
+            return result.done ? result.value : iter.next();
+        });
+    };
+    function makeInvokeMethod(innerFn, self, context) {
+        var state = GenStateSuspendedStart;
+        return function invoke(method, arg) {
+            if (state === GenStateExecuting) throw new Error("Generator is already running");
+            if (state === GenStateCompleted) {
+                if (method === "throw") throw arg;
+                // Be forgiving, per 25.3.3.3.3 of the spec:
+                // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume
+                return doneResult();
+            }
+            context.method = method;
+            context.arg = arg;
+            while(true){
+                var delegate = context.delegate;
+                if (delegate) {
+                    var delegateResult = maybeInvokeDelegate(delegate, context);
+                    if (delegateResult) {
+                        if (delegateResult === ContinueSentinel) continue;
+                        return delegateResult;
+                    }
+                }
+                if (context.method === "next") // Setting context._sent for legacy support of Babel's
+                // function.sent implementation.
+                context.sent = context._sent = context.arg;
+                else if (context.method === "throw") {
+                    if (state === GenStateSuspendedStart) {
+                        state = GenStateCompleted;
+                        throw context.arg;
+                    }
+                    context.dispatchException(context.arg);
+                } else if (context.method === "return") context.abrupt("return", context.arg);
+                state = GenStateExecuting;
+                var record = tryCatch(innerFn, self, context);
+                if (record.type === "normal") {
+                    // If an exception is thrown from innerFn, we leave state ===
+                    // GenStateExecuting and loop back for another invocation.
+                    state = context.done ? GenStateCompleted : GenStateSuspendedYield;
+                    if (record.arg === ContinueSentinel) continue;
+                    return {
+                        value: record.arg,
+                        done: context.done
+                    };
+                } else if (record.type === "throw") {
+                    state = GenStateCompleted;
+                    // Dispatch the exception by looping back around to the
+                    // context.dispatchException(context.arg) call above.
+                    context.method = "throw";
+                    context.arg = record.arg;
+                }
             }
         };
     }
-}
-var enqueueUpdate = debounce(function() {
-    Refresh.performReactRefresh();
-}, 30);
-// Everthing below is either adapted or copied from
-// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
-// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
-module.exports.prelude = function(module1) {
-    window.$RefreshReg$ = function(type, id) {
-        Refresh.register(type, module1.id + " " + id);
-    };
-    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
-};
-module.exports.postlude = function(module1) {
-    if (isReactRefreshBoundary(module1.exports)) {
-        registerExportsForReactRefresh(module1);
-        if (module1.hot) {
-            module1.hot.dispose(function(data) {
-                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
-                data.prevExports = module1.exports;
-            });
-            module1.hot.accept(function(getParents) {
-                var prevExports = module1.hot.data.prevExports;
-                var nextExports = module1.exports;
-                // Since we just executed the code for it, it's possible
-                // that the new exports make it ineligible for being a boundary.
-                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports);
-                // It can also become ineligible if its exports are incompatible
-                // with the previous exports.
-                // For example, if you add/remove/change exports, we'll want
-                // to re-execute the importing modules, and force those components
-                // to re-render. Similarly, if you convert a class component
-                // to a function, we want to invalidate the boundary.
-                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
-                if (isNoLongerABoundary || didInvalidate) {
-                    // We'll be conservative. The only case in which we won't do a full
-                    // reload is if all parent modules are also refresh boundaries.
-                    // In that case we'll add them to the current queue.
-                    var parents = getParents();
-                    if (parents.length === 0) {
-                        // Looks like we bubbled to the root. Can't recover from that.
-                        window.location.reload();
-                        return;
-                    }
-                    return parents;
+    // Call delegate.iterator[context.method](context.arg) and handle the
+    // result, either by returning a { value, done } result from the
+    // delegate iterator, or by modifying context.method and context.arg,
+    // setting context.delegate to null, and returning the ContinueSentinel.
+    function maybeInvokeDelegate(delegate, context) {
+        var methodName = context.method;
+        var method = delegate.iterator[methodName];
+        if (method === undefined) {
+            // A .throw or .return when the delegate iterator has no .throw
+            // method, or a missing .next mehtod, always terminate the
+            // yield* loop.
+            context.delegate = null;
+            // Note: ["return"] must be used for ES3 parsing compatibility.
+            if (methodName === "throw" && delegate.iterator["return"]) {
+                // If the delegate iterator has a return method, give it a
+                // chance to clean up.
+                context.method = "return";
+                context.arg = undefined;
+                maybeInvokeDelegate(delegate, context);
+                if (context.method === "throw") // If maybeInvokeDelegate(context) changed context.method from
+                // "return" to "throw", let that override the TypeError below.
+                return ContinueSentinel;
+            }
+            if (methodName !== "return") {
+                context.method = "throw";
+                context.arg = new TypeError("The iterator does not provide a '" + methodName + "' method");
+            }
+            return ContinueSentinel;
+        }
+        var record = tryCatch(method, delegate.iterator, context.arg);
+        if (record.type === "throw") {
+            context.method = "throw";
+            context.arg = record.arg;
+            context.delegate = null;
+            return ContinueSentinel;
+        }
+        var info = record.arg;
+        if (!info) {
+            context.method = "throw";
+            context.arg = new TypeError("iterator result is not an object");
+            context.delegate = null;
+            return ContinueSentinel;
+        }
+        if (info.done) {
+            // Assign the result of the finished delegate to the temporary
+            // variable specified by delegate.resultName (see delegateYield).
+            context[delegate.resultName] = info.value;
+            // Resume execution at the desired location (see delegateYield).
+            context.next = delegate.nextLoc;
+            // If context.method was "throw" but the delegate handled the
+            // exception, let the outer generator proceed normally. If
+            // context.method was "next", forget context.arg since it has been
+            // "consumed" by the delegate iterator. If context.method was
+            // "return", allow the original .return call to continue in the
+            // outer generator.
+            if (context.method !== "return") {
+                context.method = "next";
+                context.arg = undefined;
+            }
+        } else // Re-yield the result returned by the delegate method.
+        return info;
+        // The delegate iterator is finished, so forget it and continue with
+        // the outer generator.
+        context.delegate = null;
+        return ContinueSentinel;
+    }
+    // Define Generator.prototype.{next,throw,return} in terms of the
+    // unified ._invoke helper method.
+    defineIteratorMethods(Gp);
+    define(Gp, toStringTagSymbol, "Generator");
+    // A Generator should always return itself as the iterator object when the
+    // @@iterator function is called on it. Some browsers' implementations of the
+    // iterator prototype chain incorrectly implement this, causing the Generator
+    // object to not be returned from this call. This ensures that doesn't happen.
+    // See https://github.com/facebook/regenerator/issues/274 for more details.
+    define(Gp, iteratorSymbol, function() {
+        return this;
+    });
+    define(Gp, "toString", function() {
+        return "[object Generator]";
+    });
+    function pushTryEntry(locs) {
+        var entry = {
+            tryLoc: locs[0]
+        };
+        if (1 in locs) entry.catchLoc = locs[1];
+        if (2 in locs) {
+            entry.finallyLoc = locs[2];
+            entry.afterLoc = locs[3];
+        }
+        this.tryEntries.push(entry);
+    }
+    function resetTryEntry(entry) {
+        var record = entry.completion || {};
+        record.type = "normal";
+        delete record.arg;
+        entry.completion = record;
+    }
+    function Context(tryLocsList) {
+        // The root entry object (effectively a try statement without a catch
+        // or a finally block) gives us a place to store values thrown from
+        // locations where there is no enclosing try statement.
+        this.tryEntries = [
+            {
+                tryLoc: "root"
+            }
+        ];
+        tryLocsList.forEach(pushTryEntry, this);
+        this.reset(true);
+    }
+    exports.keys = function(val) {
+        var object = Object(val);
+        var keys = [];
+        for(var key in object)keys.push(key);
+        keys.reverse();
+        // Rather than returning an object with a next method, we keep
+        // things simple and return the next function itself.
+        return function next() {
+            while(keys.length){
+                var key = keys.pop();
+                if (key in object) {
+                    next.value = key;
+                    next.done = false;
+                    return next;
                 }
-                enqueueUpdate();
-            });
+            }
+            // To avoid creating an additional object, we just hang the .value
+            // and .done properties off the next function object itself. This
+            // also ensures that the minifier will not anonymize the function.
+            next.done = true;
+            return next;
+        };
+    };
+    function values(iterable) {
+        if (iterable) {
+            var iteratorMethod = iterable[iteratorSymbol];
+            if (iteratorMethod) return iteratorMethod.call(iterable);
+            if (typeof iterable.next === "function") return iterable;
+            if (!isNaN(iterable.length)) {
+                var i = -1, next = function next() {
+                    while(++i < iterable.length)if (hasOwn.call(iterable, i)) {
+                        next.value = iterable[i];
+                        next.done = false;
+                        return next;
+                    }
+                    next.value = undefined;
+                    next.done = true;
+                    return next;
+                };
+                return next.next = next;
+            }
         }
+        // Return an iterator with no values.
+        return {
+            next: doneResult
+        };
     }
-};
-function isReactRefreshBoundary(exports) {
-    if (Refresh.isLikelyComponentType(exports)) return true;
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    return false;
-    var hasExports = false;
-    var areAllExportsComponents = true;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        hasExports = true;
-        if (key === "__esModule") continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
-        return false;
-        var exportValue = exports[key];
-        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
+    exports.values = values;
+    function doneResult() {
+        return {
+            value: undefined,
+            done: true
+        };
     }
-    return hasExports && areAllExportsComponents;
-}
-function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
-    var prevSignature = getRefreshBoundarySignature(prevExports);
-    var nextSignature = getRefreshBoundarySignature(nextExports);
-    if (prevSignature.length !== nextSignature.length) return true;
-    for(var i = 0; i < nextSignature.length; i++){
-        if (prevSignature[i] !== nextSignature[i]) return true;
-    }
-    return false;
-}
-// When this signature changes, it's unsafe to stop at this refresh boundary.
-function getRefreshBoundarySignature(exports) {
-    var signature = [];
-    signature.push(Refresh.getFamilyByType(exports));
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return signature;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        if (key === "__esModule") continue;
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        signature.push(key);
-        signature.push(Refresh.getFamilyByType(exportValue));
-    }
-    return signature;
-}
-function registerExportsForReactRefresh(module1) {
-    var exports = module1.exports, id = module1.id;
-    Refresh.register(exports, id + " %exports%");
-    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
-    // (This is important for legacy environments.)
-    return;
-    let isESM = "__esModule" in exports;
-    for(var key in exports){
-        var desc = Object.getOwnPropertyDescriptor(exports, key);
-        if (desc && desc.get && !isESM) continue;
-        var exportValue = exports[key];
-        var typeID = id + " %exports% " + key;
-        Refresh.register(exportValue, typeID);
-    }
-}
-
-},{"73a6a3361f7f06f4":"6LKJy"}],"4psvf":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$a8dc = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$a8dc.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-const Footer = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("footer", {
-                id: "footer",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "footer-top",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "container",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "row",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "col-lg-3 col-md-6",
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                            className: "footer-info",
-                                            children: [
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                                                    children: "PARTAGE"
-                                                }, void 0, false, {
-                                                    fileName: "components/footer.js",
-                                                    lineNumber: 12,
-                                                    columnNumber: 19
-                                                }, undefined),
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                                    children: "Shared Utilities on Bitcoin"
-                                                }, void 0, false, {
-                                                    fileName: "components/footer.js",
-                                                    lineNumber: 13,
-                                                    columnNumber: 19
-                                                }, undefined),
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                                    children: "Join our social medias"
-                                                }, void 0, false, {
-                                                    fileName: "components/footer.js",
-                                                    lineNumber: 14,
-                                                    columnNumber: 19
-                                                }, undefined),
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                                    className: "social-links mt-3",
-                                                    children: [
-                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                                            href: "https://discord.gg/4t4AX9GVUf",
-                                                            className: "Discord",
-                                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                                                className: "bx bxl-discord"
-                                                            }, void 0, false, {
-                                                                fileName: "components/footer.js",
-                                                                lineNumber: 17,
-                                                                columnNumber: 23
-                                                            }, undefined)
-                                                        }, void 0, false, {
-                                                            fileName: "components/footer.js",
-                                                            lineNumber: 16,
-                                                            columnNumber: 21
-                                                        }, undefined),
-                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                                            href: "https://www.youtube.com/@partage_btc",
-                                                            className: "Youtube",
-                                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                                                className: "bx bxl-youtube"
-                                                            }, void 0, false, {
-                                                                fileName: "components/footer.js",
-                                                                lineNumber: 20,
-                                                                columnNumber: 23
-                                                            }, undefined)
-                                                        }, void 0, false, {
-                                                            fileName: "components/footer.js",
-                                                            lineNumber: 19,
-                                                            columnNumber: 21
-                                                        }, undefined),
-                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                                            href: "https://twitter.com/partage_btc",
-                                                            className: "twitter",
-                                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                                                className: "bx bxl-twitter"
-                                                            }, void 0, false, {
-                                                                fileName: "components/footer.js",
-                                                                lineNumber: 23,
-                                                                columnNumber: 23
-                                                            }, undefined)
-                                                        }, void 0, false, {
-                                                            fileName: "components/footer.js",
-                                                            lineNumber: 22,
-                                                            columnNumber: 21
-                                                        }, undefined),
-                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                                            href: "https://www.instagram.com/partage.btc/",
-                                                            className: "instagram",
-                                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                                                className: "bx bxl-instagram"
-                                                            }, void 0, false, {
-                                                                fileName: "components/footer.js",
-                                                                lineNumber: 26,
-                                                                columnNumber: 23
-                                                            }, undefined)
-                                                        }, void 0, false, {
-                                                            fileName: "components/footer.js",
-                                                            lineNumber: 25,
-                                                            columnNumber: 21
-                                                        }, undefined)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "components/footer.js",
-                                                    lineNumber: 15,
-                                                    columnNumber: 19
-                                                }, undefined)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "components/footer.js",
-                                            lineNumber: 11,
-                                            columnNumber: 17
-                                        }, undefined)
-                                    }, void 0, false, {
-                                        fileName: "components/footer.js",
-                                        lineNumber: 10,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "col-lg-3 col-md-6 footer-links",
-                                        children: [
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                                                children: "Explore"
-                                            }, void 0, false, {
-                                                fileName: "components/footer.js",
-                                                lineNumber: 33,
-                                                columnNumber: 17
-                                            }, undefined),
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                                                children: [
-                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                                        children: [
-                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                                                className: "bx bx-chevron-right"
-                                                            }, void 0, false, {
-                                                                fileName: "components/footer.js",
-                                                                lineNumber: 36,
-                                                                columnNumber: 21
-                                                            }, undefined),
-                                                            " ",
-                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                                                href: "https://hellopartage.xyz/nfts",
-                                                                children: "Marketplace"
-                                                            }, void 0, false, {
-                                                                fileName: "components/footer.js",
-                                                                lineNumber: 37,
-                                                                columnNumber: 21
-                                                            }, undefined)
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "components/footer.js",
-                                                        lineNumber: 35,
-                                                        columnNumber: 19
-                                                    }, undefined),
-                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                                        children: [
-                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                                                className: "bx bx-chevron-right"
-                                                            }, void 0, false, {
-                                                                fileName: "components/footer.js",
-                                                                lineNumber: 40,
-                                                                columnNumber: 21
-                                                            }, undefined),
-                                                            " ",
-                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                                                href: "https://medium.com/partage-btc/partages-white-paper-347674063de7",
-                                                                children: "White Paper"
-                                                            }, void 0, false, {
-                                                                fileName: "components/footer.js",
-                                                                lineNumber: 41,
-                                                                columnNumber: 21
-                                                            }, undefined)
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "components/footer.js",
-                                                        lineNumber: 39,
-                                                        columnNumber: 19
-                                                    }, undefined),
-                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                                        children: [
-                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                                                className: "bx bx-chevron-right"
-                                                            }, void 0, false, {
-                                                                fileName: "components/footer.js",
-                                                                lineNumber: 44,
-                                                                columnNumber: 21
-                                                            }, undefined),
-                                                            " ",
-                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                                                href: "https://medium.com/partage-btc/partage-tutorials-8e1f6868716d",
-                                                                children: "Tutorials"
-                                                            }, void 0, false, {
-                                                                fileName: "components/footer.js",
-                                                                lineNumber: 45,
-                                                                columnNumber: 21
-                                                            }, undefined)
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "components/footer.js",
-                                                        lineNumber: 43,
-                                                        columnNumber: 19
-                                                    }, undefined),
-                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                                        children: [
-                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                                                className: "bx bx-chevron-right"
-                                                            }, void 0, false, {
-                                                                fileName: "components/footer.js",
-                                                                lineNumber: 48,
-                                                                columnNumber: 21
-                                                            }, undefined),
-                                                            " ",
-                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                                                href: "https://docs.google.com/document/d/1-ZoP8lExQZ_LDxBG0ZXdbFr7i8Ie0ymcMn6Uh-XfpZc/edit#heading=h.8do1cn1ic47h",
-                                                                children: "Privacy Policy"
-                                                            }, void 0, false, {
-                                                                fileName: "components/footer.js",
-                                                                lineNumber: 49,
-                                                                columnNumber: 21
-                                                            }, undefined)
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "components/footer.js",
-                                                        lineNumber: 47,
-                                                        columnNumber: 19
-                                                    }, undefined)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "components/footer.js",
-                                                lineNumber: 34,
-                                                columnNumber: 17
-                                            }, undefined)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "components/footer.js",
-                                        lineNumber: 32,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "col-lg-4 col-md-6 footer-newsletter",
-                                        children: [
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
-                                                children: "Join Our Newsletter"
-                                            }, void 0, false, {
-                                                fileName: "components/footer.js",
-                                                lineNumber: 55,
-                                                columnNumber: 17
-                                            }, undefined),
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                                children: "Exclusive insights straight to your inbox."
-                                            }, void 0, false, {
-                                                fileName: "components/footer.js",
-                                                lineNumber: 56,
-                                                columnNumber: 17
-                                            }, undefined),
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
-                                                action: "",
-                                                method: "post",
-                                                children: [
-                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                                        type: "email",
-                                                        name: "email"
-                                                    }, void 0, false, {
-                                                        fileName: "components/footer.js",
-                                                        lineNumber: 58,
-                                                        columnNumber: 19
-                                                    }, undefined),
-                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                                        type: "submit",
-                                                        value: "Subscribe"
-                                                    }, void 0, false, {
-                                                        fileName: "components/footer.js",
-                                                        lineNumber: 59,
-                                                        columnNumber: 19
-                                                    }, undefined)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "components/footer.js",
-                                                lineNumber: 57,
-                                                columnNumber: 17
-                                            }, undefined)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "components/footer.js",
-                                        lineNumber: 54,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "components/footer.js",
-                                lineNumber: 9,
-                                columnNumber: 13
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "components/footer.js",
-                            lineNumber: 8,
-                            columnNumber: 11
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "components/footer.js",
-                        lineNumber: 7,
-                        columnNumber: 9
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "container",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "copyright",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                id: "reserve",
-                                className: "caption",
-                                href: "https://ariregister.rik.ee/eng/company/14990229/CivicTech-O%C3%9C?search_id=ed8a0b4&pos=1",
-                                target: "_blank",
-                                rel: "noopener noreferrer",
-                                children: [
-                                    "All rights reserved ",
-                                    ` Ⓒ CivicTech OÜ, 2023`
-                                ]
-                            }, void 0, true, {
-                                fileName: "components/footer.js",
-                                lineNumber: 68,
-                                columnNumber: 11
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "components/footer.js",
-                            lineNumber: 67,
-                            columnNumber: 11
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "components/footer.js",
-                        lineNumber: 66,
-                        columnNumber: 9
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "components/footer.js",
-                lineNumber: 6,
-                columnNumber: 7
-            }, undefined),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                href: "#",
-                className: "back-to-top d-flex align-items-center justify-content-center",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                    className: "bi bi-arrow-up-short"
-                }, void 0, false, {
-                    fileName: "components/footer.js",
-                    lineNumber: 85,
-                    columnNumber: 9
-                }, undefined)
-            }, void 0, false, {
-                fileName: "components/footer.js",
-                lineNumber: 81,
-                columnNumber: 7
-            }, undefined)
-        ]
-    }, void 0, true);
-};
-_c = Footer;
-exports.default = Footer;
-var _c;
-$RefreshReg$(_c, "Footer");
-
-  $parcel$ReactRefreshHelpers$a8dc.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"kh41a"}],"6sEDB":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$0e66 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$0e66.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-const Contact = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
-        id: "contact",
-        className: "contact",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "container",
-            "data-aos": "fade-up",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "section-title",
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                        children: "Contact Us"
-                    }, void 0, false, {
-                        fileName: "components/contact.js",
-                        lineNumber: 8,
-                        columnNumber: 11
-                    }, undefined)
-                }, void 0, false, {
-                    fileName: "components/contact.js",
-                    lineNumber: 7,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "row",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "col-lg-6",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "row",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "col-md-12",
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                            className: "info-box",
-                                            children: [
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                                    className: "bx bx-map"
-                                                }, void 0, false, {
-                                                    fileName: "components/contact.js",
-                                                    lineNumber: 16,
-                                                    columnNumber: 19
-                                                }, undefined),
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                                                    children: "Address"
-                                                }, void 0, false, {
-                                                    fileName: "components/contact.js",
-                                                    lineNumber: 17,
-                                                    columnNumber: 19
-                                                }, undefined),
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                                    children: "Ahtri tn 12, 10151 Tallinn, Estonia "
-                                                }, void 0, false, {
-                                                    fileName: "components/contact.js",
-                                                    lineNumber: 18,
-                                                    columnNumber: 19
-                                                }, undefined)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "components/contact.js",
-                                            lineNumber: 15,
-                                            columnNumber: 17
-                                        }, undefined)
-                                    }, void 0, false, {
-                                        fileName: "components/contact.js",
-                                        lineNumber: 14,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "col-md-6",
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                            className: "info-box mt-4",
-                                            children: [
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                                    className: "bx bx-envelope"
-                                                }, void 0, false, {
-                                                    fileName: "components/contact.js",
-                                                    lineNumber: 23,
-                                                    columnNumber: 19
-                                                }, undefined),
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                                                    children: "Email"
-                                                }, void 0, false, {
-                                                    fileName: "components/contact.js",
-                                                    lineNumber: 24,
-                                                    columnNumber: 19
-                                                }, undefined),
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                                    children: [
-                                                        "support@hellopartage.xyz",
-                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                                                            fileName: "components/contact.js",
-                                                            lineNumber: 27,
-                                                            columnNumber: 21
-                                                        }, undefined)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "components/contact.js",
-                                                    lineNumber: 25,
-                                                    columnNumber: 19
-                                                }, undefined)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "components/contact.js",
-                                            lineNumber: 22,
-                                            columnNumber: 17
-                                        }, undefined)
-                                    }, void 0, false, {
-                                        fileName: "components/contact.js",
-                                        lineNumber: 21,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "col-md-6",
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                            className: "info-box mt-4",
-                                            children: [
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                                    className: "bx bx-phone-call"
-                                                }, void 0, false, {
-                                                    fileName: "components/contact.js",
-                                                    lineNumber: 33,
-                                                    columnNumber: 19
-                                                }, undefined),
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                                                    children: "Whatsapp"
-                                                }, void 0, false, {
-                                                    fileName: "components/contact.js",
-                                                    lineNumber: 34,
-                                                    columnNumber: 19
-                                                }, undefined),
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                                    children: [
-                                                        "+33 617 98 2358",
-                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                                                            fileName: "components/contact.js",
-                                                            lineNumber: 37,
-                                                            columnNumber: 21
-                                                        }, undefined)
-                                                    ]
-                                                }, void 0, true, {
-                                                    fileName: "components/contact.js",
-                                                    lineNumber: 35,
-                                                    columnNumber: 19
-                                                }, undefined)
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "components/contact.js",
-                                            lineNumber: 32,
-                                            columnNumber: 17
-                                        }, undefined)
-                                    }, void 0, false, {
-                                        fileName: "components/contact.js",
-                                        lineNumber: 31,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "components/contact.js",
-                                lineNumber: 13,
-                                columnNumber: 13
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "components/contact.js",
-                            lineNumber: 12,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "col-lg-6 mt-4 mt-lg-0",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
-                                action: "forms/contact.php",
-                                method: "post",
-                                role: "form",
-                                className: "php-email-form",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "row",
-                                        children: [
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                                className: "col-md-6 form-group",
-                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                                    type: "text",
-                                                    name: "name",
-                                                    className: "form-control",
-                                                    id: "name",
-                                                    placeholder: "Your Name",
-                                                    required: true
-                                                }, void 0, false, {
-                                                    fileName: "components/contact.js",
-                                                    lineNumber: 53,
-                                                    columnNumber: 19
-                                                }, undefined)
-                                            }, void 0, false, {
-                                                fileName: "components/contact.js",
-                                                lineNumber: 52,
-                                                columnNumber: 17
-                                            }, undefined),
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                                className: "col-md-6 form-group mt-3 mt-md-0",
-                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                                    type: "email",
-                                                    className: "form-control",
-                                                    name: "email",
-                                                    id: "email",
-                                                    placeholder: "Your Email",
-                                                    required: true
-                                                }, void 0, false, {
-                                                    fileName: "components/contact.js",
-                                                    lineNumber: 63,
-                                                    columnNumber: 19
-                                                }, undefined)
-                                            }, void 0, false, {
-                                                fileName: "components/contact.js",
-                                                lineNumber: 62,
-                                                columnNumber: 17
-                                            }, undefined)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "components/contact.js",
-                                        lineNumber: 51,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "form-group mt-3",
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                            type: "text",
-                                            className: "form-control",
-                                            name: "subject",
-                                            id: "subject",
-                                            placeholder: "Subject",
-                                            required: true
-                                        }, void 0, false, {
-                                            fileName: "components/contact.js",
-                                            lineNumber: 74,
-                                            columnNumber: 17
-                                        }, undefined)
-                                    }, void 0, false, {
-                                        fileName: "components/contact.js",
-                                        lineNumber: 73,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "form-group mt-3",
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("textarea", {
-                                            className: "form-control",
-                                            name: "message",
-                                            rows: "5",
-                                            placeholder: "Message",
-                                            required: true
-                                        }, void 0, false, {
-                                            fileName: "components/contact.js",
-                                            lineNumber: 84,
-                                            columnNumber: 17
-                                        }, undefined)
-                                    }, void 0, false, {
-                                        fileName: "components/contact.js",
-                                        lineNumber: 83,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "my-3",
-                                        children: [
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                                className: "loading",
-                                                children: "Loading"
-                                            }, void 0, false, {
-                                                fileName: "components/contact.js",
-                                                lineNumber: 93,
-                                                columnNumber: 17
-                                            }, undefined),
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                                className: "error-message"
-                                            }, void 0, false, {
-                                                fileName: "components/contact.js",
-                                                lineNumber: 94,
-                                                columnNumber: 17
-                                            }, undefined),
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                                className: "sent-message",
-                                                children: "Your message has been sent. Thank you!"
-                                            }, void 0, false, {
-                                                fileName: "components/contact.js",
-                                                lineNumber: 95,
-                                                columnNumber: 17
-                                            }, undefined)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "components/contact.js",
-                                        lineNumber: 92,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "text-center",
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                            id: "usebutcases",
-                                            type: "submit",
-                                            children: "Send Message"
-                                        }, void 0, false, {
-                                            fileName: "components/contact.js",
-                                            lineNumber: 100,
-                                            columnNumber: 17
-                                        }, undefined)
-                                    }, void 0, false, {
-                                        fileName: "components/contact.js",
-                                        lineNumber: 99,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "components/contact.js",
-                                lineNumber: 45,
-                                columnNumber: 13
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "components/contact.js",
-                            lineNumber: 44,
-                            columnNumber: 11
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "components/contact.js",
-                    lineNumber: 11,
-                    columnNumber: 9
-                }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "components/contact.js",
-            lineNumber: 6,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "components/contact.js",
-        lineNumber: 5,
-        columnNumber: 5
-    }, undefined);
-};
-_c = Contact;
-exports.default = Contact;
-var _c;
-$RefreshReg$(_c, "Contact");
-
-  $parcel$ReactRefreshHelpers$0e66.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"kh41a"}],"i4peN":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$445b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$445b.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _connectWalletJpg = require("../assets/img/connect-wallet.jpg");
-var _connectWalletJpgDefault = parcelHelpers.interopDefault(_connectWalletJpg);
-var _sendPaymentJpg = require("../assets/img/send-payment.jpg");
-var _sendPaymentJpgDefault = parcelHelpers.interopDefault(_sendPaymentJpg);
-var _receivePasswordJpg = require("../assets/img/receive-password.jpg");
-var _receivePasswordJpgDefault = parcelHelpers.interopDefault(_receivePasswordJpg);
-const Services = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
-        id: "about-boxes",
-        className: "about-boxes",
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-            className: "container",
-            "data-aos": "fade-up",
-            children: [
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "section-title",
-                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                        children: "How It Works"
-                    }, void 0, false, {
-                        fileName: "components/services.js",
-                        lineNumber: 11,
-                        columnNumber: 11
-                    }, undefined)
-                }, void 0, false, {
-                    fileName: "components/services.js",
-                    lineNumber: 10,
-                    columnNumber: 9
-                }, undefined),
-                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    className: "row",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "col-lg-4 col-md-6 d-flex align-items-stretch",
-                            "data-aos": "fade-up",
-                            "data-aos-delay": "100",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "card",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                        src: (0, _connectWalletJpgDefault.default),
-                                        className: "card-img-top",
-                                        alt: "..."
-                                    }, void 0, false, {
-                                        fileName: "components/services.js",
-                                        lineNumber: 21,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "card-icon",
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                            className: "ri-brush-4-line"
-                                        }, void 0, false, {
-                                            fileName: "components/services.js",
-                                            lineNumber: 27,
-                                            columnNumber: 17
-                                        }, undefined)
-                                    }, void 0, false, {
-                                        fileName: "components/services.js",
-                                        lineNumber: 26,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "card-body",
-                                        children: [
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
-                                                className: "card-title",
-                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                                    href: "",
-                                                    children: "Connect Your Wallet"
-                                                }, void 0, false, {
-                                                    fileName: "components/services.js",
-                                                    lineNumber: 30,
-                                                    columnNumber: 44
-                                                }, undefined)
-                                            }, void 0, false, {
-                                                fileName: "components/services.js",
-                                                lineNumber: 30,
-                                                columnNumber: 17
-                                            }, undefined),
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                                className: "card-text",
-                                                children: "Connect your preferred Near wallet by clicking the Connect Wallet button at the top of this page."
-                                            }, void 0, false, {
-                                                fileName: "components/services.js",
-                                                lineNumber: 31,
-                                                columnNumber: 17
-                                            }, undefined)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "components/services.js",
-                                        lineNumber: 29,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "components/services.js",
-                                lineNumber: 20,
-                                columnNumber: 13
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "components/services.js",
-                            lineNumber: 15,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "col-lg-4 col-md-6 d-flex align-items-stretch",
-                            "data-aos": "fade-up",
-                            "data-aos-delay": "200",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "card",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                        src: (0, _sendPaymentJpgDefault.default),
-                                        className: "card-img-top",
-                                        alt: "..."
-                                    }, void 0, false, {
-                                        fileName: "components/services.js",
-                                        lineNumber: 44,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "card-icon",
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                            className: "ri-calendar-check-line"
-                                        }, void 0, false, {
-                                            fileName: "components/services.js",
-                                            lineNumber: 50,
-                                            columnNumber: 17
-                                        }, undefined)
-                                    }, void 0, false, {
-                                        fileName: "components/services.js",
-                                        lineNumber: 49,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "card-body",
-                                        children: [
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
-                                                className: "card-title",
-                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                                    href: "",
-                                                    children: "Send payment"
-                                                }, void 0, false, {
-                                                    fileName: "components/services.js",
-                                                    lineNumber: 53,
-                                                    columnNumber: 44
-                                                }, undefined)
-                                            }, void 0, false, {
-                                                fileName: "components/services.js",
-                                                lineNumber: 53,
-                                                columnNumber: 17
-                                            }, undefined),
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                                className: "card-text",
-                                                children: "Browse all available locked Utilities in the Partage Marketplace, and send payment for your desired use time."
-                                            }, void 0, false, {
-                                                fileName: "components/services.js",
-                                                lineNumber: 54,
-                                                columnNumber: 17
-                                            }, undefined)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "components/services.js",
-                                        lineNumber: 52,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "components/services.js",
-                                lineNumber: 43,
-                                columnNumber: 13
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "components/services.js",
-                            lineNumber: 38,
-                            columnNumber: 11
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "col-lg-4 col-md-6 d-flex align-items-stretch",
-                            "data-aos": "fade-up",
-                            "data-aos-delay": "300",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "card",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
-                                        src: (0, _receivePasswordJpgDefault.default),
-                                        className: "card-img-top",
-                                        alt: "..."
-                                    }, void 0, false, {
-                                        fileName: "components/services.js",
-                                        lineNumber: 66,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "card-icon",
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                            className: "ri-movie-2-line"
-                                        }, void 0, false, {
-                                            fileName: "components/services.js",
-                                            lineNumber: 72,
-                                            columnNumber: 17
-                                        }, undefined)
-                                    }, void 0, false, {
-                                        fileName: "components/services.js",
-                                        lineNumber: 71,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                        className: "card-body",
-                                        children: [
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
-                                                className: "card-title",
-                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                                    href: "",
-                                                    children: "Receive password"
-                                                }, void 0, false, {
-                                                    fileName: "components/services.js",
-                                                    lineNumber: 75,
-                                                    columnNumber: 44
-                                                }, undefined)
-                                            }, void 0, false, {
-                                                fileName: "components/services.js",
-                                                lineNumber: 75,
-                                                columnNumber: 17
-                                            }, undefined),
-                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                                className: "card-text",
-                                                children: "Receive a secret password in your email and type it on the Partage lock to access the locked utility you chose."
-                                            }, void 0, false, {
-                                                fileName: "components/services.js",
-                                                lineNumber: 76,
-                                                columnNumber: 17
-                                            }, undefined)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "components/services.js",
-                                        lineNumber: 74,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "components/services.js",
-                                lineNumber: 65,
-                                columnNumber: 13
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "components/services.js",
-                            lineNumber: 60,
-                            columnNumber: 11
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "components/services.js",
-                    lineNumber: 14,
-                    columnNumber: 9
-                }, undefined)
-            ]
-        }, void 0, true, {
-            fileName: "components/services.js",
-            lineNumber: 9,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false, {
-        fileName: "components/services.js",
-        lineNumber: 8,
-        columnNumber: 5
-    }, undefined);
-};
-_c = Services;
-exports.default = Services;
-var _c;
-$RefreshReg$(_c, "Services");
-
-  $parcel$ReactRefreshHelpers$445b.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../assets/img/connect-wallet.jpg":"9L9OK","../assets/img/send-payment.jpg":"5XY4R","../assets/img/receive-password.jpg":"gSQOY","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"kh41a"}],"9L9OK":[function(require,module,exports) {
-module.exports = require("e81e242a3628a8d").getBundleURL("UckoE") + "connect-wallet.2b771d86.jpg" + "?" + Date.now();
-
-},{"e81e242a3628a8d":"cMlBw"}],"cMlBw":[function(require,module,exports) {
-"use strict";
-var bundleURL = {};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return "/";
-}
-function getBaseURL(url) {
-    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
-}
-// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
-    if (!matches) throw new Error("Origin not found");
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"5XY4R":[function(require,module,exports) {
-module.exports = require("4ee771a4df51c25f").getBundleURL("UckoE") + "send-payment.6afce8c8.jpg" + "?" + Date.now();
-
-},{"4ee771a4df51c25f":"cMlBw"}],"gSQOY":[function(require,module,exports) {
-module.exports = require("95bf72b8b2df7459").getBundleURL("UckoE") + "receive-password.af5862f0.jpg" + "?" + Date.now();
-
-},{"95bf72b8b2df7459":"cMlBw"}],"hGILx":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$266e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$266e.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _arduinoLockJpg = require("../assets/img/arduino-lock.jpg");
-var _arduinoLockJpgDefault = parcelHelpers.interopDefault(_arduinoLockJpg);
-const About = ()=>{
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
-            id: "about",
-            className: "about",
-            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "container",
-                "data-aos": "fade-up",
-                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                    id: "aboutmore",
-                    className: "row",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
-                            id: "hero",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "hero-container",
-                                "data-aos": "fade-up",
-                                "data-aos-delay": "150",
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("iframe", {
-                                    src: "https://docs.google.com/presentation/d/e/2PACX-1vSnHUCBGG0FRNgRNH3WAFI243y7XK6w63WugnmzjhmGW2EKvgHgnmgDtzzismnvsDjPIbjLbjZfsWzm/embed?start=false&loop=false&delayms=3000",
-                                    frameborder: "0",
-                                    id: "heroiframe",
-                                    allowfullscreen: "true",
-                                    mozallowfullscreen: "true",
-                                    webkitallowfullscreen: "true",
-                                    style: {
-                                        height: "100%"
-                                    }
-                                }, void 0, false, {
-                                    fileName: "components/About.js",
-                                    lineNumber: 16,
-                                    columnNumber: 17
-                                }, undefined)
-                            }, void 0, false, {
-                                fileName: "components/About.js",
-                                lineNumber: 11,
-                                columnNumber: 15
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "components/About.js",
-                            lineNumber: 10,
-                            columnNumber: 13
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "col-lg-6 order-1 order-lg-2",
-                            "data-aos": "fade-left",
-                            "data-aos-delay": "100",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("iframe", {
-                                height: "500",
-                                src: "https://www.youtube.com/embed/MKt_rHBYrPw"
-                            }, void 0, false, {
-                                fileName: "components/About.js",
-                                lineNumber: 33,
-                                columnNumber: 15
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "components/About.js",
-                            lineNumber: 28,
-                            columnNumber: 13
-                        }, undefined),
-                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                            className: "col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content",
-                            "data-aos": "fade-right",
-                            "data-aos-delay": "100",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                    className: "section-title",
-                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
-                                        children: "What is Partage Lock?"
-                                    }, void 0, false, {
-                                        fileName: "components/About.js",
-                                        lineNumber: 44,
-                                        columnNumber: 17
-                                    }, undefined)
-                                }, void 0, false, {
-                                    fileName: "components/About.js",
-                                    lineNumber: 43,
-                                    columnNumber: 15
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
-                                    children: "A Blockchain-controlled smart lock for Utility NFTs"
-                                }, void 0, false, {
-                                    fileName: "components/About.js",
-                                    lineNumber: 46,
-                                    columnNumber: 15
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                                    fileName: "components/About.js",
-                                    lineNumber: 47,
-                                    columnNumber: 15
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                    children: "Owners, providers, remotely manage users' access to real-world asset NFTs safely locked in a vault, a garage, or a house."
-                                }, void 0, false, {
-                                    fileName: "components/About.js",
-                                    lineNumber: 48,
-                                    columnNumber: 15
-                                }, undefined),
-                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                            children: [
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                                    className: "ri-check-double-line"
-                                                }, void 0, false, {
-                                                    fileName: "components/About.js",
-                                                    lineNumber: 54,
-                                                    columnNumber: 19
-                                                }, undefined),
-                                                " ",
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
-                                                    children: "Secured:"
-                                                }, void 0, false, {
-                                                    fileName: "components/About.js",
-                                                    lineNumber: 54,
-                                                    columnNumber: 60
-                                                }, undefined),
-                                                " Only the smart contract owner can control the lock."
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "components/About.js",
-                                            lineNumber: 53,
-                                            columnNumber: 17
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                            children: [
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                                    className: "ri-check-double-line"
-                                                }, void 0, false, {
-                                                    fileName: "components/About.js",
-                                                    lineNumber: 58,
-                                                    columnNumber: 19
-                                                }, undefined),
-                                                " ",
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
-                                                    children: "Decentralized:"
-                                                }, void 0, false, {
-                                                    fileName: "components/About.js",
-                                                    lineNumber: 58,
-                                                    columnNumber: 60
-                                                }, undefined),
-                                                " ",
-                                                "The owner is independent from any third party platform."
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "components/About.js",
-                                            lineNumber: 57,
-                                            columnNumber: 17
-                                        }, undefined),
-                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                            children: [
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                                    className: "ri-check-double-line"
-                                                }, void 0, false, {
-                                                    fileName: "components/About.js",
-                                                    lineNumber: 62,
-                                                    columnNumber: 19
-                                                }, undefined),
-                                                " ",
-                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
-                                                    children: "Trustworthy:"
-                                                }, void 0, false, {
-                                                    fileName: "components/About.js",
-                                                    lineNumber: 62,
-                                                    columnNumber: 60
-                                                }, undefined),
-                                                " ",
-                                                "Code is law. Once deployed on blockchain, code is forever."
-                                            ]
-                                        }, void 0, true, {
-                                            fileName: "components/About.js",
-                                            lineNumber: 61,
-                                            columnNumber: 17
-                                        }, undefined)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "components/About.js",
-                                    lineNumber: 52,
-                                    columnNumber: 15
-                                }, undefined)
-                            ]
-                        }, void 0, true, {
-                            fileName: "components/About.js",
-                            lineNumber: 38,
-                            columnNumber: 13
-                        }, undefined)
-                    ]
-                }, void 0, true, {
-                    fileName: "components/About.js",
-                    lineNumber: 9,
-                    columnNumber: 11
-                }, undefined)
-            }, void 0, false, {
-                fileName: "components/About.js",
-                lineNumber: 8,
-                columnNumber: 9
-            }, undefined)
-        }, void 0, false, {
-            fileName: "components/About.js",
-            lineNumber: 7,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false);
-};
-_c = About;
-exports.default = About;
-var _c;
-$RefreshReg$(_c, "About");
-
-  $parcel$ReactRefreshHelpers$266e.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../assets/img/arduino-lock.jpg":"AWmST","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"kh41a"}],"AWmST":[function(require,module,exports) {
-module.exports = require("6ea272ba9799e049").getBundleURL("UckoE") + "arduino-lock.2b1ee7b3.jpg" + "?" + Date.now();
-
-},{"6ea272ba9799e049":"cMlBw"}],"9iZ3i":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$e412 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$e412.prelude(module);
-
-try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _s = $RefreshSig$();
-function Calendar() {
-    _s();
-    const [name, setName] = (0, _react.useState)("");
-    const [description, setDescription] = (0, _react.useState)("");
-    const [startDate, setStartDate] = (0, _react.useState)(null);
-    const [endDate, setEndDate] = (0, _react.useState)(null);
-    // Set daily price
-    const dailyPrice = 10;
-    const [amountToPay, setAmountToPay] = (0, _react.useState)(null);
-    const [email, setEmail] = (0, _react.useState)("");
-    const formatDate = (date)=>{
-        if (!date) return "";
-        const year = date.getFullYear();
-        const month = (date.getMonth() + 1).toString().padStart(2, "0");
-        const day = date.getDate().toString().padStart(2, "0");
-        return `${year}-${month}-${day}`;
-    };
-    const handleStartDateChange = (date)=>{
-        setStartDate(date);
-        calculateAmount(date, endDate);
-    };
-    const handleEndDateChange = (date)=>{
-        setEndDate(date);
-        calculateAmount(startDate, date);
-    };
-    const calculateAmount = (start, end)=>{
-        if (start && end) {
-            const days = Math.ceil((end - start) / 86400000);
-            const amount = dailyPrice * days;
-            setAmountToPay(amount);
+    Context.prototype = {
+        constructor: Context,
+        reset: function(skipTempReset) {
+            this.prev = 0;
+            this.next = 0;
+            // Resetting context._sent for legacy support of Babel's
+            // function.sent implementation.
+            this.sent = this._sent = undefined;
+            this.done = false;
+            this.delegate = null;
+            this.method = "next";
+            this.arg = undefined;
+            this.tryEntries.forEach(resetTryEntry);
+            if (!skipTempReset) {
+                for(var name in this)// Not sure about the optimal order of these conditions:
+                if (name.charAt(0) === "t" && hasOwn.call(this, name) && !isNaN(+name.slice(1))) this[name] = undefined;
+            }
+        },
+        stop: function() {
+            this.done = true;
+            var rootEntry = this.tryEntries[0];
+            var rootRecord = rootEntry.completion;
+            if (rootRecord.type === "throw") throw rootRecord.arg;
+            return this.rval;
+        },
+        dispatchException: function(exception) {
+            if (this.done) throw exception;
+            var context = this;
+            function handle(loc, caught) {
+                record.type = "throw";
+                record.arg = exception;
+                context.next = loc;
+                if (caught) {
+                    // If the dispatched exception was caught by a catch block,
+                    // then let that catch block handle the exception normally.
+                    context.method = "next";
+                    context.arg = undefined;
+                }
+                return !!caught;
+            }
+            for(var i = this.tryEntries.length - 1; i >= 0; --i){
+                var entry = this.tryEntries[i];
+                var record = entry.completion;
+                if (entry.tryLoc === "root") // Exception thrown outside of any try block that could handle
+                // it, so set the completion value of the entire function to
+                // throw the exception.
+                return handle("end");
+                if (entry.tryLoc <= this.prev) {
+                    var hasCatch = hasOwn.call(entry, "catchLoc");
+                    var hasFinally = hasOwn.call(entry, "finallyLoc");
+                    if (hasCatch && hasFinally) {
+                        if (this.prev < entry.catchLoc) return handle(entry.catchLoc, true);
+                        else if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc);
+                    } else if (hasCatch) {
+                        if (this.prev < entry.catchLoc) return handle(entry.catchLoc, true);
+                    } else if (hasFinally) {
+                        if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc);
+                    } else throw new Error("try statement without catch or finally");
+                }
+            }
+        },
+        abrupt: function(type, arg) {
+            for(var i = this.tryEntries.length - 1; i >= 0; --i){
+                var entry = this.tryEntries[i];
+                if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) {
+                    var finallyEntry = entry;
+                    break;
+                }
+            }
+            if (finallyEntry && (type === "break" || type === "continue") && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc) // Ignore the finally entry if control is not jumping to a
+            // location outside the try/catch block.
+            finallyEntry = null;
+            var record = finallyEntry ? finallyEntry.completion : {};
+            record.type = type;
+            record.arg = arg;
+            if (finallyEntry) {
+                this.method = "next";
+                this.next = finallyEntry.finallyLoc;
+                return ContinueSentinel;
+            }
+            return this.complete(record);
+        },
+        complete: function(record, afterLoc) {
+            if (record.type === "throw") throw record.arg;
+            if (record.type === "break" || record.type === "continue") this.next = record.arg;
+            else if (record.type === "return") {
+                this.rval = this.arg = record.arg;
+                this.method = "return";
+                this.next = "end";
+            } else if (record.type === "normal" && afterLoc) this.next = afterLoc;
+            return ContinueSentinel;
+        },
+        finish: function(finallyLoc) {
+            for(var i = this.tryEntries.length - 1; i >= 0; --i){
+                var entry = this.tryEntries[i];
+                if (entry.finallyLoc === finallyLoc) {
+                    this.complete(entry.completion, entry.afterLoc);
+                    resetTryEntry(entry);
+                    return ContinueSentinel;
+                }
+            }
+        },
+        "catch": function(tryLoc) {
+            for(var i = this.tryEntries.length - 1; i >= 0; --i){
+                var entry = this.tryEntries[i];
+                if (entry.tryLoc === tryLoc) {
+                    var record = entry.completion;
+                    if (record.type === "throw") {
+                        var thrown = record.arg;
+                        resetTryEntry(entry);
+                    }
+                    return thrown;
+                }
+            }
+            // The context.catch method must only be called with a location
+            // argument that corresponds to a known catch block.
+            throw new Error("illegal catch attempt");
+        },
+        delegateYield: function(iterable, resultName, nextLoc) {
+            this.delegate = {
+                iterator: values(iterable),
+                resultName: resultName,
+                nextLoc: nextLoc
+            };
+            if (this.method === "next") // Deliberately forget the last sent value so that we don't
+            // accidentally pass it on to the delegate.
+            this.arg = undefined;
+            return ContinueSentinel;
         }
     };
-    const numberOfDays = startDate && endDate ? Math.ceil((endDate - startDate) / 86400000) : 0;
-    const handleEmailChange = (event)=>{
-        setEmail(event.target.value);
-    };
-    const handleBuyClick = ()=>{
-        // Implement your buy logic here, e.g., initiate a transaction
-        alert(`Buy button clicked.\nName: ${name}\nDescription: ${description}\nEmail: ${email}\nStart Date: ${formatDate(startDate)}\nEnd Date: ${formatDate(endDate)}\nAmount to pay: ${amountToPay}NEAR`);
-    };
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
-        id: "about-boxes",
-        className: "about-boxes",
-        children: [
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                fileName: "components/Calendar.js",
-                lineNumber: 52,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "container calenderly",
-                "data-aos": "fade-up",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                        fileName: "components/Calendar.js",
-                        lineNumber: 54,
-                        columnNumber: 7
-                    }, this),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                        className: "calendar-container",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                                id: "calender-title",
-                                children: "Partage Booking Calendar"
-                            }, void 0, false, {
-                                fileName: "components/Calendar.js",
-                                lineNumber: 56,
-                                columnNumber: 7
-                            }, this),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "date-inputs",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                        htmlFor: "name",
-                                        children: "Name:"
-                                    }, void 0, false, {
-                                        fileName: "components/Calendar.js",
-                                        lineNumber: 58,
-                                        columnNumber: 9
-                                    }, this),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                        type: "text",
-                                        id: "name",
-                                        value: name,
-                                        onChange: (e)=>setName(e.target.value),
-                                        placeholder: "Enter your name"
-                                    }, void 0, false, {
-                                        fileName: "components/Calendar.js",
-                                        lineNumber: 59,
-                                        columnNumber: 9
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "components/Calendar.js",
-                                lineNumber: 57,
-                                columnNumber: 7
-                            }, this),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "date-inputs",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                        htmlFor: "description",
-                                        children: "Description:"
-                                    }, void 0, false, {
-                                        fileName: "components/Calendar.js",
-                                        lineNumber: 68,
-                                        columnNumber: 9
-                                    }, this),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("textarea", {
-                                        id: "description",
-                                        value: description,
-                                        onChange: (e)=>setDescription(e.target.value),
-                                        placeholder: "Enter a description"
-                                    }, void 0, false, {
-                                        fileName: "components/Calendar.js",
-                                        lineNumber: 69,
-                                        columnNumber: 9
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "components/Calendar.js",
-                                lineNumber: 67,
-                                columnNumber: 7
-                            }, this),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "date-inputs",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                        htmlFor: "start-date",
-                                        children: "Start Date:"
-                                    }, void 0, false, {
-                                        fileName: "components/Calendar.js",
-                                        lineNumber: 77,
-                                        columnNumber: 9
-                                    }, this),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                        type: "date",
-                                        id: "start-date",
-                                        onChange: (e)=>handleStartDateChange(new Date(e.target.value)),
-                                        value: formatDate(startDate),
-                                        placeholder: "Start Date"
-                                    }, void 0, false, {
-                                        fileName: "components/Calendar.js",
-                                        lineNumber: 78,
-                                        columnNumber: 9
-                                    }, this),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                        htmlFor: "end-date",
-                                        children: "End Date:"
-                                    }, void 0, false, {
-                                        fileName: "components/Calendar.js",
-                                        lineNumber: 85,
-                                        columnNumber: 9
-                                    }, this),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                        type: "date",
-                                        id: "end-date",
-                                        onChange: (e)=>handleEndDateChange(new Date(e.target.value)),
-                                        value: formatDate(endDate),
-                                        placeholder: "End Date"
-                                    }, void 0, false, {
-                                        fileName: "components/Calendar.js",
-                                        lineNumber: 86,
-                                        columnNumber: 9
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "components/Calendar.js",
-                                lineNumber: 76,
-                                columnNumber: 7
-                            }, this),
-                            amountToPay === null && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "payment-details",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                        children: "Daily Price:"
-                                    }, void 0, false, {
-                                        fileName: "components/Calendar.js",
-                                        lineNumber: 96,
-                                        columnNumber: 11
-                                    }, this),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                        children: "Number of Days:"
-                                    }, void 0, false, {
-                                        fileName: "components/Calendar.js",
-                                        lineNumber: 97,
-                                        columnNumber: 11
-                                    }, this),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                        children: "Total Price:"
-                                    }, void 0, false, {
-                                        fileName: "components/Calendar.js",
-                                        lineNumber: 98,
-                                        columnNumber: 11
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "components/Calendar.js",
-                                lineNumber: 95,
-                                columnNumber: 9
-                            }, this),
-                            amountToPay !== null && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "payment-details",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                        children: [
-                                            "Daily Price: ",
-                                            dailyPrice,
-                                            " NEAR"
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "components/Calendar.js",
-                                        lineNumber: 103,
-                                        columnNumber: 11
-                                    }, this),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                        children: [
-                                            "Number of Days: ",
-                                            numberOfDays,
-                                            " days"
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "components/Calendar.js",
-                                        lineNumber: 104,
-                                        columnNumber: 11
-                                    }, this),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
-                                        children: [
-                                            "Total Price: ",
-                                            amountToPay,
-                                            " NEAR"
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "components/Calendar.js",
-                                        lineNumber: 105,
-                                        columnNumber: 11
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "components/Calendar.js",
-                                lineNumber: 102,
-                                columnNumber: 9
-                            }, this),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "date-inputs",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
-                                        htmlFor: "email",
-                                        children: "Email:"
-                                    }, void 0, false, {
-                                        fileName: "components/Calendar.js",
-                                        lineNumber: 110,
-                                        columnNumber: 9
-                                    }, this),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
-                                        type: "email",
-                                        id: "email",
-                                        onChange: handleEmailChange,
-                                        value: email,
-                                        placeholder: "Enter your email"
-                                    }, void 0, false, {
-                                        fileName: "components/Calendar.js",
-                                        lineNumber: 111,
-                                        columnNumber: 9
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "components/Calendar.js",
-                                lineNumber: 109,
-                                columnNumber: 7
-                            }, this),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                                className: "text-center",
-                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
-                                    onClick: handleBuyClick,
-                                    children: "Buy"
-                                }, void 0, false, {
-                                    fileName: "components/Calendar.js",
-                                    lineNumber: 120,
-                                    columnNumber: 7
-                                }, this)
-                            }, void 0, false, {
-                                fileName: "components/Calendar.js",
-                                lineNumber: 119,
-                                columnNumber: 7
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "components/Calendar.js",
-                        lineNumber: 55,
-                        columnNumber: 7
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "components/Calendar.js",
-                lineNumber: 53,
-                columnNumber: 7
-            }, this)
-        ]
-    }, void 0, true, {
-        fileName: "components/Calendar.js",
-        lineNumber: 50,
-        columnNumber: 5
-    }, this);
-}
-_s(Calendar, "iL5HLbpN84l2CNmDxYVmW0hkFC4=");
-_c = Calendar;
-exports.default = Calendar;
-var _c;
-$RefreshReg$(_c, "Calendar");
-
-  $parcel$ReactRefreshHelpers$e412.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"kh41a"}],"izsrV":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$a44e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$a44e.prelude(module);
-
+    // Regardless of whether this script is executing as a CommonJS module
+    // or not, return the runtime object so that we can declare the variable
+    // regeneratorRuntime in the outer scope, which allows this module to be
+    // injected easily by `bin/regenerator --include-runtime script.js`.
+    return exports;
+}(// If this script is executing as a CommonJS module, use module.exports
+// as the regeneratorRuntime namespace. Otherwise create a new empty
+// object. Either way, the resulting object will be used to initialize
+// the regeneratorRuntime variable at the top of this file.
+(0, module.exports));
 try {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-var _jsxDevRuntime = require("react/jsx-dev-runtime");
-var _react = require("react");
-var _reactDefault = parcelHelpers.interopDefault(_react);
-var _headerScrolled = require("../assets/js/headerScrolled");
-var _uiComponents = require("../ui-components");
-var _uiComponentsDefault = parcelHelpers.interopDefault(_uiComponents);
-var _s = $RefreshSig$();
-const Signheader = ({ onClick, accountId })=>{
-    _s();
-    (0, _react.useEffect)(()=>{
-        (0, _headerScrolled.initHeaderScrolled)();
-    }, []);
-    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
-        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
-            id: "header",
-            className: "fixed-top",
-            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
-                className: "container d-flex align-items-center justify-content-between",
-                children: [
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
-                        className: "logo",
-                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                            style: {
-                                color: "#c5f801"
-                            },
-                            href: "",
-                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
-                                children: "PARTAGE LOCK"
-                            }, void 0, false, {
-                                fileName: "components/Signheader.js",
-                                lineNumber: 16,
-                                columnNumber: 15
-                            }, undefined)
-                        }, void 0, false, {
-                            fileName: "components/Signheader.js",
-                            lineNumber: 15,
-                            columnNumber: 13
-                        }, undefined)
-                    }, void 0, false, {
-                        fileName: "components/Signheader.js",
-                        lineNumber: 14,
-                        columnNumber: 11
-                    }, undefined),
-                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("nav", {
-                        id: "navbar",
-                        className: "navbar",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                            className: "nav-link scrollto",
-                                            href: "https://medium.com/@juliencarbonnell/democratizing-access-to-utilities-blockchain-for-smart-cities-25eefb0348e7",
-                                            children: "Documentation"
-                                        }, void 0, false, {
-                                            fileName: "components/Signheader.js",
-                                            lineNumber: 23,
-                                            columnNumber: 17
-                                        }, undefined)
-                                    }, void 0, false, {
-                                        fileName: "components/Signheader.js",
-                                        lineNumber: 22,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                            className: "",
-                                            children: accountId
-                                        }, void 0, false, {
-                                            fileName: "components/Signheader.js",
-                                            lineNumber: 31,
-                                            columnNumber: 17
-                                        }, undefined)
-                                    }, void 0, false, {
-                                        fileName: "components/Signheader.js",
-                                        lineNumber: 30,
-                                        columnNumber: 15
-                                    }, undefined),
-                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
-                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
-                                            onClick: onClick,
-                                            className: "getstarted scrollto",
-                                            children: "Disconnect"
-                                        }, void 0, false, {
-                                            fileName: "components/Signheader.js",
-                                            lineNumber: 37,
-                                            columnNumber: 17
-                                        }, undefined)
-                                    }, void 0, false, {
-                                        fileName: "components/Signheader.js",
-                                        lineNumber: 36,
-                                        columnNumber: 15
-                                    }, undefined)
-                                ]
-                            }, void 0, true, {
-                                fileName: "components/Signheader.js",
-                                lineNumber: 21,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
-                                className: "bi bi-list mobile-nav-toggle"
-                            }, void 0, false, {
-                                fileName: "components/Signheader.js",
-                                lineNumber: 42,
-                                columnNumber: 13
-                            }, undefined),
-                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
-                                fileName: "components/Signheader.js",
-                                lineNumber: 43,
-                                columnNumber: 13
-                            }, undefined)
-                        ]
-                    }, void 0, true, {
-                        fileName: "components/Signheader.js",
-                        lineNumber: 20,
-                        columnNumber: 11
-                    }, undefined)
-                ]
-            }, void 0, true, {
-                fileName: "components/Signheader.js",
-                lineNumber: 13,
-                columnNumber: 9
-            }, undefined)
-        }, void 0, false, {
-            fileName: "components/Signheader.js",
-            lineNumber: 12,
-            columnNumber: 7
-        }, undefined)
-    }, void 0, false);
-};
-_s(Signheader, "OD7bBpZva5O2jO+Puf00hKivP7c=");
-_c = Signheader;
-exports.default = Signheader;
-var _c;
-$RefreshReg$(_c, "Signheader");
-
-  $parcel$ReactRefreshHelpers$a44e.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
+    regeneratorRuntime = runtime;
+} catch (accidentalStrictMode) {
+    // This module should not be running in strict mode, so the above
+    // assignment should always work unless something is misconfigured. Just
+    // in case runtime.js accidentally runs in strict mode, in modern engines
+    // we can explicitly access globalThis. In older engines we can escape
+    // strict mode using a global Function call. This could conceivably fail
+    // if a Content Security Policy forbids using Function, but in that case
+    // the proper solution is to fix the accidental strict mode problem. If
+    // you've misconfigured your bundler to force strict mode and applied a
+    // CSP to forbid Function, and you're not willing to fix either of those
+    // problems, please detail your unique predicament in a GitHub issue.
+    if (typeof globalThis === "object") globalThis.regeneratorRuntime = runtime;
+    else Function("r", "regeneratorRuntime = r")(runtime);
 }
-},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../assets/js/headerScrolled":"gaYUV","../ui-components":"4LIXu","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"kh41a"}],"8r2D8":[function() {},{}],"8LmR1":[function() {},{}],"C1LtY":[function() {},{}],"9VyyL":[function() {},{}],"mlhn4":[function() {},{}],"irvEs":[function() {},{}],"erQec":[function() {},{}],"58byD":[function() {},{}],"kBGcU":[function(require,module,exports) {
+
+},{}],"kBGcU":[function(require,module,exports) {
 !function(e, t) {
     module.exports = t();
 }(this, function() {
@@ -31141,7 +29501,7 @@ parcelHelpers.export(exports, "Swiper", ()=>(0, _swiperCoreMjs.S));
 parcelHelpers.export(exports, "default", ()=>(0, _swiperCoreMjs.S));
 var _swiperCoreMjs = require("./shared/swiper-core.mjs");
 
-},{"./shared/swiper-core.mjs":"c1Vcv","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"c1Vcv":[function(require,module,exports) {
+},{"./shared/swiper-core.mjs":"c1Vcv","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"c1Vcv":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "S", ()=>Swiper);
@@ -33901,7 +32261,7 @@ Swiper.use([
     Observer
 ]);
 
-},{"./ssr-window.esm.mjs":"th8PY","./utils.mjs":"9mU7V","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"th8PY":[function(require,module,exports) {
+},{"./ssr-window.esm.mjs":"th8PY","./utils.mjs":"9mU7V","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"th8PY":[function(require,module,exports) {
 /**
  * SSR Window 4.0.2
  * Better handling for window object in SSR environment
@@ -34041,7 +32401,37 @@ function getWindow() {
     return win;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"9mU7V":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, "__esModule", {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === "default" || key === "__esModule" || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"9mU7V":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "a", ()=>elementParents);
@@ -34297,7 +32687,7 @@ function elementOuterSize(el, size, includeMargins) {
     return el.offsetWidth;
 }
 
-},{"./ssr-window.esm.mjs":"th8PY","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"aHntc":[function(require,module,exports) {
+},{"./ssr-window.esm.mjs":"th8PY","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aHntc":[function(require,module,exports) {
 /*!
  * Isotope v3.0.6
  *
@@ -37227,698 +35617,3065 @@ function elementOuterSize(el, size, includeMargins) {
     ]);
 });
 
-},{}],"dXNgZ":[function(require,module,exports) {
-/**
- * Copyright (c) 2014-present, Facebook, Inc.
- *
- * This source code is licensed under the MIT license found in the
- * LICENSE file in the root directory of this source tree.
- */ var runtime = function(exports) {
-    "use strict";
-    var Op = Object.prototype;
-    var hasOwn = Op.hasOwnProperty;
-    var defineProperty = Object.defineProperty || function(obj, key, desc) {
-        obj[key] = desc.value;
-    };
-    var undefined; // More compressible than void 0.
-    var $Symbol = typeof Symbol === "function" ? Symbol : {};
-    var iteratorSymbol = $Symbol.iterator || "@@iterator";
-    var asyncIteratorSymbol = $Symbol.asyncIterator || "@@asyncIterator";
-    var toStringTagSymbol = $Symbol.toStringTag || "@@toStringTag";
-    function define(obj, key, value) {
-        Object.defineProperty(obj, key, {
-            value: value,
-            enumerable: true,
-            configurable: true,
-            writable: true
-        });
-        return obj[key];
-    }
-    try {
-        // IE 8 has a broken Object.defineProperty that only works on DOM objects.
-        define({}, "");
-    } catch (err) {
-        define = function(obj, key, value) {
-            return obj[key] = value;
-        };
-    }
-    function wrap(innerFn, outerFn, self, tryLocsList) {
-        // If outerFn provided and outerFn.prototype is a Generator, then outerFn.prototype instanceof Generator.
-        var protoGenerator = outerFn && outerFn.prototype instanceof Generator ? outerFn : Generator;
-        var generator = Object.create(protoGenerator.prototype);
-        var context = new Context(tryLocsList || []);
-        // The ._invoke method unifies the implementations of the .next,
-        // .throw, and .return methods.
-        defineProperty(generator, "_invoke", {
-            value: makeInvokeMethod(innerFn, self, context)
-        });
-        return generator;
-    }
-    exports.wrap = wrap;
-    // Try/catch helper to minimize deoptimizations. Returns a completion
-    // record like context.tryEntries[i].completion. This interface could
-    // have been (and was previously) designed to take a closure to be
-    // invoked without arguments, but in all the cases we care about we
-    // already have an existing method we want to call, so there's no need
-    // to create a new function object. We can even get away with assuming
-    // the method takes exactly one argument, since that happens to be true
-    // in every case, so we don't have to touch the arguments object. The
-    // only additional allocation required is the completion record, which
-    // has a stable shape and so hopefully should be cheap to allocate.
-    function tryCatch(fn, obj, arg) {
-        try {
-            return {
-                type: "normal",
-                arg: fn.call(obj, arg)
-            };
-        } catch (err) {
-            return {
-                type: "throw",
-                arg: err
-            };
-        }
-    }
-    var GenStateSuspendedStart = "suspendedStart";
-    var GenStateSuspendedYield = "suspendedYield";
-    var GenStateExecuting = "executing";
-    var GenStateCompleted = "completed";
-    // Returning this object from the innerFn has the same effect as
-    // breaking out of the dispatch switch statement.
-    var ContinueSentinel = {};
-    // Dummy constructor functions that we use as the .constructor and
-    // .constructor.prototype properties for functions that return Generator
-    // objects. For full spec compliance, you may wish to configure your
-    // minifier not to mangle the names of these two functions.
-    function Generator() {}
-    function GeneratorFunction() {}
-    function GeneratorFunctionPrototype() {}
-    // This is a polyfill for %IteratorPrototype% for environments that
-    // don't natively support it.
-    var IteratorPrototype = {};
-    define(IteratorPrototype, iteratorSymbol, function() {
-        return this;
-    });
-    var getProto = Object.getPrototypeOf;
-    var NativeIteratorPrototype = getProto && getProto(getProto(values([])));
-    if (NativeIteratorPrototype && NativeIteratorPrototype !== Op && hasOwn.call(NativeIteratorPrototype, iteratorSymbol)) // This environment has a native %IteratorPrototype%; use it instead
-    // of the polyfill.
-    IteratorPrototype = NativeIteratorPrototype;
-    var Gp = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(IteratorPrototype);
-    GeneratorFunction.prototype = GeneratorFunctionPrototype;
-    defineProperty(Gp, "constructor", {
-        value: GeneratorFunctionPrototype,
-        configurable: true
-    });
-    defineProperty(GeneratorFunctionPrototype, "constructor", {
-        value: GeneratorFunction,
-        configurable: true
-    });
-    GeneratorFunction.displayName = define(GeneratorFunctionPrototype, toStringTagSymbol, "GeneratorFunction");
-    // Helper for defining the .next, .throw, and .return methods of the
-    // Iterator interface in terms of a single ._invoke method.
-    function defineIteratorMethods(prototype) {
-        [
-            "next",
-            "throw",
-            "return"
-        ].forEach(function(method) {
-            define(prototype, method, function(arg) {
-                return this._invoke(method, arg);
-            });
-        });
-    }
-    exports.isGeneratorFunction = function(genFun) {
-        var ctor = typeof genFun === "function" && genFun.constructor;
-        return ctor ? ctor === GeneratorFunction || // For the native GeneratorFunction constructor, the best we can
-        // do is to check its .name property.
-        (ctor.displayName || ctor.name) === "GeneratorFunction" : false;
-    };
-    exports.mark = function(genFun) {
-        if (Object.setPrototypeOf) Object.setPrototypeOf(genFun, GeneratorFunctionPrototype);
-        else {
-            genFun.__proto__ = GeneratorFunctionPrototype;
-            define(genFun, toStringTagSymbol, "GeneratorFunction");
-        }
-        genFun.prototype = Object.create(Gp);
-        return genFun;
-    };
-    // Within the body of any async function, `await x` is transformed to
-    // `yield regeneratorRuntime.awrap(x)`, so that the runtime can test
-    // `hasOwn.call(value, "__await")` to determine if the yielded value is
-    // meant to be awaited.
-    exports.awrap = function(arg) {
-        return {
-            __await: arg
-        };
-    };
-    function AsyncIterator(generator, PromiseImpl) {
-        function invoke(method, arg, resolve, reject) {
-            var record = tryCatch(generator[method], generator, arg);
-            if (record.type === "throw") reject(record.arg);
-            else {
-                var result = record.arg;
-                var value = result.value;
-                if (value && typeof value === "object" && hasOwn.call(value, "__await")) return PromiseImpl.resolve(value.__await).then(function(value) {
-                    invoke("next", value, resolve, reject);
-                }, function(err) {
-                    invoke("throw", err, resolve, reject);
-                });
-                return PromiseImpl.resolve(value).then(function(unwrapped) {
-                    // When a yielded Promise is resolved, its final value becomes
-                    // the .value of the Promise<{value,done}> result for the
-                    // current iteration.
-                    result.value = unwrapped;
-                    resolve(result);
-                }, function(error) {
-                    // If a rejected Promise was yielded, throw the rejection back
-                    // into the async generator function so it can be handled there.
-                    return invoke("throw", error, resolve, reject);
-                });
-            }
-        }
-        var previousPromise;
-        function enqueue(method, arg) {
-            function callInvokeWithMethodAndArg() {
-                return new PromiseImpl(function(resolve, reject) {
-                    invoke(method, arg, resolve, reject);
-                });
-            }
-            return previousPromise = // If enqueue has been called before, then we want to wait until
-            // all previous Promises have been resolved before calling invoke,
-            // so that results are always delivered in the correct order. If
-            // enqueue has not been called before, then it is important to
-            // call invoke immediately, without waiting on a callback to fire,
-            // so that the async generator function has the opportunity to do
-            // any necessary setup in a predictable way. This predictability
-            // is why the Promise constructor synchronously invokes its
-            // executor callback, and why async functions synchronously
-            // execute code before the first await. Since we implement simple
-            // async functions in terms of async generators, it is especially
-            // important to get this right, even though it requires care.
-            previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, // Avoid propagating failures to Promises returned by later
-            // invocations of the iterator.
-            callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg();
-        }
-        // Define the unified helper method that is used to implement .next,
-        // .throw, and .return (see defineIteratorMethods).
-        defineProperty(this, "_invoke", {
-            value: enqueue
-        });
-    }
-    defineIteratorMethods(AsyncIterator.prototype);
-    define(AsyncIterator.prototype, asyncIteratorSymbol, function() {
-        return this;
-    });
-    exports.AsyncIterator = AsyncIterator;
-    // Note that simple async functions are implemented on top of
-    // AsyncIterator objects; they just return a Promise for the value of
-    // the final result produced by the iterator.
-    exports.async = function(innerFn, outerFn, self, tryLocsList, PromiseImpl) {
-        if (PromiseImpl === void 0) PromiseImpl = Promise;
-        var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl);
-        return exports.isGeneratorFunction(outerFn) ? iter // If outerFn is a generator, return the full iterator.
-         : iter.next().then(function(result) {
-            return result.done ? result.value : iter.next();
-        });
-    };
-    function makeInvokeMethod(innerFn, self, context) {
-        var state = GenStateSuspendedStart;
-        return function invoke(method, arg) {
-            if (state === GenStateExecuting) throw new Error("Generator is already running");
-            if (state === GenStateCompleted) {
-                if (method === "throw") throw arg;
-                // Be forgiving, per 25.3.3.3.3 of the spec:
-                // https://people.mozilla.org/~jorendorff/es6-draft.html#sec-generatorresume
-                return doneResult();
-            }
-            context.method = method;
-            context.arg = arg;
-            while(true){
-                var delegate = context.delegate;
-                if (delegate) {
-                    var delegateResult = maybeInvokeDelegate(delegate, context);
-                    if (delegateResult) {
-                        if (delegateResult === ContinueSentinel) continue;
-                        return delegateResult;
-                    }
-                }
-                if (context.method === "next") // Setting context._sent for legacy support of Babel's
-                // function.sent implementation.
-                context.sent = context._sent = context.arg;
-                else if (context.method === "throw") {
-                    if (state === GenStateSuspendedStart) {
-                        state = GenStateCompleted;
-                        throw context.arg;
-                    }
-                    context.dispatchException(context.arg);
-                } else if (context.method === "return") context.abrupt("return", context.arg);
-                state = GenStateExecuting;
-                var record = tryCatch(innerFn, self, context);
-                if (record.type === "normal") {
-                    // If an exception is thrown from innerFn, we leave state ===
-                    // GenStateExecuting and loop back for another invocation.
-                    state = context.done ? GenStateCompleted : GenStateSuspendedYield;
-                    if (record.arg === ContinueSentinel) continue;
-                    return {
-                        value: record.arg,
-                        done: context.done
-                    };
-                } else if (record.type === "throw") {
-                    state = GenStateCompleted;
-                    // Dispatch the exception by looping back around to the
-                    // context.dispatchException(context.arg) call above.
-                    context.method = "throw";
-                    context.arg = record.arg;
-                }
-            }
-        };
-    }
-    // Call delegate.iterator[context.method](context.arg) and handle the
-    // result, either by returning a { value, done } result from the
-    // delegate iterator, or by modifying context.method and context.arg,
-    // setting context.delegate to null, and returning the ContinueSentinel.
-    function maybeInvokeDelegate(delegate, context) {
-        var methodName = context.method;
-        var method = delegate.iterator[methodName];
-        if (method === undefined) {
-            // A .throw or .return when the delegate iterator has no .throw
-            // method, or a missing .next mehtod, always terminate the
-            // yield* loop.
-            context.delegate = null;
-            // Note: ["return"] must be used for ES3 parsing compatibility.
-            if (methodName === "throw" && delegate.iterator["return"]) {
-                // If the delegate iterator has a return method, give it a
-                // chance to clean up.
-                context.method = "return";
-                context.arg = undefined;
-                maybeInvokeDelegate(delegate, context);
-                if (context.method === "throw") // If maybeInvokeDelegate(context) changed context.method from
-                // "return" to "throw", let that override the TypeError below.
-                return ContinueSentinel;
-            }
-            if (methodName !== "return") {
-                context.method = "throw";
-                context.arg = new TypeError("The iterator does not provide a '" + methodName + "' method");
-            }
-            return ContinueSentinel;
-        }
-        var record = tryCatch(method, delegate.iterator, context.arg);
-        if (record.type === "throw") {
-            context.method = "throw";
-            context.arg = record.arg;
-            context.delegate = null;
-            return ContinueSentinel;
-        }
-        var info = record.arg;
-        if (!info) {
-            context.method = "throw";
-            context.arg = new TypeError("iterator result is not an object");
-            context.delegate = null;
-            return ContinueSentinel;
-        }
-        if (info.done) {
-            // Assign the result of the finished delegate to the temporary
-            // variable specified by delegate.resultName (see delegateYield).
-            context[delegate.resultName] = info.value;
-            // Resume execution at the desired location (see delegateYield).
-            context.next = delegate.nextLoc;
-            // If context.method was "throw" but the delegate handled the
-            // exception, let the outer generator proceed normally. If
-            // context.method was "next", forget context.arg since it has been
-            // "consumed" by the delegate iterator. If context.method was
-            // "return", allow the original .return call to continue in the
-            // outer generator.
-            if (context.method !== "return") {
-                context.method = "next";
-                context.arg = undefined;
-            }
-        } else // Re-yield the result returned by the delegate method.
-        return info;
-        // The delegate iterator is finished, so forget it and continue with
-        // the outer generator.
-        context.delegate = null;
-        return ContinueSentinel;
-    }
-    // Define Generator.prototype.{next,throw,return} in terms of the
-    // unified ._invoke helper method.
-    defineIteratorMethods(Gp);
-    define(Gp, toStringTagSymbol, "Generator");
-    // A Generator should always return itself as the iterator object when the
-    // @@iterator function is called on it. Some browsers' implementations of the
-    // iterator prototype chain incorrectly implement this, causing the Generator
-    // object to not be returned from this call. This ensures that doesn't happen.
-    // See https://github.com/facebook/regenerator/issues/274 for more details.
-    define(Gp, iteratorSymbol, function() {
-        return this;
-    });
-    define(Gp, "toString", function() {
-        return "[object Generator]";
-    });
-    function pushTryEntry(locs) {
-        var entry = {
-            tryLoc: locs[0]
-        };
-        if (1 in locs) entry.catchLoc = locs[1];
-        if (2 in locs) {
-            entry.finallyLoc = locs[2];
-            entry.afterLoc = locs[3];
-        }
-        this.tryEntries.push(entry);
-    }
-    function resetTryEntry(entry) {
-        var record = entry.completion || {};
-        record.type = "normal";
-        delete record.arg;
-        entry.completion = record;
-    }
-    function Context(tryLocsList) {
-        // The root entry object (effectively a try statement without a catch
-        // or a finally block) gives us a place to store values thrown from
-        // locations where there is no enclosing try statement.
-        this.tryEntries = [
-            {
-                tryLoc: "root"
-            }
-        ];
-        tryLocsList.forEach(pushTryEntry, this);
-        this.reset(true);
-    }
-    exports.keys = function(val) {
-        var object = Object(val);
-        var keys = [];
-        for(var key in object)keys.push(key);
-        keys.reverse();
-        // Rather than returning an object with a next method, we keep
-        // things simple and return the next function itself.
-        return function next() {
-            while(keys.length){
-                var key = keys.pop();
-                if (key in object) {
-                    next.value = key;
-                    next.done = false;
-                    return next;
-                }
-            }
-            // To avoid creating an additional object, we just hang the .value
-            // and .done properties off the next function object itself. This
-            // also ensures that the minifier will not anonymize the function.
-            next.done = true;
-            return next;
-        };
-    };
-    function values(iterable) {
-        if (iterable) {
-            var iteratorMethod = iterable[iteratorSymbol];
-            if (iteratorMethod) return iteratorMethod.call(iterable);
-            if (typeof iterable.next === "function") return iterable;
-            if (!isNaN(iterable.length)) {
-                var i = -1, next = function next() {
-                    while(++i < iterable.length)if (hasOwn.call(iterable, i)) {
-                        next.value = iterable[i];
-                        next.done = false;
-                        return next;
-                    }
-                    next.value = undefined;
-                    next.done = true;
-                    return next;
-                };
-                return next.next = next;
-            }
-        }
-        // Return an iterator with no values.
-        return {
-            next: doneResult
-        };
-    }
-    exports.values = values;
-    function doneResult() {
-        return {
-            value: undefined,
-            done: true
-        };
-    }
-    Context.prototype = {
-        constructor: Context,
-        reset: function(skipTempReset) {
-            this.prev = 0;
-            this.next = 0;
-            // Resetting context._sent for legacy support of Babel's
-            // function.sent implementation.
-            this.sent = this._sent = undefined;
-            this.done = false;
-            this.delegate = null;
-            this.method = "next";
-            this.arg = undefined;
-            this.tryEntries.forEach(resetTryEntry);
-            if (!skipTempReset) {
-                for(var name in this)// Not sure about the optimal order of these conditions:
-                if (name.charAt(0) === "t" && hasOwn.call(this, name) && !isNaN(+name.slice(1))) this[name] = undefined;
-            }
-        },
-        stop: function() {
-            this.done = true;
-            var rootEntry = this.tryEntries[0];
-            var rootRecord = rootEntry.completion;
-            if (rootRecord.type === "throw") throw rootRecord.arg;
-            return this.rval;
-        },
-        dispatchException: function(exception) {
-            if (this.done) throw exception;
-            var context = this;
-            function handle(loc, caught) {
-                record.type = "throw";
-                record.arg = exception;
-                context.next = loc;
-                if (caught) {
-                    // If the dispatched exception was caught by a catch block,
-                    // then let that catch block handle the exception normally.
-                    context.method = "next";
-                    context.arg = undefined;
-                }
-                return !!caught;
-            }
-            for(var i = this.tryEntries.length - 1; i >= 0; --i){
-                var entry = this.tryEntries[i];
-                var record = entry.completion;
-                if (entry.tryLoc === "root") // Exception thrown outside of any try block that could handle
-                // it, so set the completion value of the entire function to
-                // throw the exception.
-                return handle("end");
-                if (entry.tryLoc <= this.prev) {
-                    var hasCatch = hasOwn.call(entry, "catchLoc");
-                    var hasFinally = hasOwn.call(entry, "finallyLoc");
-                    if (hasCatch && hasFinally) {
-                        if (this.prev < entry.catchLoc) return handle(entry.catchLoc, true);
-                        else if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc);
-                    } else if (hasCatch) {
-                        if (this.prev < entry.catchLoc) return handle(entry.catchLoc, true);
-                    } else if (hasFinally) {
-                        if (this.prev < entry.finallyLoc) return handle(entry.finallyLoc);
-                    } else throw new Error("try statement without catch or finally");
-                }
-            }
-        },
-        abrupt: function(type, arg) {
-            for(var i = this.tryEntries.length - 1; i >= 0; --i){
-                var entry = this.tryEntries[i];
-                if (entry.tryLoc <= this.prev && hasOwn.call(entry, "finallyLoc") && this.prev < entry.finallyLoc) {
-                    var finallyEntry = entry;
-                    break;
-                }
-            }
-            if (finallyEntry && (type === "break" || type === "continue") && finallyEntry.tryLoc <= arg && arg <= finallyEntry.finallyLoc) // Ignore the finally entry if control is not jumping to a
-            // location outside the try/catch block.
-            finallyEntry = null;
-            var record = finallyEntry ? finallyEntry.completion : {};
-            record.type = type;
-            record.arg = arg;
-            if (finallyEntry) {
-                this.method = "next";
-                this.next = finallyEntry.finallyLoc;
-                return ContinueSentinel;
-            }
-            return this.complete(record);
-        },
-        complete: function(record, afterLoc) {
-            if (record.type === "throw") throw record.arg;
-            if (record.type === "break" || record.type === "continue") this.next = record.arg;
-            else if (record.type === "return") {
-                this.rval = this.arg = record.arg;
-                this.method = "return";
-                this.next = "end";
-            } else if (record.type === "normal" && afterLoc) this.next = afterLoc;
-            return ContinueSentinel;
-        },
-        finish: function(finallyLoc) {
-            for(var i = this.tryEntries.length - 1; i >= 0; --i){
-                var entry = this.tryEntries[i];
-                if (entry.finallyLoc === finallyLoc) {
-                    this.complete(entry.completion, entry.afterLoc);
-                    resetTryEntry(entry);
-                    return ContinueSentinel;
-                }
-            }
-        },
-        "catch": function(tryLoc) {
-            for(var i = this.tryEntries.length - 1; i >= 0; --i){
-                var entry = this.tryEntries[i];
-                if (entry.tryLoc === tryLoc) {
-                    var record = entry.completion;
-                    if (record.type === "throw") {
-                        var thrown = record.arg;
-                        resetTryEntry(entry);
-                    }
-                    return thrown;
-                }
-            }
-            // The context.catch method must only be called with a location
-            // argument that corresponds to a known catch block.
-            throw new Error("illegal catch attempt");
-        },
-        delegateYield: function(iterable, resultName, nextLoc) {
-            this.delegate = {
-                iterator: values(iterable),
-                resultName: resultName,
-                nextLoc: nextLoc
-            };
-            if (this.method === "next") // Deliberately forget the last sent value so that we don't
-            // accidentally pass it on to the delegate.
-            this.arg = undefined;
-            return ContinueSentinel;
-        }
-    };
-    // Regardless of whether this script is executing as a CommonJS module
-    // or not, return the runtime object so that we can declare the variable
-    // regeneratorRuntime in the outer scope, which allows this module to be
-    // injected easily by `bin/regenerator --include-runtime script.js`.
-    return exports;
-}(// If this script is executing as a CommonJS module, use module.exports
-// as the regeneratorRuntime namespace. Otherwise create a new empty
-// object. Either way, the resulting object will be used to initialize
-// the regeneratorRuntime variable at the top of this file.
-(0, module.exports));
-try {
-    regeneratorRuntime = runtime;
-} catch (accidentalStrictMode) {
-    // This module should not be running in strict mode, so the above
-    // assignment should always work unless something is misconfigured. Just
-    // in case runtime.js accidentally runs in strict mode, in modern engines
-    // we can explicitly access globalThis. In older engines we can escape
-    // strict mode using a global Function call. This could conceivably fail
-    // if a Content Security Policy forbids using Function, but in that case
-    // the proper solution is to fix the accidental strict mode problem. If
-    // you've misconfigured your bundler to force strict mode and applied a
-    // CSP to forbid Function, and you're not willing to fix either of those
-    // problems, please detail your unique predicament in a GitHub issue.
-    if (typeof globalThis === "object") globalThis.regeneratorRuntime = runtime;
-    else Function("r", "regeneratorRuntime = r")(runtime);
-}
+},{}],"8r2D8":[function() {},{}],"8LmR1":[function() {},{}],"C1LtY":[function() {},{}],"9VyyL":[function() {},{}],"mlhn4":[function() {},{}],"irvEs":[function() {},{}],"erQec":[function() {},{}],"58byD":[function() {},{}],"4LIXu":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$38d8 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$38d8.prelude(module);
 
-},{}],"dg9wB":[function(require,module,exports) {
-/* A helper file that simplifies using the wallet selector */ // near api js
+try {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
-// Wallet that simplifies using the wallet selector
-parcelHelpers.export(exports, "Wallet", ()=>Wallet);
-var _nearApiJs = require("near-api-js");
-// wallet selector
-var _stylesCss = require("@near-wallet-selector/modal-ui/styles.css");
-var _modalUi = require("@near-wallet-selector/modal-ui");
-var _core = require("@near-wallet-selector/core");
-var _myNearWallet = require("@near-wallet-selector/my-near-wallet");
-var Buffer = require("f82bc9c169fd1dff").Buffer;
-const THIRTY_TGAS = "30000000000000";
-const NO_DEPOSIT = "0";
-class Wallet {
-    walletSelector;
-    wallet;
-    network;
-    createAccessKeyFor;
-    constructor({ createAccessKeyFor, network = "testnet" }){
-        // Login to a wallet passing a contractId will create a local
-        // key, so the user skips signing non-payable transactions.
-        // Omitting the accountId will result in the user being
-        // asked to sign all transactions.
-        this.createAccessKeyFor = createAccessKeyFor;
-        this.network = "testnet";
-    }
-    // To be called when the website loads
-    async startUp() {
-        this.walletSelector = await (0, _core.setupWalletSelector)({
-            network: this.network,
-            modules: [
-                (0, _myNearWallet.setupMyNearWallet)()
+parcelHelpers.export(exports, "SignInPrompt", ()=>SignInPrompt);
+parcelHelpers.export(exports, "SignOutButton", ()=>SignOutButton);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _header = require("./components/header");
+var _headerDefault = parcelHelpers.interopDefault(_header);
+var _signheader = require("./components/Signheader");
+var _signheaderDefault = parcelHelpers.interopDefault(_signheader);
+var _footer = require("./components/footer");
+var _footerDefault = parcelHelpers.interopDefault(_footer);
+var _contact = require("./components/contact");
+var _contactDefault = parcelHelpers.interopDefault(_contact);
+var _services = require("./components/services");
+var _servicesDefault = parcelHelpers.interopDefault(_services);
+var _about = require("./components/About");
+var _aboutDefault = parcelHelpers.interopDefault(_about);
+var _calendar = require("./components/Calendar");
+var _calendarDefault = parcelHelpers.interopDefault(_calendar);
+function SignInPrompt({ greeting, onClick, isSignedIn }) {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("main", {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _headerDefault.default), {
+                onClick: onClick
+            }, void 0, false, {
+                fileName: "ui-components.js",
+                lineNumber: 13,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _aboutDefault.default), {}, void 0, false, {
+                fileName: "ui-components.js",
+                lineNumber: 15,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _servicesDefault.default), {}, void 0, false, {
+                fileName: "ui-components.js",
+                lineNumber: 16,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _contactDefault.default), {}, void 0, false, {
+                fileName: "ui-components.js",
+                lineNumber: 17,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {}, void 0, false, {
+                fileName: "ui-components.js",
+                lineNumber: 19,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "ui-components.js",
+        lineNumber: 12,
+        columnNumber: 5
+    }, this);
+}
+_c = SignInPrompt;
+function SignOutButton({ isSignedIn, accountId, onClick }) {
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("main", {
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _signheaderDefault.default), {
+                    onClick: onClick
+                }, void 0, false, {
+                    fileName: "ui-components.js",
+                    lineNumber: 32,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _calendarDefault.default), {}, void 0, false, {
+                    fileName: "ui-components.js",
+                    lineNumber: 34,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _footerDefault.default), {}, void 0, false, {
+                    fileName: "ui-components.js",
+                    lineNumber: 36,
+                    columnNumber: 9
+                }, this)
             ]
-        });
-        const isSignedIn = this.walletSelector.isSignedIn();
-        if (isSignedIn) {
-            this.wallet = await this.walletSelector.wallet();
-            this.accountId = this.walletSelector.store.getState().accounts[0].accountId;
-        }
-        return isSignedIn;
+        }, void 0, true, {
+            fileName: "ui-components.js",
+            lineNumber: 31,
+            columnNumber: 7
+        }, this)
+    }, void 0, false);
+}
+_c1 = SignOutButton;
+var _c, _c1;
+$RefreshReg$(_c, "SignInPrompt");
+$RefreshReg$(_c1, "SignOutButton");
+
+  $parcel$ReactRefreshHelpers$38d8.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","./components/header":"gMwGB","./components/Signheader":"izsrV","./components/footer":"4psvf","./components/contact":"6sEDB","./components/services":"i4peN","./components/About":"hGILx","./components/Calendar":"9iZ3i","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"gMwGB":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$e7c5 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$e7c5.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _headerScrolled = require("../assets/js/headerScrolled");
+var _uiComponents = require("../ui-components");
+var _uiComponentsDefault = parcelHelpers.interopDefault(_uiComponents);
+var _s = $RefreshSig$();
+const Header = ({ onClick, accountId })=>{
+    _s();
+    (0, _react.useEffect)(()=>{
+        (0, _headerScrolled.initHeaderScrolled)();
+    }, []);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
+            id: "header",
+            className: "fixed-top",
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "container d-flex align-items-center justify-content-between",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                        className: "logo",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                            style: {
+                                color: "#c5f801"
+                            },
+                            href: "",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
+                                children: "PARTAGE LOCK"
+                            }, void 0, false, {
+                                fileName: "components/header.js",
+                                lineNumber: 16,
+                                columnNumber: 15
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "components/header.js",
+                            lineNumber: 15,
+                            columnNumber: 13
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "components/header.js",
+                        lineNumber: 14,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("nav", {
+                        id: "navbar",
+                        className: "navbar",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                            className: "nav-link scrollto",
+                                            href: "https://juliencarbonnell.medium.com/blockchain-for-smart-cities-tutorial-building-a-blockchain-controlled-smart-lock-on-near-100-d97b19ca7a86",
+                                            children: "Documentation"
+                                        }, void 0, false, {
+                                            fileName: "components/header.js",
+                                            lineNumber: 23,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "components/header.js",
+                                        lineNumber: 22,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                            onClick: onClick,
+                                            className: "getstarted scrollto",
+                                            children: "Connect Wallet"
+                                        }, void 0, false, {
+                                            fileName: "components/header.js",
+                                            lineNumber: 31,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "components/header.js",
+                                        lineNumber: 30,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/header.js",
+                                lineNumber: 21,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                className: "bi bi-list mobile-nav-toggle"
+                            }, void 0, false, {
+                                fileName: "components/header.js",
+                                lineNumber: 36,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                fileName: "components/header.js",
+                                lineNumber: 37,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "components/header.js",
+                        lineNumber: 20,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "components/header.js",
+                lineNumber: 13,
+                columnNumber: 9
+            }, undefined)
+        }, void 0, false, {
+            fileName: "components/header.js",
+            lineNumber: 12,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false);
+};
+_s(Header, "OD7bBpZva5O2jO+Puf00hKivP7c=");
+_c = Header;
+exports.default = Header;
+var _c;
+$RefreshReg$(_c, "Header");
+
+  $parcel$ReactRefreshHelpers$e7c5.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../assets/js/headerScrolled":"gaYUV","../ui-components":"4LIXu","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"gaYUV":[function(require,module,exports) {
+// headerScrolled.js
+/**
+ * Easy selector helper function
+ */ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "initHeaderScrolled", ()=>initHeaderScrolled);
+const select = (el, all = false)=>{
+    el = el.trim();
+    if (all) return [
+        ...document.querySelectorAll(el)
+    ];
+    else return document.querySelector(el);
+};
+/**
+   * Easy on scroll event listener
+   */ const onscroll = (el, listener)=>{
+    el.addEventListener("scroll", listener);
+};
+const initHeaderScrolled = ()=>{
+    let selectHeader = select("#header");
+    if (selectHeader) {
+        const headerScrolled = ()=>{
+            if (window.scrollY > 100) selectHeader.classList.add("header-scrolled");
+            else selectHeader.classList.remove("header-scrolled");
+        };
+        window.addEventListener("load", headerScrolled);
+        onscroll(document, headerScrolled);
     }
-    // Sign-in method
-    signIn() {
-        const description = "Please select a wallet to sign in.";
-        const modal = (0, _modalUi.setupModal)(this.walletSelector, {
-            contractId: this.createAccessKeyFor,
-            description
-        });
-        modal.show();
+};
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"km3Ru":[function(require,module,exports) {
+"use strict";
+var Refresh = require("7422ead32dcc1e6b");
+function debounce(func, delay) {
+    {
+        let timeout = undefined;
+        let lastTime = 0;
+        return function(args) {
+            // Call immediately if last call was more than the delay ago.
+            // Otherwise, set a timeout. This means the first call is fast
+            // (for the common case of a single update), and subsequent updates
+            // are batched.
+            let now = Date.now();
+            if (now - lastTime > delay) {
+                lastTime = now;
+                func.call(null, args);
+            } else {
+                clearTimeout(timeout);
+                timeout = setTimeout(function() {
+                    timeout = undefined;
+                    lastTime = Date.now();
+                    func.call(null, args);
+                }, delay);
+            }
+        };
     }
-    // Sign-out method
-    signOut() {
-        this.wallet.signOut();
-        this.wallet = this.accountId = this.createAccessKeyFor = null;
-        window.location.replace(window.location.origin + window.location.pathname);
-    }
-    // Make a read-only call to retrieve information from the network
-    async viewMethod({ contractId, method, args = {} }) {
-        const { network } = this.walletSelector.options;
-        const provider = new (0, _nearApiJs.providers).JsonRpcProvider({
-            url: network.nodeUrl
-        });
-        let res = await provider.query({
-            request_type: "call_function",
-            account_id: contractId,
-            method_name: method,
-            args_base64: Buffer.from(JSON.stringify(args)).toString("base64"),
-            finality: "optimistic"
-        });
-        return JSON.parse(Buffer.from(res.result).toString());
-    }
-    // Call a method that changes the contract's state
-    async callMethod({ contractId, method, args = {}, gas = THIRTY_TGAS, deposit = NO_DEPOSIT }) {
-        // Sign a transaction with the "FunctionCall" action
-        return await this.wallet.signAndSendTransaction({
-            signerId: this.accountId,
-            receiverId: contractId,
-            actions: [
-                {
-                    type: "FunctionCall",
-                    params: {
-                        methodName: method,
-                        args,
-                        gas,
-                        deposit
+}
+var enqueueUpdate = debounce(function() {
+    Refresh.performReactRefresh();
+}, 30);
+// Everthing below is either adapted or copied from
+// https://github.com/facebook/metro/blob/61de16bd1edd7e738dd0311c89555a644023ab2d/packages/metro/src/lib/polyfills/require.js
+// MIT License - Copyright (c) Facebook, Inc. and its affiliates.
+module.exports.prelude = function(module1) {
+    window.$RefreshReg$ = function(type, id) {
+        Refresh.register(type, module1.id + " " + id);
+    };
+    window.$RefreshSig$ = Refresh.createSignatureFunctionForTransform;
+};
+module.exports.postlude = function(module1) {
+    if (isReactRefreshBoundary(module1.exports)) {
+        registerExportsForReactRefresh(module1);
+        if (module1.hot) {
+            module1.hot.dispose(function(data) {
+                if (Refresh.hasUnrecoverableErrors()) window.location.reload();
+                data.prevExports = module1.exports;
+            });
+            module1.hot.accept(function(getParents) {
+                var prevExports = module1.hot.data.prevExports;
+                var nextExports = module1.exports;
+                // Since we just executed the code for it, it's possible
+                // that the new exports make it ineligible for being a boundary.
+                var isNoLongerABoundary = !isReactRefreshBoundary(nextExports);
+                // It can also become ineligible if its exports are incompatible
+                // with the previous exports.
+                // For example, if you add/remove/change exports, we'll want
+                // to re-execute the importing modules, and force those components
+                // to re-render. Similarly, if you convert a class component
+                // to a function, we want to invalidate the boundary.
+                var didInvalidate = shouldInvalidateReactRefreshBoundary(prevExports, nextExports);
+                if (isNoLongerABoundary || didInvalidate) {
+                    // We'll be conservative. The only case in which we won't do a full
+                    // reload is if all parent modules are also refresh boundaries.
+                    // In that case we'll add them to the current queue.
+                    var parents = getParents();
+                    if (parents.length === 0) {
+                        // Looks like we bubbled to the root. Can't recover from that.
+                        window.location.reload();
+                        return;
                     }
+                    return parents;
                 }
-            ]
-        });
+                enqueueUpdate();
+            });
+        }
     }
-    // Get transaction result from the network
-    async getTransactionResult(txhash) {
-        const { network } = this.walletSelector.options;
-        const provider = new (0, _nearApiJs.providers).JsonRpcProvider({
-            url: network.nodeUrl
-        });
-        // Retrieve transaction result from the network
-        const transaction = await provider.txStatus(txhash, "unnused");
-        return (0, _nearApiJs.providers).getTransactionLastResult(transaction);
+};
+function isReactRefreshBoundary(exports) {
+    if (Refresh.isLikelyComponentType(exports)) return true;
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    return false;
+    var hasExports = false;
+    var areAllExportsComponents = true;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        hasExports = true;
+        if (key === "__esModule") continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) // Don't invoke getters for CJS as they may have side effects.
+        return false;
+        var exportValue = exports[key];
+        if (!Refresh.isLikelyComponentType(exportValue)) areAllExportsComponents = false;
+    }
+    return hasExports && areAllExportsComponents;
+}
+function shouldInvalidateReactRefreshBoundary(prevExports, nextExports) {
+    var prevSignature = getRefreshBoundarySignature(prevExports);
+    var nextSignature = getRefreshBoundarySignature(nextExports);
+    if (prevSignature.length !== nextSignature.length) return true;
+    for(var i = 0; i < nextSignature.length; i++){
+        if (prevSignature[i] !== nextSignature[i]) return true;
+    }
+    return false;
+}
+// When this signature changes, it's unsafe to stop at this refresh boundary.
+function getRefreshBoundarySignature(exports) {
+    var signature = [];
+    signature.push(Refresh.getFamilyByType(exports));
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return signature;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        if (key === "__esModule") continue;
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        signature.push(key);
+        signature.push(Refresh.getFamilyByType(exportValue));
+    }
+    return signature;
+}
+function registerExportsForReactRefresh(module1) {
+    var exports = module1.exports, id = module1.id;
+    Refresh.register(exports, id + " %exports%");
+    if (exports == null || typeof exports !== "object") // Exit if we can't iterate over exports.
+    // (This is important for legacy environments.)
+    return;
+    let isESM = "__esModule" in exports;
+    for(var key in exports){
+        var desc = Object.getOwnPropertyDescriptor(exports, key);
+        if (desc && desc.get && !isESM) continue;
+        var exportValue = exports[key];
+        var typeID = id + " %exports% " + key;
+        Refresh.register(exportValue, typeID);
     }
 }
 
-},{"f82bc9c169fd1dff":"fCgem","near-api-js":"ohc3m","@near-wallet-selector/modal-ui/styles.css":"b4TAP","@near-wallet-selector/modal-ui":"1nDKo","@near-wallet-selector/core":"eEY3a","@near-wallet-selector/my-near-wallet":"bYYGG","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"fCgem":[function(require,module,exports) {
+},{"7422ead32dcc1e6b":"786KC"}],"izsrV":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$a44e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$a44e.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _headerScrolled = require("../assets/js/headerScrolled");
+var _uiComponents = require("../ui-components");
+var _uiComponentsDefault = parcelHelpers.interopDefault(_uiComponents);
+var _s = $RefreshSig$();
+const Signheader = ({ onClick, accountId })=>{
+    _s();
+    (0, _react.useEffect)(()=>{
+        (0, _headerScrolled.initHeaderScrolled)();
+    }, []);
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("header", {
+            id: "header",
+            className: "fixed-top",
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "container d-flex align-items-center justify-content-between",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                        className: "logo",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                            style: {
+                                color: "#c5f801"
+                            },
+                            href: "",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
+                                children: "PARTAGE LOCK"
+                            }, void 0, false, {
+                                fileName: "components/Signheader.js",
+                                lineNumber: 16,
+                                columnNumber: 15
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "components/Signheader.js",
+                            lineNumber: 15,
+                            columnNumber: 13
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "components/Signheader.js",
+                        lineNumber: 14,
+                        columnNumber: 11
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("nav", {
+                        id: "navbar",
+                        className: "navbar",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                            className: "nav-link scrollto",
+                                            href: "https://juliencarbonnell.medium.com/blockchain-for-smart-cities-tutorial-building-a-blockchain-controlled-smart-lock-on-near-100-d97b19ca7a86",
+                                            children: "Documentation"
+                                        }, void 0, false, {
+                                            fileName: "components/Signheader.js",
+                                            lineNumber: 23,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "components/Signheader.js",
+                                        lineNumber: 22,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                            className: "",
+                                            children: accountId
+                                        }, void 0, false, {
+                                            fileName: "components/Signheader.js",
+                                            lineNumber: 31,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "components/Signheader.js",
+                                        lineNumber: 30,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                            onClick: onClick,
+                                            className: "getstarted scrollto",
+                                            children: "Disconnect"
+                                        }, void 0, false, {
+                                            fileName: "components/Signheader.js",
+                                            lineNumber: 37,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "components/Signheader.js",
+                                        lineNumber: 36,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/Signheader.js",
+                                lineNumber: 21,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                className: "bi bi-list mobile-nav-toggle"
+                            }, void 0, false, {
+                                fileName: "components/Signheader.js",
+                                lineNumber: 42,
+                                columnNumber: 13
+                            }, undefined),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                fileName: "components/Signheader.js",
+                                lineNumber: 43,
+                                columnNumber: 13
+                            }, undefined)
+                        ]
+                    }, void 0, true, {
+                        fileName: "components/Signheader.js",
+                        lineNumber: 20,
+                        columnNumber: 11
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "components/Signheader.js",
+                lineNumber: 13,
+                columnNumber: 9
+            }, undefined)
+        }, void 0, false, {
+            fileName: "components/Signheader.js",
+            lineNumber: 12,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false);
+};
+_s(Signheader, "OD7bBpZva5O2jO+Puf00hKivP7c=");
+_c = Signheader;
+exports.default = Signheader;
+var _c;
+$RefreshReg$(_c, "Signheader");
+
+  $parcel$ReactRefreshHelpers$a44e.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../assets/js/headerScrolled":"gaYUV","../ui-components":"4LIXu","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4psvf":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$a8dc = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$a8dc.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const Footer = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("footer", {
+                id: "footer",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "footer-top",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "container",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "row",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "col-lg-3 col-md-6",
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            className: "footer-info",
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                                    children: "PARTAGE"
+                                                }, void 0, false, {
+                                                    fileName: "components/footer.js",
+                                                    lineNumber: 12,
+                                                    columnNumber: 19
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                    children: "Shared Utilities on Bitcoin"
+                                                }, void 0, false, {
+                                                    fileName: "components/footer.js",
+                                                    lineNumber: 13,
+                                                    columnNumber: 19
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                    children: "Join our social medias"
+                                                }, void 0, false, {
+                                                    fileName: "components/footer.js",
+                                                    lineNumber: 14,
+                                                    columnNumber: 19
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                    className: "social-links mt-3",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                            href: "https://discord.gg/4t4AX9GVUf",
+                                                            className: "Discord",
+                                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                                                className: "bx bxl-discord"
+                                                            }, void 0, false, {
+                                                                fileName: "components/footer.js",
+                                                                lineNumber: 17,
+                                                                columnNumber: 23
+                                                            }, undefined)
+                                                        }, void 0, false, {
+                                                            fileName: "components/footer.js",
+                                                            lineNumber: 16,
+                                                            columnNumber: 21
+                                                        }, undefined),
+                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                            href: "https://www.youtube.com/@partage_btc",
+                                                            className: "Youtube",
+                                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                                                className: "bx bxl-youtube"
+                                                            }, void 0, false, {
+                                                                fileName: "components/footer.js",
+                                                                lineNumber: 20,
+                                                                columnNumber: 23
+                                                            }, undefined)
+                                                        }, void 0, false, {
+                                                            fileName: "components/footer.js",
+                                                            lineNumber: 19,
+                                                            columnNumber: 21
+                                                        }, undefined),
+                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                            href: "https://twitter.com/partage_btc",
+                                                            className: "twitter",
+                                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                                                className: "bx bxl-twitter"
+                                                            }, void 0, false, {
+                                                                fileName: "components/footer.js",
+                                                                lineNumber: 23,
+                                                                columnNumber: 23
+                                                            }, undefined)
+                                                        }, void 0, false, {
+                                                            fileName: "components/footer.js",
+                                                            lineNumber: 22,
+                                                            columnNumber: 21
+                                                        }, undefined),
+                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                            href: "https://www.instagram.com/partage.btc/",
+                                                            className: "instagram",
+                                                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                                                className: "bx bxl-instagram"
+                                                            }, void 0, false, {
+                                                                fileName: "components/footer.js",
+                                                                lineNumber: 26,
+                                                                columnNumber: 23
+                                                            }, undefined)
+                                                        }, void 0, false, {
+                                                            fileName: "components/footer.js",
+                                                            lineNumber: 25,
+                                                            columnNumber: 21
+                                                        }, undefined)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "components/footer.js",
+                                                    lineNumber: 15,
+                                                    columnNumber: 19
+                                                }, undefined)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "components/footer.js",
+                                            lineNumber: 11,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "components/footer.js",
+                                        lineNumber: 10,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "col-lg-3 col-md-6 footer-links",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                                                children: "Explore"
+                                            }, void 0, false, {
+                                                fileName: "components/footer.js",
+                                                lineNumber: 33,
+                                                columnNumber: 17
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                                                className: "bx bx-chevron-right"
+                                                            }, void 0, false, {
+                                                                fileName: "components/footer.js",
+                                                                lineNumber: 36,
+                                                                columnNumber: 21
+                                                            }, undefined),
+                                                            " ",
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                                href: "https://hellopartage.xyz/nfts",
+                                                                children: "Marketplace"
+                                                            }, void 0, false, {
+                                                                fileName: "components/footer.js",
+                                                                lineNumber: 37,
+                                                                columnNumber: 21
+                                                            }, undefined)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/footer.js",
+                                                        lineNumber: 35,
+                                                        columnNumber: 19
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                                                className: "bx bx-chevron-right"
+                                                            }, void 0, false, {
+                                                                fileName: "components/footer.js",
+                                                                lineNumber: 40,
+                                                                columnNumber: 21
+                                                            }, undefined),
+                                                            " ",
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                                href: "https://medium.com/partage-btc/partages-white-paper-347674063de7",
+                                                                children: "White Paper"
+                                                            }, void 0, false, {
+                                                                fileName: "components/footer.js",
+                                                                lineNumber: 41,
+                                                                columnNumber: 21
+                                                            }, undefined)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/footer.js",
+                                                        lineNumber: 39,
+                                                        columnNumber: 19
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                                                className: "bx bx-chevron-right"
+                                                            }, void 0, false, {
+                                                                fileName: "components/footer.js",
+                                                                lineNumber: 44,
+                                                                columnNumber: 21
+                                                            }, undefined),
+                                                            " ",
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                                href: "https://medium.com/partage-btc/partage-tutorials-8e1f6868716d",
+                                                                children: "Tutorials"
+                                                            }, void 0, false, {
+                                                                fileName: "components/footer.js",
+                                                                lineNumber: 45,
+                                                                columnNumber: 21
+                                                            }, undefined)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/footer.js",
+                                                        lineNumber: 43,
+                                                        columnNumber: 19
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                                        children: [
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                                                className: "bx bx-chevron-right"
+                                                            }, void 0, false, {
+                                                                fileName: "components/footer.js",
+                                                                lineNumber: 48,
+                                                                columnNumber: 21
+                                                            }, undefined),
+                                                            " ",
+                                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                                href: "https://docs.google.com/document/d/1-ZoP8lExQZ_LDxBG0ZXdbFr7i8Ie0ymcMn6Uh-XfpZc/edit#heading=h.8do1cn1ic47h",
+                                                                children: "Privacy Policy"
+                                                            }, void 0, false, {
+                                                                fileName: "components/footer.js",
+                                                                lineNumber: 49,
+                                                                columnNumber: 21
+                                                            }, undefined)
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "components/footer.js",
+                                                        lineNumber: 47,
+                                                        columnNumber: 19
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "components/footer.js",
+                                                lineNumber: 34,
+                                                columnNumber: 17
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "components/footer.js",
+                                        lineNumber: 32,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "col-lg-4 col-md-6 footer-newsletter",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h4", {
+                                                children: "Join Our Newsletter"
+                                            }, void 0, false, {
+                                                fileName: "components/footer.js",
+                                                lineNumber: 55,
+                                                columnNumber: 17
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                children: "Exclusive insights straight to your inbox."
+                                            }, void 0, false, {
+                                                fileName: "components/footer.js",
+                                                lineNumber: 56,
+                                                columnNumber: 17
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+                                                action: "",
+                                                method: "post",
+                                                children: [
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                                        type: "email",
+                                                        name: "email"
+                                                    }, void 0, false, {
+                                                        fileName: "components/footer.js",
+                                                        lineNumber: 58,
+                                                        columnNumber: 19
+                                                    }, undefined),
+                                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                                        type: "submit",
+                                                        value: "Subscribe"
+                                                    }, void 0, false, {
+                                                        fileName: "components/footer.js",
+                                                        lineNumber: 59,
+                                                        columnNumber: 19
+                                                    }, undefined)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "components/footer.js",
+                                                lineNumber: 57,
+                                                columnNumber: 17
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "components/footer.js",
+                                        lineNumber: 54,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/footer.js",
+                                lineNumber: 9,
+                                columnNumber: 13
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "components/footer.js",
+                            lineNumber: 8,
+                            columnNumber: 11
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "components/footer.js",
+                        lineNumber: 7,
+                        columnNumber: 9
+                    }, undefined),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "container",
+                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "copyright",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                id: "reserve",
+                                className: "caption",
+                                href: "https://ariregister.rik.ee/eng/company/14990229/CivicTech-O%C3%9C?search_id=ed8a0b4&pos=1",
+                                target: "_blank",
+                                rel: "noopener noreferrer",
+                                children: [
+                                    "All rights reserved ",
+                                    ` Ⓒ CivicTech OÜ, 2023`
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/footer.js",
+                                lineNumber: 68,
+                                columnNumber: 11
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "components/footer.js",
+                            lineNumber: 67,
+                            columnNumber: 11
+                        }, undefined)
+                    }, void 0, false, {
+                        fileName: "components/footer.js",
+                        lineNumber: 66,
+                        columnNumber: 9
+                    }, undefined)
+                ]
+            }, void 0, true, {
+                fileName: "components/footer.js",
+                lineNumber: 6,
+                columnNumber: 7
+            }, undefined),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                href: "#",
+                className: "back-to-top d-flex align-items-center justify-content-center",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                    className: "bi bi-arrow-up-short"
+                }, void 0, false, {
+                    fileName: "components/footer.js",
+                    lineNumber: 85,
+                    columnNumber: 9
+                }, undefined)
+            }, void 0, false, {
+                fileName: "components/footer.js",
+                lineNumber: 81,
+                columnNumber: 7
+            }, undefined)
+        ]
+    }, void 0, true);
+};
+_c = Footer;
+exports.default = Footer;
+var _c;
+$RefreshReg$(_c, "Footer");
+
+  $parcel$ReactRefreshHelpers$a8dc.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6sEDB":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$0e66 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$0e66.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+const Contact = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
+        id: "contact",
+        className: "contact",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "container",
+            "data-aos": "fade-up",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "section-title",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                        children: "Contact Us"
+                    }, void 0, false, {
+                        fileName: "components/contact.js",
+                        lineNumber: 8,
+                        columnNumber: 11
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "components/contact.js",
+                    lineNumber: 7,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "row",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "col-lg-6",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "row",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "col-md-12",
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            className: "info-box",
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                                    className: "bx bx-map"
+                                                }, void 0, false, {
+                                                    fileName: "components/contact.js",
+                                                    lineNumber: 16,
+                                                    columnNumber: 19
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                                    children: "Address"
+                                                }, void 0, false, {
+                                                    fileName: "components/contact.js",
+                                                    lineNumber: 17,
+                                                    columnNumber: 19
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                    children: "Ahtri tn 12, 10151 Tallinn, Estonia "
+                                                }, void 0, false, {
+                                                    fileName: "components/contact.js",
+                                                    lineNumber: 18,
+                                                    columnNumber: 19
+                                                }, undefined)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "components/contact.js",
+                                            lineNumber: 15,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "components/contact.js",
+                                        lineNumber: 14,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "col-md-6",
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            className: "info-box mt-4",
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                                    className: "bx bx-envelope"
+                                                }, void 0, false, {
+                                                    fileName: "components/contact.js",
+                                                    lineNumber: 23,
+                                                    columnNumber: 19
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                                    children: "Email"
+                                                }, void 0, false, {
+                                                    fileName: "components/contact.js",
+                                                    lineNumber: 24,
+                                                    columnNumber: 19
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                    children: [
+                                                        "support@hellopartage.xyz",
+                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                                            fileName: "components/contact.js",
+                                                            lineNumber: 27,
+                                                            columnNumber: 21
+                                                        }, undefined)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "components/contact.js",
+                                                    lineNumber: 25,
+                                                    columnNumber: 19
+                                                }, undefined)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "components/contact.js",
+                                            lineNumber: 22,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "components/contact.js",
+                                        lineNumber: 21,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "col-md-6",
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                            className: "info-box mt-4",
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                                    className: "bx bx-phone-call"
+                                                }, void 0, false, {
+                                                    fileName: "components/contact.js",
+                                                    lineNumber: 33,
+                                                    columnNumber: 19
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                                    children: "Whatsapp"
+                                                }, void 0, false, {
+                                                    fileName: "components/contact.js",
+                                                    lineNumber: 34,
+                                                    columnNumber: 19
+                                                }, undefined),
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                    children: [
+                                                        "+33 617 98 2358",
+                                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                                            fileName: "components/contact.js",
+                                                            lineNumber: 37,
+                                                            columnNumber: 21
+                                                        }, undefined)
+                                                    ]
+                                                }, void 0, true, {
+                                                    fileName: "components/contact.js",
+                                                    lineNumber: 35,
+                                                    columnNumber: 19
+                                                }, undefined)
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "components/contact.js",
+                                            lineNumber: 32,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "components/contact.js",
+                                        lineNumber: 31,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/contact.js",
+                                lineNumber: 13,
+                                columnNumber: 13
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "components/contact.js",
+                            lineNumber: 12,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "col-lg-6 mt-4 mt-lg-0",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("form", {
+                                action: "forms/contact.php",
+                                method: "post",
+                                role: "form",
+                                className: "php-email-form",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "row",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                className: "col-md-6 form-group",
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                                    type: "text",
+                                                    name: "name",
+                                                    className: "form-control",
+                                                    id: "name",
+                                                    placeholder: "Your Name",
+                                                    required: true
+                                                }, void 0, false, {
+                                                    fileName: "components/contact.js",
+                                                    lineNumber: 53,
+                                                    columnNumber: 19
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "components/contact.js",
+                                                lineNumber: 52,
+                                                columnNumber: 17
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                className: "col-md-6 form-group mt-3 mt-md-0",
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                                    type: "email",
+                                                    className: "form-control",
+                                                    name: "email",
+                                                    id: "email",
+                                                    placeholder: "Your Email",
+                                                    required: true
+                                                }, void 0, false, {
+                                                    fileName: "components/contact.js",
+                                                    lineNumber: 63,
+                                                    columnNumber: 19
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "components/contact.js",
+                                                lineNumber: 62,
+                                                columnNumber: 17
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "components/contact.js",
+                                        lineNumber: 51,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "form-group mt-3",
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                            type: "text",
+                                            className: "form-control",
+                                            name: "subject",
+                                            id: "subject",
+                                            placeholder: "Subject",
+                                            required: true
+                                        }, void 0, false, {
+                                            fileName: "components/contact.js",
+                                            lineNumber: 74,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "components/contact.js",
+                                        lineNumber: 73,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "form-group mt-3",
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("textarea", {
+                                            className: "form-control",
+                                            name: "message",
+                                            rows: "5",
+                                            placeholder: "Message",
+                                            required: true
+                                        }, void 0, false, {
+                                            fileName: "components/contact.js",
+                                            lineNumber: 84,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "components/contact.js",
+                                        lineNumber: 83,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "my-3",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                className: "loading",
+                                                children: "Loading"
+                                            }, void 0, false, {
+                                                fileName: "components/contact.js",
+                                                lineNumber: 93,
+                                                columnNumber: 17
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                className: "error-message"
+                                            }, void 0, false, {
+                                                fileName: "components/contact.js",
+                                                lineNumber: 94,
+                                                columnNumber: 17
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                                className: "sent-message",
+                                                children: "Your message has been sent. Thank you!"
+                                            }, void 0, false, {
+                                                fileName: "components/contact.js",
+                                                lineNumber: 95,
+                                                columnNumber: 17
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "components/contact.js",
+                                        lineNumber: 92,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "text-center",
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                            id: "usebutcases",
+                                            type: "submit",
+                                            children: "Send Message"
+                                        }, void 0, false, {
+                                            fileName: "components/contact.js",
+                                            lineNumber: 100,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "components/contact.js",
+                                        lineNumber: 99,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/contact.js",
+                                lineNumber: 45,
+                                columnNumber: 13
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "components/contact.js",
+                            lineNumber: 44,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "components/contact.js",
+                    lineNumber: 11,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "components/contact.js",
+            lineNumber: 6,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "components/contact.js",
+        lineNumber: 5,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Contact;
+exports.default = Contact;
+var _c;
+$RefreshReg$(_c, "Contact");
+
+  $parcel$ReactRefreshHelpers$0e66.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"i4peN":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$445b = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$445b.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _connectWalletJpg = require("../assets/img/connect-wallet.jpg");
+var _connectWalletJpgDefault = parcelHelpers.interopDefault(_connectWalletJpg);
+var _sendPaymentJpg = require("../assets/img/send-payment.jpg");
+var _sendPaymentJpgDefault = parcelHelpers.interopDefault(_sendPaymentJpg);
+var _receivePasswordJpg = require("../assets/img/receive-password.jpg");
+var _receivePasswordJpgDefault = parcelHelpers.interopDefault(_receivePasswordJpg);
+const Services = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
+        id: "about-boxes",
+        className: "about-boxes",
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+            className: "container",
+            "data-aos": "fade-up",
+            children: [
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "section-title",
+                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                        children: "How It Works"
+                    }, void 0, false, {
+                        fileName: "components/services.js",
+                        lineNumber: 11,
+                        columnNumber: 11
+                    }, undefined)
+                }, void 0, false, {
+                    fileName: "components/services.js",
+                    lineNumber: 10,
+                    columnNumber: 9
+                }, undefined),
+                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    className: "row",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "col-lg-4 col-md-6 d-flex align-items-stretch",
+                            "data-aos": "fade-up",
+                            "data-aos-delay": "100",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "card",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                        src: (0, _connectWalletJpgDefault.default),
+                                        className: "card-img-top",
+                                        alt: "..."
+                                    }, void 0, false, {
+                                        fileName: "components/services.js",
+                                        lineNumber: 21,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "card-icon",
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                            className: "ri-brush-4-line"
+                                        }, void 0, false, {
+                                            fileName: "components/services.js",
+                                            lineNumber: 27,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "components/services.js",
+                                        lineNumber: 26,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "card-body",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
+                                                className: "card-title",
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                    href: "",
+                                                    children: "Connect Your Wallet"
+                                                }, void 0, false, {
+                                                    fileName: "components/services.js",
+                                                    lineNumber: 30,
+                                                    columnNumber: 44
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "components/services.js",
+                                                lineNumber: 30,
+                                                columnNumber: 17
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                className: "card-text",
+                                                children: "Connect your preferred Near wallet by clicking the Connect Wallet button at the top of this page."
+                                            }, void 0, false, {
+                                                fileName: "components/services.js",
+                                                lineNumber: 31,
+                                                columnNumber: 17
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "components/services.js",
+                                        lineNumber: 29,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/services.js",
+                                lineNumber: 20,
+                                columnNumber: 13
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "components/services.js",
+                            lineNumber: 15,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "col-lg-4 col-md-6 d-flex align-items-stretch",
+                            "data-aos": "fade-up",
+                            "data-aos-delay": "200",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "card",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                        src: (0, _sendPaymentJpgDefault.default),
+                                        className: "card-img-top",
+                                        alt: "..."
+                                    }, void 0, false, {
+                                        fileName: "components/services.js",
+                                        lineNumber: 44,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "card-icon",
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                            className: "ri-calendar-check-line"
+                                        }, void 0, false, {
+                                            fileName: "components/services.js",
+                                            lineNumber: 50,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "components/services.js",
+                                        lineNumber: 49,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "card-body",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
+                                                className: "card-title",
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                    href: "",
+                                                    children: "Send payment"
+                                                }, void 0, false, {
+                                                    fileName: "components/services.js",
+                                                    lineNumber: 53,
+                                                    columnNumber: 44
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "components/services.js",
+                                                lineNumber: 53,
+                                                columnNumber: 17
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                className: "card-text",
+                                                children: "Browse all available locked Utilities in the Partage Marketplace, and send payment for your desired use time."
+                                            }, void 0, false, {
+                                                fileName: "components/services.js",
+                                                lineNumber: 54,
+                                                columnNumber: 17
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "components/services.js",
+                                        lineNumber: 52,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/services.js",
+                                lineNumber: 43,
+                                columnNumber: 13
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "components/services.js",
+                            lineNumber: 38,
+                            columnNumber: 11
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "col-lg-4 col-md-6 d-flex align-items-stretch",
+                            "data-aos": "fade-up",
+                            "data-aos-delay": "300",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "card",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("img", {
+                                        src: (0, _receivePasswordJpgDefault.default),
+                                        className: "card-img-top",
+                                        alt: "..."
+                                    }, void 0, false, {
+                                        fileName: "components/services.js",
+                                        lineNumber: 66,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "card-icon",
+                                        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                            className: "ri-movie-2-line"
+                                        }, void 0, false, {
+                                            fileName: "components/services.js",
+                                            lineNumber: 72,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    }, void 0, false, {
+                                        fileName: "components/services.js",
+                                        lineNumber: 71,
+                                        columnNumber: 15
+                                    }, undefined),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                        className: "card-body",
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h5", {
+                                                className: "card-title",
+                                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("a", {
+                                                    href: "",
+                                                    children: "Receive password"
+                                                }, void 0, false, {
+                                                    fileName: "components/services.js",
+                                                    lineNumber: 75,
+                                                    columnNumber: 44
+                                                }, undefined)
+                                            }, void 0, false, {
+                                                fileName: "components/services.js",
+                                                lineNumber: 75,
+                                                columnNumber: 17
+                                            }, undefined),
+                                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                                className: "card-text",
+                                                children: "Receive a secret password in your email and type it on the Partage lock to access the locked utility you chose."
+                                            }, void 0, false, {
+                                                fileName: "components/services.js",
+                                                lineNumber: 76,
+                                                columnNumber: 17
+                                            }, undefined)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "components/services.js",
+                                        lineNumber: 74,
+                                        columnNumber: 15
+                                    }, undefined)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/services.js",
+                                lineNumber: 65,
+                                columnNumber: 13
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "components/services.js",
+                            lineNumber: 60,
+                            columnNumber: 11
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "components/services.js",
+                    lineNumber: 14,
+                    columnNumber: 9
+                }, undefined)
+            ]
+        }, void 0, true, {
+            fileName: "components/services.js",
+            lineNumber: 9,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false, {
+        fileName: "components/services.js",
+        lineNumber: 8,
+        columnNumber: 5
+    }, undefined);
+};
+_c = Services;
+exports.default = Services;
+var _c;
+$RefreshReg$(_c, "Services");
+
+  $parcel$ReactRefreshHelpers$445b.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../assets/img/connect-wallet.jpg":"8EkwD","../assets/img/send-payment.jpg":"5V67e","../assets/img/receive-password.jpg":"bxlg9","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"8EkwD":[function(require,module,exports) {
+module.exports = require("18b155ef857eabc4").getBundleURL("UckoE") + "connect-wallet.2b771d86.jpg" + "?" + Date.now();
+
+},{"18b155ef857eabc4":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ("" + err.stack).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return "/";
+}
+function getBaseURL(url) {
+    return ("" + url).replace(/^((?:https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/.+)\/[^/]+$/, "$1") + "/";
+}
+// TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ("" + url).match(/(https?|file|ftp|(chrome|moz|safari-web)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error("Origin not found");
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"5V67e":[function(require,module,exports) {
+module.exports = require("24a21002d59734e9").getBundleURL("UckoE") + "send-payment.6afce8c8.jpg" + "?" + Date.now();
+
+},{"24a21002d59734e9":"lgJ39"}],"bxlg9":[function(require,module,exports) {
+module.exports = require("1a18b13726d6bb4").getBundleURL("UckoE") + "receive-password.af5862f0.jpg" + "?" + Date.now();
+
+},{"1a18b13726d6bb4":"lgJ39"}],"hGILx":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$266e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$266e.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _arduinoLockJpg = require("../assets/img/arduino-lock.jpg");
+var _arduinoLockJpgDefault = parcelHelpers.interopDefault(_arduinoLockJpg);
+const About = ()=>{
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _jsxDevRuntime.Fragment), {
+        children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
+            id: "about",
+            className: "about",
+            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "container",
+                "data-aos": "fade-up",
+                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                    id: "aboutmore",
+                    className: "row",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
+                            id: "hero",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "hero-container",
+                                "data-aos": "fade-up",
+                                "data-aos-delay": "150",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("iframe", {
+                                    src: "https://docs.google.com/presentation/d/e/2PACX-1vSnHUCBGG0FRNgRNH3WAFI243y7XK6w63WugnmzjhmGW2EKvgHgnmgDtzzismnvsDjPIbjLbjZfsWzm/embed?start=false&loop=false&delayms=3000",
+                                    frameborder: "0",
+                                    id: "heroiframe",
+                                    allowfullscreen: "true",
+                                    mozallowfullscreen: "true",
+                                    webkitallowfullscreen: "true",
+                                    style: {
+                                        height: "100%"
+                                    }
+                                }, void 0, false, {
+                                    fileName: "components/About.js",
+                                    lineNumber: 16,
+                                    columnNumber: 17
+                                }, undefined)
+                            }, void 0, false, {
+                                fileName: "components/About.js",
+                                lineNumber: 11,
+                                columnNumber: 15
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "components/About.js",
+                            lineNumber: 10,
+                            columnNumber: 13
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "col-lg-6 order-1 order-lg-2",
+                            "data-aos": "fade-left",
+                            "data-aos-delay": "100",
+                            children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("iframe", {
+                                height: "500",
+                                src: "https://www.youtube.com/embed/MKt_rHBYrPw"
+                            }, void 0, false, {
+                                fileName: "components/About.js",
+                                lineNumber: 33,
+                                columnNumber: 15
+                            }, undefined)
+                        }, void 0, false, {
+                            fileName: "components/About.js",
+                            lineNumber: 28,
+                            columnNumber: 13
+                        }, undefined),
+                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                            className: "col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content",
+                            "data-aos": "fade-right",
+                            "data-aos-delay": "100",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                    className: "section-title",
+                                    children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h2", {
+                                        children: "What is Partage Lock?"
+                                    }, void 0, false, {
+                                        fileName: "components/About.js",
+                                        lineNumber: 44,
+                                        columnNumber: 17
+                                    }, undefined)
+                                }, void 0, false, {
+                                    fileName: "components/About.js",
+                                    lineNumber: 43,
+                                    columnNumber: 15
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h3", {
+                                    children: "A Blockchain-controlled smart lock for Utility NFTs"
+                                }, void 0, false, {
+                                    fileName: "components/About.js",
+                                    lineNumber: 46,
+                                    columnNumber: 15
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                                    fileName: "components/About.js",
+                                    lineNumber: 47,
+                                    columnNumber: 15
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                    children: "Owners, providers, remotely manage users' access to real-world asset NFTs safely locked in a vault, a garage, or a house."
+                                }, void 0, false, {
+                                    fileName: "components/About.js",
+                                    lineNumber: 48,
+                                    columnNumber: 15
+                                }, undefined),
+                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("ul", {
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                                    className: "ri-check-double-line"
+                                                }, void 0, false, {
+                                                    fileName: "components/About.js",
+                                                    lineNumber: 54,
+                                                    columnNumber: 19
+                                                }, undefined),
+                                                " ",
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
+                                                    children: "Secured:"
+                                                }, void 0, false, {
+                                                    fileName: "components/About.js",
+                                                    lineNumber: 54,
+                                                    columnNumber: 60
+                                                }, undefined),
+                                                " Only the smart contract owner can control the lock."
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "components/About.js",
+                                            lineNumber: 53,
+                                            columnNumber: 17
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                                    className: "ri-check-double-line"
+                                                }, void 0, false, {
+                                                    fileName: "components/About.js",
+                                                    lineNumber: 58,
+                                                    columnNumber: 19
+                                                }, undefined),
+                                                " ",
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
+                                                    children: "Decentralized:"
+                                                }, void 0, false, {
+                                                    fileName: "components/About.js",
+                                                    lineNumber: 58,
+                                                    columnNumber: 60
+                                                }, undefined),
+                                                " ",
+                                                "The owner is independent from any third party platform."
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "components/About.js",
+                                            lineNumber: 57,
+                                            columnNumber: 17
+                                        }, undefined),
+                                        /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("li", {
+                                            children: [
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("i", {
+                                                    className: "ri-check-double-line"
+                                                }, void 0, false, {
+                                                    fileName: "components/About.js",
+                                                    lineNumber: 62,
+                                                    columnNumber: 19
+                                                }, undefined),
+                                                " ",
+                                                /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("b", {
+                                                    children: "Trustworthy:"
+                                                }, void 0, false, {
+                                                    fileName: "components/About.js",
+                                                    lineNumber: 62,
+                                                    columnNumber: 60
+                                                }, undefined),
+                                                " ",
+                                                "Code is law. Once deployed on blockchain, code is forever."
+                                            ]
+                                        }, void 0, true, {
+                                            fileName: "components/About.js",
+                                            lineNumber: 61,
+                                            columnNumber: 17
+                                        }, undefined)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "components/About.js",
+                                    lineNumber: 52,
+                                    columnNumber: 15
+                                }, undefined)
+                            ]
+                        }, void 0, true, {
+                            fileName: "components/About.js",
+                            lineNumber: 38,
+                            columnNumber: 13
+                        }, undefined)
+                    ]
+                }, void 0, true, {
+                    fileName: "components/About.js",
+                    lineNumber: 9,
+                    columnNumber: 11
+                }, undefined)
+            }, void 0, false, {
+                fileName: "components/About.js",
+                lineNumber: 8,
+                columnNumber: 9
+            }, undefined)
+        }, void 0, false, {
+            fileName: "components/About.js",
+            lineNumber: 7,
+            columnNumber: 7
+        }, undefined)
+    }, void 0, false);
+};
+_c = About;
+exports.default = About;
+var _c;
+$RefreshReg$(_c, "About");
+
+  $parcel$ReactRefreshHelpers$266e.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","../assets/img/arduino-lock.jpg":"5IPwv","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"5IPwv":[function(require,module,exports) {
+module.exports = require("bb42f158cdc27431").getBundleURL("UckoE") + "arduino-lock.2b1ee7b3.jpg" + "?" + Date.now();
+
+},{"bb42f158cdc27431":"lgJ39"}],"9iZ3i":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$e412 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$e412.prelude(module);
+
+try {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _jsxDevRuntime = require("react/jsx-dev-runtime");
+var _react = require("react");
+var _reactDefault = parcelHelpers.interopDefault(_react);
+var _s = $RefreshSig$();
+function Calendar() {
+    _s();
+    const [name, setName] = (0, _react.useState)("");
+    const [description, setDescription] = (0, _react.useState)("");
+    const [startDate, setStartDate] = (0, _react.useState)(null);
+    const [endDate, setEndDate] = (0, _react.useState)(null);
+    // Set daily price
+    const dailyPrice = 10;
+    const [amountToPay, setAmountToPay] = (0, _react.useState)(null);
+    const [email, setEmail] = (0, _react.useState)("");
+    const formatDate = (date)=>{
+        if (!date) return "";
+        const year = date.getFullYear();
+        const month = (date.getMonth() + 1).toString().padStart(2, "0");
+        const day = date.getDate().toString().padStart(2, "0");
+        return `${year}-${month}-${day}`;
+    };
+    const handleStartDateChange = (date)=>{
+        setStartDate(date);
+        calculateAmount(date, endDate);
+    };
+    const handleEndDateChange = (date)=>{
+        setEndDate(date);
+        calculateAmount(startDate, date);
+    };
+    const calculateAmount = (start, end)=>{
+        if (start && end) {
+            const days = Math.ceil((end - start) / 86400000);
+            const amount = dailyPrice * days;
+            setAmountToPay(amount);
+        }
+    };
+    const numberOfDays = startDate && endDate ? Math.ceil((endDate - startDate) / 86400000) : 0;
+    const handleEmailChange = (event)=>{
+        setEmail(event.target.value);
+    };
+    const handleBuyClick = ()=>{
+        // Implement your buy logic here, e.g., initiate a transaction
+        alert(`Buy button clicked.\nName: ${name}\nDescription: ${description}\nEmail: ${email}\nStart Date: ${formatDate(startDate)}\nEnd Date: ${formatDate(endDate)}\nAmount to pay: ${amountToPay}NEAR`);
+    };
+    return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("section", {
+        id: "about-boxes",
+        className: "about-boxes",
+        children: [
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                fileName: "components/Calendar.js",
+                lineNumber: 52,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                className: "container calenderly",
+                "data-aos": "fade-up",
+                children: [
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("br", {}, void 0, false, {
+                        fileName: "components/Calendar.js",
+                        lineNumber: 54,
+                        columnNumber: 7
+                    }, this),
+                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                        className: "calendar-container",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("h1", {
+                                id: "calender-title",
+                                children: "Partage Booking Calendar"
+                            }, void 0, false, {
+                                fileName: "components/Calendar.js",
+                                lineNumber: 56,
+                                columnNumber: 7
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "date-inputs",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        htmlFor: "name",
+                                        children: "Name:"
+                                    }, void 0, false, {
+                                        fileName: "components/Calendar.js",
+                                        lineNumber: 58,
+                                        columnNumber: 9
+                                    }, this),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "text",
+                                        id: "name",
+                                        value: name,
+                                        onChange: (e)=>setName(e.target.value),
+                                        placeholder: "Enter your name"
+                                    }, void 0, false, {
+                                        fileName: "components/Calendar.js",
+                                        lineNumber: 59,
+                                        columnNumber: 9
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/Calendar.js",
+                                lineNumber: 57,
+                                columnNumber: 7
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "date-inputs",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        htmlFor: "description",
+                                        children: "Description:"
+                                    }, void 0, false, {
+                                        fileName: "components/Calendar.js",
+                                        lineNumber: 68,
+                                        columnNumber: 9
+                                    }, this),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("textarea", {
+                                        id: "description",
+                                        value: description,
+                                        onChange: (e)=>setDescription(e.target.value),
+                                        placeholder: "Enter a description"
+                                    }, void 0, false, {
+                                        fileName: "components/Calendar.js",
+                                        lineNumber: 69,
+                                        columnNumber: 9
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/Calendar.js",
+                                lineNumber: 67,
+                                columnNumber: 7
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "date-inputs",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        htmlFor: "start-date",
+                                        children: "Start Date:"
+                                    }, void 0, false, {
+                                        fileName: "components/Calendar.js",
+                                        lineNumber: 77,
+                                        columnNumber: 9
+                                    }, this),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "date",
+                                        id: "start-date",
+                                        onChange: (e)=>handleStartDateChange(new Date(e.target.value)),
+                                        value: formatDate(startDate),
+                                        placeholder: "Start Date"
+                                    }, void 0, false, {
+                                        fileName: "components/Calendar.js",
+                                        lineNumber: 78,
+                                        columnNumber: 9
+                                    }, this),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        htmlFor: "end-date",
+                                        children: "End Date:"
+                                    }, void 0, false, {
+                                        fileName: "components/Calendar.js",
+                                        lineNumber: 85,
+                                        columnNumber: 9
+                                    }, this),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "date",
+                                        id: "end-date",
+                                        onChange: (e)=>handleEndDateChange(new Date(e.target.value)),
+                                        value: formatDate(endDate),
+                                        placeholder: "End Date"
+                                    }, void 0, false, {
+                                        fileName: "components/Calendar.js",
+                                        lineNumber: 86,
+                                        columnNumber: 9
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/Calendar.js",
+                                lineNumber: 76,
+                                columnNumber: 7
+                            }, this),
+                            amountToPay === null && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "payment-details",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        children: "Daily Price:"
+                                    }, void 0, false, {
+                                        fileName: "components/Calendar.js",
+                                        lineNumber: 96,
+                                        columnNumber: 11
+                                    }, this),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        children: "Number of Days:"
+                                    }, void 0, false, {
+                                        fileName: "components/Calendar.js",
+                                        lineNumber: 97,
+                                        columnNumber: 11
+                                    }, this),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        children: "Total Price:"
+                                    }, void 0, false, {
+                                        fileName: "components/Calendar.js",
+                                        lineNumber: 98,
+                                        columnNumber: 11
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/Calendar.js",
+                                lineNumber: 95,
+                                columnNumber: 9
+                            }, this),
+                            amountToPay !== null && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "payment-details",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        children: [
+                                            "Daily Price: ",
+                                            dailyPrice,
+                                            " NEAR"
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "components/Calendar.js",
+                                        lineNumber: 103,
+                                        columnNumber: 11
+                                    }, this),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        children: [
+                                            "Number of Days: ",
+                                            numberOfDays,
+                                            " days"
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "components/Calendar.js",
+                                        lineNumber: 104,
+                                        columnNumber: 11
+                                    }, this),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        children: [
+                                            "Total Price: ",
+                                            amountToPay,
+                                            " NEAR"
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "components/Calendar.js",
+                                        lineNumber: 105,
+                                        columnNumber: 11
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/Calendar.js",
+                                lineNumber: 102,
+                                columnNumber: 9
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "date-inputs",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("label", {
+                                        htmlFor: "email",
+                                        children: "Email:"
+                                    }, void 0, false, {
+                                        fileName: "components/Calendar.js",
+                                        lineNumber: 110,
+                                        columnNumber: 9
+                                    }, this),
+                                    /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("input", {
+                                        type: "email",
+                                        id: "email",
+                                        onChange: handleEmailChange,
+                                        value: email,
+                                        placeholder: "Enter your email"
+                                    }, void 0, false, {
+                                        fileName: "components/Calendar.js",
+                                        lineNumber: 111,
+                                        columnNumber: 9
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "components/Calendar.js",
+                                lineNumber: 109,
+                                columnNumber: 7
+                            }, this),
+                            /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("div", {
+                                className: "text-center",
+                                children: /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("button", {
+                                    onClick: handleBuyClick,
+                                    children: "Buy"
+                                }, void 0, false, {
+                                    fileName: "components/Calendar.js",
+                                    lineNumber: 120,
+                                    columnNumber: 7
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "components/Calendar.js",
+                                lineNumber: 119,
+                                columnNumber: 7
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "components/Calendar.js",
+                        lineNumber: 55,
+                        columnNumber: 7
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "components/Calendar.js",
+                lineNumber: 53,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "components/Calendar.js",
+        lineNumber: 50,
+        columnNumber: 5
+    }, this);
+}
+_s(Calendar, "iL5HLbpN84l2CNmDxYVmW0hkFC4=");
+_c = Calendar;
+exports.default = Calendar;
+var _c;
+$RefreshReg$(_c, "Calendar");
+
+  $parcel$ReactRefreshHelpers$e412.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-dev-runtime":"iTorj","react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bIDtH":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+// Initialize contract & set global variables
+parcelHelpers.export(exports, "initContract", ()=>initContract);
+parcelHelpers.export(exports, "logout", ()=>logout);
+parcelHelpers.export(exports, "login", ()=>login);
+var _nearApiJs = require("near-api-js");
+var _config = require("./config");
+var _configDefault = parcelHelpers.interopDefault(_config);
+// NEAR
+var _nearWallet = require("./near-wallet");
+const CONTRACT_NAME = "dev-1692813334115-18963243556435";
+const nearConfig = (0, _configDefault.default)("development");
+// When creating the wallet you can optionally ask to create an access key
+// Having the key enables to call non-payable methods without interrupting the user to sign
+const wallet = new (0, _nearWallet.Wallet)({
+    createAccessKeyFor: CONTRACT_NAME
+});
+async function initContract() {
+    // Initialize connection to the NEAR testnet
+    const near = await (0, _nearApiJs.connect)(Object.assign({
+        deps: {
+            keyStore: new (0, _nearApiJs.keyStores).BrowserLocalStorageKeyStore()
+        }
+    }, nearConfig));
+    // Getting the Account ID. If still unauthorized, it's just empty string
+    wallet.accountId = window.wallet.getAccountId();
+    // Initializing our contract APIs by contract name and configuration
+    window.contract = await new (0, _nearApiJs.Contract)(window.wallet.startUp(), nearConfig.contractName, {
+        // View methods are read only. They don't modify the state, but usually return some value.
+        viewMethods: [
+            "event_count"
+        ],
+        // Change methods can modify the state. But you don't receive the returned value when called.
+        changeMethods: [
+            "add_event",
+            "add_vote",
+            "list_events"
+        ]
+    });
+}
+function logout() {
+    window.wallet.signOut();
+    // reload page
+    window.location.replace(window.location.origin + window.location.pathname);
+}
+function login() {
+    // Allow the current app to make calls to the specified contract on the
+    // user's behalf.
+    // This works by creating a new access key for the user's account and storing
+    // the private key in localStorage.
+    window.wallet.requestSignIn(nearConfig.contractName);
+}
+
+},{"near-api-js":"ohc3m","./config":"bSr8D","./near-wallet":"dg9wB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ohc3m":[function(require,module,exports) {
+"use strict";
+var __createBinding = this && this.__createBinding || (Object.create ? function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) desc = {
+        enumerable: true,
+        get: function() {
+            return m[k];
+        }
+    };
+    Object.defineProperty(o, k2, desc);
+} : function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+});
+var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function(o, v) {
+    Object.defineProperty(o, "default", {
+        enumerable: true,
+        value: v
+    });
+} : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = this && this.__importStar || function(mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) {
+        for(var k in mod)if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    }
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __exportStar = this && this.__exportStar || function(m, exports1) {
+    for(var p in m)if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports1, p)) __createBinding(exports1, m, p);
+};
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.keyStores = void 0;
+/** @hidden @module */ exports.keyStores = __importStar(require("9be656c000e30bfb"));
+__exportStar(require("3ab88f382f4ceb44"), exports);
+__exportStar(require("d046daabcfea0576"), exports);
+require("7839426a8217c1ea");
+
+},{"9be656c000e30bfb":"aBfSM","3ab88f382f4ceb44":"gtZXS","d046daabcfea0576":"7yTE6","7839426a8217c1ea":"2YFhR"}],"aBfSM":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.MergeKeyStore = exports.BrowserLocalStorageKeyStore = exports.InMemoryKeyStore = exports.KeyStore = void 0;
+/** @hidden @module */ const keystore_1 = require("6e29e94457fcf2ab");
+Object.defineProperty(exports, "KeyStore", {
+    enumerable: true,
+    get: function() {
+        return keystore_1.KeyStore;
+    }
+});
+const in_memory_key_store_1 = require("b8222c4130a04b14");
+Object.defineProperty(exports, "InMemoryKeyStore", {
+    enumerable: true,
+    get: function() {
+        return in_memory_key_store_1.InMemoryKeyStore;
+    }
+});
+const browser_local_storage_key_store_1 = require("201553e3d8c8bca9");
+Object.defineProperty(exports, "BrowserLocalStorageKeyStore", {
+    enumerable: true,
+    get: function() {
+        return browser_local_storage_key_store_1.BrowserLocalStorageKeyStore;
+    }
+});
+const merge_key_store_1 = require("91ca7563f3126bf6");
+Object.defineProperty(exports, "MergeKeyStore", {
+    enumerable: true,
+    get: function() {
+        return merge_key_store_1.MergeKeyStore;
+    }
+});
+
+},{"6e29e94457fcf2ab":"5Moei","b8222c4130a04b14":"fTfs7","201553e3d8c8bca9":"l5Tuv","91ca7563f3126bf6":"kgqhu"}],"5Moei":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.KeyStore = void 0;
+var keystores_1 = require("b5681d1f54d38cf1");
+Object.defineProperty(exports, "KeyStore", {
+    enumerable: true,
+    get: function() {
+        return keystores_1.KeyStore;
+    }
+});
+
+},{"b5681d1f54d38cf1":"91sHL"}],"91sHL":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.MergeKeyStore = exports.KeyStore = exports.InMemoryKeyStore = void 0;
+var in_memory_key_store_1 = require("fd007117385a397a");
+Object.defineProperty(exports, "InMemoryKeyStore", {
+    enumerable: true,
+    get: function() {
+        return in_memory_key_store_1.InMemoryKeyStore;
+    }
+});
+var keystore_1 = require("fda705680a797bc9");
+Object.defineProperty(exports, "KeyStore", {
+    enumerable: true,
+    get: function() {
+        return keystore_1.KeyStore;
+    }
+});
+var merge_key_store_1 = require("65bdef3d94954dec");
+Object.defineProperty(exports, "MergeKeyStore", {
+    enumerable: true,
+    get: function() {
+        return merge_key_store_1.MergeKeyStore;
+    }
+});
+
+},{"fd007117385a397a":"2XFZd","fda705680a797bc9":"596MR","65bdef3d94954dec":"h12dg"}],"2XFZd":[function(require,module,exports) {
+"use strict";
+var __awaiter = this && this.__awaiter || function(thisArg, _arguments, P, generator) {
+    function adopt(value) {
+        return value instanceof P ? value : new P(function(resolve) {
+            resolve(value);
+        });
+    }
+    return new (P || (P = Promise))(function(resolve, reject) {
+        function fulfilled(value) {
+            try {
+                step(generator.next(value));
+            } catch (e) {
+                reject(e);
+            }
+        }
+        function rejected(value) {
+            try {
+                step(generator["throw"](value));
+            } catch (e) {
+                reject(e);
+            }
+        }
+        function step(result) {
+            result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
+        }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.InMemoryKeyStore = void 0;
+const crypto_1 = require("770a2073221255ac");
+const keystore_1 = require("d0d22d452e4abf0f");
+/**
+ * Simple in-memory keystore for mainly for testing purposes.
+ *
+ * @see [https://docs.near.org/docs/develop/front-end/naj-quick-reference#key-store](https://docs.near.org/docs/develop/front-end/naj-quick-reference#key-store)
+ * @example
+ * ```js
+ * import { connect, keyStores, utils } from 'near-api-js';
+ *
+ * const privateKey = '.......';
+ * const keyPair = utils.KeyPair.fromString(privateKey);
+ *
+ * const keyStore = new keyStores.InMemoryKeyStore();
+ * keyStore.setKey('testnet', 'example-account.testnet', keyPair);
+ *
+ * const config = {
+ *   keyStore, // instance of InMemoryKeyStore
+ *   networkId: 'testnet',
+ *   nodeUrl: 'https://rpc.testnet.near.org',
+ *   walletUrl: 'https://wallet.testnet.near.org',
+ *   helperUrl: 'https://helper.testnet.near.org',
+ *   explorerUrl: 'https://explorer.testnet.near.org'
+ * };
+ *
+ * // inside an async function
+ * const near = await connect(config)
+ * ```
+ */ class InMemoryKeyStore extends keystore_1.KeyStore {
+    constructor(){
+        super();
+        this.keys = {};
+    }
+    /**
+     * Stores a {@link utils/key_pair!KeyPair} in in-memory storage item
+     * @param networkId The targeted network. (ex. default, betanet, etc…)
+     * @param accountId The NEAR account tied to the key pair
+     * @param keyPair The key pair to store in local storage
+     */ setKey(networkId, accountId, keyPair) {
+        return __awaiter(this, void 0, void 0, function*() {
+            this.keys[`${accountId}:${networkId}`] = keyPair.toString();
+        });
+    }
+    /**
+     * Gets a {@link utils/key_pair!KeyPair} from in-memory storage
+     * @param networkId The targeted network. (ex. default, betanet, etc…)
+     * @param accountId The NEAR account tied to the key pair
+     * @returns {Promise<KeyPair>}
+     */ getKey(networkId, accountId) {
+        return __awaiter(this, void 0, void 0, function*() {
+            const value = this.keys[`${accountId}:${networkId}`];
+            if (!value) return null;
+            return crypto_1.KeyPair.fromString(value);
+        });
+    }
+    /**
+     * Removes a {@link utils/key_pair!KeyPair} from in-memory storage
+     * @param networkId The targeted network. (ex. default, betanet, etc…)
+     * @param accountId The NEAR account tied to the key pair
+     */ removeKey(networkId, accountId) {
+        return __awaiter(this, void 0, void 0, function*() {
+            delete this.keys[`${accountId}:${networkId}`];
+        });
+    }
+    /**
+     * Removes all {@link utils/key_pair!KeyPair} from in-memory storage
+     */ clear() {
+        return __awaiter(this, void 0, void 0, function*() {
+            this.keys = {};
+        });
+    }
+    /**
+     * Get the network(s) from in-memory storage
+     * @returns {Promise<string[]>}
+     */ getNetworks() {
+        return __awaiter(this, void 0, void 0, function*() {
+            const result = new Set();
+            Object.keys(this.keys).forEach((key)=>{
+                const parts = key.split(":");
+                result.add(parts[1]);
+            });
+            return Array.from(result.values());
+        });
+    }
+    /**
+     * Gets the account(s) from in-memory storage
+     * @param networkId The targeted network. (ex. default, betanet, etc…)
+     */ getAccounts(networkId) {
+        return __awaiter(this, void 0, void 0, function*() {
+            const result = new Array();
+            Object.keys(this.keys).forEach((key)=>{
+                const parts = key.split(":");
+                if (parts[parts.length - 1] === networkId) result.push(parts.slice(0, parts.length - 1).join(":"));
+            });
+            return result;
+        });
+    }
+    /** @hidden */ toString() {
+        return "InMemoryKeyStore";
+    }
+}
+exports.InMemoryKeyStore = InMemoryKeyStore;
+
+},{"770a2073221255ac":"51QAe","d0d22d452e4abf0f":"596MR"}],"51QAe":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.PublicKey = exports.KeyPairEd25519 = exports.KeyPair = exports.KeyType = void 0;
+var constants_1 = require("23406e6f4daf26fa");
+Object.defineProperty(exports, "KeyType", {
+    enumerable: true,
+    get: function() {
+        return constants_1.KeyType;
+    }
+});
+var key_pair_1 = require("e7b3de2cc6509ca5");
+Object.defineProperty(exports, "KeyPair", {
+    enumerable: true,
+    get: function() {
+        return key_pair_1.KeyPair;
+    }
+});
+var key_pair_ed25519_1 = require("64631b2a79254b29");
+Object.defineProperty(exports, "KeyPairEd25519", {
+    enumerable: true,
+    get: function() {
+        return key_pair_ed25519_1.KeyPairEd25519;
+    }
+});
+var public_key_1 = require("d1a8c1e3705754dc");
+Object.defineProperty(exports, "PublicKey", {
+    enumerable: true,
+    get: function() {
+        return public_key_1.PublicKey;
+    }
+});
+
+},{"23406e6f4daf26fa":"jKdYX","e7b3de2cc6509ca5":"98lq4","64631b2a79254b29":"fpzI9","d1a8c1e3705754dc":"1SRGM"}],"jKdYX":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.KeyType = void 0;
+/** All supported key types */ var KeyType;
+(function(KeyType) {
+    KeyType[KeyType["ED25519"] = 0] = "ED25519";
+})(KeyType = exports.KeyType || (exports.KeyType = {}));
+
+},{}],"98lq4":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.KeyPair = void 0;
+const key_pair_base_1 = require("87f48ff75e61ef7a");
+const key_pair_ed25519_1 = require("21a96214583a9315");
+class KeyPair extends key_pair_base_1.KeyPairBase {
+    /**
+     * @param curve Name of elliptical curve, case-insensitive
+     * @returns Random KeyPair based on the curve
+     */ static fromRandom(curve) {
+        switch(curve.toUpperCase()){
+            case "ED25519":
+                return key_pair_ed25519_1.KeyPairEd25519.fromRandom();
+            default:
+                throw new Error(`Unknown curve ${curve}`);
+        }
+    }
+    static fromString(encodedKey) {
+        const parts = encodedKey.split(":");
+        if (parts.length === 1) return new key_pair_ed25519_1.KeyPairEd25519(parts[0]);
+        else if (parts.length === 2) switch(parts[0].toUpperCase()){
+            case "ED25519":
+                return new key_pair_ed25519_1.KeyPairEd25519(parts[1]);
+            default:
+                throw new Error(`Unknown curve: ${parts[0]}`);
+        }
+        else throw new Error("Invalid encoded key format, must be <curve>:<encoded key>");
+    }
+}
+exports.KeyPair = KeyPair;
+
+},{"87f48ff75e61ef7a":"hU8EK","21a96214583a9315":"fpzI9"}],"hU8EK":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.KeyPairBase = void 0;
+class KeyPairBase {
+}
+exports.KeyPairBase = KeyPairBase;
+
+},{}],"fpzI9":[function(require,module,exports) {
+"use strict";
+var __importDefault = this && this.__importDefault || function(mod) {
+    return mod && mod.__esModule ? mod : {
+        "default": mod
+    };
+};
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.KeyPairEd25519 = void 0;
+const borsh_1 = require("f66062c18a40fe28");
+const tweetnacl_1 = __importDefault(require("8d5b1db7e805f60c"));
+const constants_1 = require("d9bf9cd33b990706");
+const key_pair_base_1 = require("ead508dde7f6667d");
+const public_key_1 = require("f2d1b21f7b515d46");
+/**
+ * This class provides key pair functionality for Ed25519 curve:
+ * generating key pairs, encoding key pairs, signing and verifying.
+ */ class KeyPairEd25519 extends key_pair_base_1.KeyPairBase {
+    /**
+     * Construct an instance of key pair given a secret key.
+     * It's generally assumed that these are encoded in base58.
+     * @param {string} secretKey
+     */ constructor(secretKey){
+        super();
+        const keyPair = tweetnacl_1.default.sign.keyPair.fromSecretKey((0, borsh_1.baseDecode)(secretKey));
+        this.publicKey = new public_key_1.PublicKey({
+            keyType: constants_1.KeyType.ED25519,
+            data: keyPair.publicKey
+        });
+        this.secretKey = secretKey;
+    }
+    /**
+     * Generate a new random keypair.
+     * @example
+     * const keyRandom = KeyPair.fromRandom();
+     * keyRandom.publicKey
+     * // returns [PUBLIC_KEY]
+     *
+     * keyRandom.secretKey
+     * // returns [SECRET_KEY]
+     */ static fromRandom() {
+        const newKeyPair = tweetnacl_1.default.sign.keyPair();
+        return new KeyPairEd25519((0, borsh_1.baseEncode)(newKeyPair.secretKey));
+    }
+    sign(message) {
+        const signature = tweetnacl_1.default.sign.detached(message, (0, borsh_1.baseDecode)(this.secretKey));
+        return {
+            signature,
+            publicKey: this.publicKey
+        };
+    }
+    verify(message, signature) {
+        return this.publicKey.verify(message, signature);
+    }
+    toString() {
+        return `ed25519:${this.secretKey}`;
+    }
+    getPublicKey() {
+        return this.publicKey;
+    }
+}
+exports.KeyPairEd25519 = KeyPairEd25519;
+
+},{"f66062c18a40fe28":"4JCmN","8d5b1db7e805f60c":"3J9rh","d9bf9cd33b990706":"jKdYX","ead508dde7f6667d":"hU8EK","f2d1b21f7b515d46":"1SRGM"}],"4JCmN":[function(require,module,exports) {
+var Buffer = require("699c164eb7aea5db").Buffer;
+"use strict";
+var __createBinding = this && this.__createBinding || (Object.create ? function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    Object.defineProperty(o, k2, {
+        enumerable: true,
+        get: function() {
+            return m[k];
+        }
+    });
+} : function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+});
+var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function(o, v) {
+    Object.defineProperty(o, "default", {
+        enumerable: true,
+        value: v
+    });
+} : function(o, v) {
+    o["default"] = v;
+});
+var __decorate = this && this.__decorate || function(decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for(var i = decorators.length - 1; i >= 0; i--)if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __importStar = this && this.__importStar || function(mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) {
+        for(var k in mod)if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    }
+    __setModuleDefault(result, mod);
+    return result;
+};
+var __importDefault = this && this.__importDefault || function(mod) {
+    return mod && mod.__esModule ? mod : {
+        "default": mod
+    };
+};
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.deserializeUnchecked = exports.deserialize = exports.serialize = exports.BinaryReader = exports.BinaryWriter = exports.BorshError = exports.baseDecode = exports.baseEncode = void 0;
+const bn_js_1 = __importDefault(require("17e7c0a10366aaf7"));
+const bs58_1 = __importDefault(require("d1e02929d3f43eae"));
+// TODO: Make sure this polyfill not included when not required
+const encoding = __importStar(require("b378096fead01c9a"));
+const ResolvedTextDecoder = typeof TextDecoder !== "function" ? encoding.TextDecoder : TextDecoder;
+const textDecoder = new ResolvedTextDecoder("utf-8", {
+    fatal: true
+});
+function baseEncode(value) {
+    if (typeof value === "string") value = Buffer.from(value, "utf8");
+    return bs58_1.default.encode(Buffer.from(value));
+}
+exports.baseEncode = baseEncode;
+function baseDecode(value) {
+    return Buffer.from(bs58_1.default.decode(value));
+}
+exports.baseDecode = baseDecode;
+const INITIAL_LENGTH = 1024;
+class BorshError extends Error {
+    constructor(message){
+        super(message);
+        this.fieldPath = [];
+        this.originalMessage = message;
+    }
+    addToFieldPath(fieldName) {
+        this.fieldPath.splice(0, 0, fieldName);
+        // NOTE: Modifying message directly as jest doesn't use .toString()
+        this.message = this.originalMessage + ": " + this.fieldPath.join(".");
+    }
+}
+exports.BorshError = BorshError;
+/// Binary encoder.
+class BinaryWriter {
+    constructor(){
+        this.buf = Buffer.alloc(INITIAL_LENGTH);
+        this.length = 0;
+    }
+    maybeResize() {
+        if (this.buf.length < 16 + this.length) this.buf = Buffer.concat([
+            this.buf,
+            Buffer.alloc(INITIAL_LENGTH)
+        ]);
+    }
+    writeU8(value) {
+        this.maybeResize();
+        this.buf.writeUInt8(value, this.length);
+        this.length += 1;
+    }
+    writeU16(value) {
+        this.maybeResize();
+        this.buf.writeUInt16LE(value, this.length);
+        this.length += 2;
+    }
+    writeU32(value) {
+        this.maybeResize();
+        this.buf.writeUInt32LE(value, this.length);
+        this.length += 4;
+    }
+    writeU64(value) {
+        this.maybeResize();
+        this.writeBuffer(Buffer.from(new bn_js_1.default(value).toArray("le", 8)));
+    }
+    writeU128(value) {
+        this.maybeResize();
+        this.writeBuffer(Buffer.from(new bn_js_1.default(value).toArray("le", 16)));
+    }
+    writeU256(value) {
+        this.maybeResize();
+        this.writeBuffer(Buffer.from(new bn_js_1.default(value).toArray("le", 32)));
+    }
+    writeU512(value) {
+        this.maybeResize();
+        this.writeBuffer(Buffer.from(new bn_js_1.default(value).toArray("le", 64)));
+    }
+    writeBuffer(buffer) {
+        // Buffer.from is needed as this.buf.subarray can return plain Uint8Array in browser
+        this.buf = Buffer.concat([
+            Buffer.from(this.buf.subarray(0, this.length)),
+            buffer,
+            Buffer.alloc(INITIAL_LENGTH)
+        ]);
+        this.length += buffer.length;
+    }
+    writeString(str) {
+        this.maybeResize();
+        const b = Buffer.from(str, "utf8");
+        this.writeU32(b.length);
+        this.writeBuffer(b);
+    }
+    writeFixedArray(array) {
+        this.writeBuffer(Buffer.from(array));
+    }
+    writeArray(array, fn) {
+        this.maybeResize();
+        this.writeU32(array.length);
+        for (const elem of array){
+            this.maybeResize();
+            fn(elem);
+        }
+    }
+    toArray() {
+        return this.buf.subarray(0, this.length);
+    }
+}
+exports.BinaryWriter = BinaryWriter;
+function handlingRangeError(target, propertyKey, propertyDescriptor) {
+    const originalMethod = propertyDescriptor.value;
+    propertyDescriptor.value = function(...args) {
+        try {
+            return originalMethod.apply(this, args);
+        } catch (e) {
+            if (e instanceof RangeError) {
+                const code = e.code;
+                if ([
+                    "ERR_BUFFER_OUT_OF_BOUNDS",
+                    "ERR_OUT_OF_RANGE"
+                ].indexOf(code) >= 0) throw new BorshError("Reached the end of buffer when deserializing");
+            }
+            throw e;
+        }
+    };
+}
+class BinaryReader {
+    constructor(buf){
+        this.buf = buf;
+        this.offset = 0;
+    }
+    readU8() {
+        const value = this.buf.readUInt8(this.offset);
+        this.offset += 1;
+        return value;
+    }
+    readU16() {
+        const value = this.buf.readUInt16LE(this.offset);
+        this.offset += 2;
+        return value;
+    }
+    readU32() {
+        const value = this.buf.readUInt32LE(this.offset);
+        this.offset += 4;
+        return value;
+    }
+    readU64() {
+        const buf = this.readBuffer(8);
+        return new bn_js_1.default(buf, "le");
+    }
+    readU128() {
+        const buf = this.readBuffer(16);
+        return new bn_js_1.default(buf, "le");
+    }
+    readU256() {
+        const buf = this.readBuffer(32);
+        return new bn_js_1.default(buf, "le");
+    }
+    readU512() {
+        const buf = this.readBuffer(64);
+        return new bn_js_1.default(buf, "le");
+    }
+    readBuffer(len) {
+        if (this.offset + len > this.buf.length) throw new BorshError(`Expected buffer length ${len} isn't within bounds`);
+        const result = this.buf.slice(this.offset, this.offset + len);
+        this.offset += len;
+        return result;
+    }
+    readString() {
+        const len = this.readU32();
+        const buf = this.readBuffer(len);
+        try {
+            // NOTE: Using TextDecoder to fail on invalid UTF-8
+            return textDecoder.decode(buf);
+        } catch (e) {
+            throw new BorshError(`Error decoding UTF-8 string: ${e}`);
+        }
+    }
+    readFixedArray(len) {
+        return new Uint8Array(this.readBuffer(len));
+    }
+    readArray(fn) {
+        const len = this.readU32();
+        const result = Array();
+        for(let i = 0; i < len; ++i)result.push(fn());
+        return result;
+    }
+}
+__decorate([
+    handlingRangeError
+], BinaryReader.prototype, "readU8", null);
+__decorate([
+    handlingRangeError
+], BinaryReader.prototype, "readU16", null);
+__decorate([
+    handlingRangeError
+], BinaryReader.prototype, "readU32", null);
+__decorate([
+    handlingRangeError
+], BinaryReader.prototype, "readU64", null);
+__decorate([
+    handlingRangeError
+], BinaryReader.prototype, "readU128", null);
+__decorate([
+    handlingRangeError
+], BinaryReader.prototype, "readU256", null);
+__decorate([
+    handlingRangeError
+], BinaryReader.prototype, "readU512", null);
+__decorate([
+    handlingRangeError
+], BinaryReader.prototype, "readString", null);
+__decorate([
+    handlingRangeError
+], BinaryReader.prototype, "readFixedArray", null);
+__decorate([
+    handlingRangeError
+], BinaryReader.prototype, "readArray", null);
+exports.BinaryReader = BinaryReader;
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+function serializeField(schema, fieldName, value, fieldType, writer) {
+    try {
+        // TODO: Handle missing values properly (make sure they never result in just skipped write)
+        if (typeof fieldType === "string") writer[`write${capitalizeFirstLetter(fieldType)}`](value);
+        else if (fieldType instanceof Array) {
+            if (typeof fieldType[0] === "number") {
+                if (value.length !== fieldType[0]) throw new BorshError(`Expecting byte array of length ${fieldType[0]}, but got ${value.length} bytes`);
+                writer.writeFixedArray(value);
+            } else if (fieldType.length === 2 && typeof fieldType[1] === "number") {
+                if (value.length !== fieldType[1]) throw new BorshError(`Expecting byte array of length ${fieldType[1]}, but got ${value.length} bytes`);
+                for(let i = 0; i < fieldType[1]; i++)serializeField(schema, null, value[i], fieldType[0], writer);
+            } else writer.writeArray(value, (item)=>{
+                serializeField(schema, fieldName, item, fieldType[0], writer);
+            });
+        } else if (fieldType.kind !== undefined) switch(fieldType.kind){
+            case "option":
+                if (value === null || value === undefined) writer.writeU8(0);
+                else {
+                    writer.writeU8(1);
+                    serializeField(schema, fieldName, value, fieldType.type, writer);
+                }
+                break;
+            case "map":
+                writer.writeU32(value.size);
+                value.forEach((val, key)=>{
+                    serializeField(schema, fieldName, key, fieldType.key, writer);
+                    serializeField(schema, fieldName, val, fieldType.value, writer);
+                });
+                break;
+            default:
+                throw new BorshError(`FieldType ${fieldType} unrecognized`);
+        }
+        else serializeStruct(schema, value, writer);
+    } catch (error) {
+        if (error instanceof BorshError) error.addToFieldPath(fieldName);
+        throw error;
+    }
+}
+function serializeStruct(schema, obj, writer) {
+    if (typeof obj.borshSerialize === "function") {
+        obj.borshSerialize(writer);
+        return;
+    }
+    const structSchema = schema.get(obj.constructor);
+    if (!structSchema) throw new BorshError(`Class ${obj.constructor.name} is missing in schema`);
+    if (structSchema.kind === "struct") structSchema.fields.map(([fieldName, fieldType])=>{
+        serializeField(schema, fieldName, obj[fieldName], fieldType, writer);
+    });
+    else if (structSchema.kind === "enum") {
+        const name = obj[structSchema.field];
+        for(let idx = 0; idx < structSchema.values.length; ++idx){
+            const [fieldName, fieldType] = structSchema.values[idx];
+            if (fieldName === name) {
+                writer.writeU8(idx);
+                serializeField(schema, fieldName, obj[fieldName], fieldType, writer);
+                break;
+            }
+        }
+    } else throw new BorshError(`Unexpected schema kind: ${structSchema.kind} for ${obj.constructor.name}`);
+}
+/// Serialize given object using schema of the form:
+/// { class_name -> [ [field_name, field_type], .. ], .. }
+function serialize(schema, obj, Writer = BinaryWriter) {
+    const writer = new Writer();
+    serializeStruct(schema, obj, writer);
+    return writer.toArray();
+}
+exports.serialize = serialize;
+function deserializeField(schema, fieldName, fieldType, reader) {
+    try {
+        if (typeof fieldType === "string") return reader[`read${capitalizeFirstLetter(fieldType)}`]();
+        if (fieldType instanceof Array) {
+            if (typeof fieldType[0] === "number") return reader.readFixedArray(fieldType[0]);
+            else if (typeof fieldType[1] === "number") {
+                const arr = [];
+                for(let i = 0; i < fieldType[1]; i++)arr.push(deserializeField(schema, null, fieldType[0], reader));
+                return arr;
+            } else return reader.readArray(()=>deserializeField(schema, fieldName, fieldType[0], reader));
+        }
+        if (fieldType.kind === "option") {
+            const option = reader.readU8();
+            if (option) return deserializeField(schema, fieldName, fieldType.type, reader);
+            return undefined;
+        }
+        if (fieldType.kind === "map") {
+            let map = new Map();
+            const length = reader.readU32();
+            for(let i = 0; i < length; i++){
+                const key = deserializeField(schema, fieldName, fieldType.key, reader);
+                const val = deserializeField(schema, fieldName, fieldType.value, reader);
+                map.set(key, val);
+            }
+            return map;
+        }
+        return deserializeStruct(schema, fieldType, reader);
+    } catch (error) {
+        if (error instanceof BorshError) error.addToFieldPath(fieldName);
+        throw error;
+    }
+}
+function deserializeStruct(schema, classType, reader) {
+    if (typeof classType.borshDeserialize === "function") return classType.borshDeserialize(reader);
+    const structSchema = schema.get(classType);
+    if (!structSchema) throw new BorshError(`Class ${classType.name} is missing in schema`);
+    if (structSchema.kind === "struct") {
+        const result = {};
+        for (const [fieldName, fieldType] of schema.get(classType).fields)result[fieldName] = deserializeField(schema, fieldName, fieldType, reader);
+        return new classType(result);
+    }
+    if (structSchema.kind === "enum") {
+        const idx = reader.readU8();
+        if (idx >= structSchema.values.length) throw new BorshError(`Enum index: ${idx} is out of range`);
+        const [fieldName, fieldType] = structSchema.values[idx];
+        const fieldValue = deserializeField(schema, fieldName, fieldType, reader);
+        return new classType({
+            [fieldName]: fieldValue
+        });
+    }
+    throw new BorshError(`Unexpected schema kind: ${structSchema.kind} for ${classType.constructor.name}`);
+}
+/// Deserializes object from bytes using schema.
+function deserialize(schema, classType, buffer, Reader = BinaryReader) {
+    const reader = new Reader(buffer);
+    const result = deserializeStruct(schema, classType, reader);
+    if (reader.offset < buffer.length) throw new BorshError(`Unexpected ${buffer.length - reader.offset} bytes after deserialized data`);
+    return result;
+}
+exports.deserialize = deserialize;
+/// Deserializes object from bytes using schema, without checking the length read
+function deserializeUnchecked(schema, classType, buffer, Reader = BinaryReader) {
+    const reader = new Reader(buffer);
+    return deserializeStruct(schema, classType, reader);
+}
+exports.deserializeUnchecked = deserializeUnchecked;
+
+},{"699c164eb7aea5db":"fCgem","17e7c0a10366aaf7":"VopIn","d1e02929d3f43eae":"4ji3p","b378096fead01c9a":"feCA6"}],"fCgem":[function(require,module,exports) {
 /*!
  * The buffer module from node.js, for the browser.
  *
@@ -39514,820 +40271,7 @@ exports.write = function(buffer, value, offset, isLE, mLen, nBytes) {
     buffer[offset + i - d] |= s * 128;
 };
 
-},{}],"ohc3m":[function(require,module,exports) {
-"use strict";
-var __createBinding = this && this.__createBinding || (Object.create ? function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) desc = {
-        enumerable: true,
-        get: function() {
-            return m[k];
-        }
-    };
-    Object.defineProperty(o, k2, desc);
-} : function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-});
-var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function(o, v) {
-    Object.defineProperty(o, "default", {
-        enumerable: true,
-        value: v
-    });
-} : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = this && this.__importStar || function(mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) {
-        for(var k in mod)if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    }
-    __setModuleDefault(result, mod);
-    return result;
-};
-var __exportStar = this && this.__exportStar || function(m, exports1) {
-    for(var p in m)if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports1, p)) __createBinding(exports1, m, p);
-};
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.keyStores = void 0;
-/** @hidden @module */ exports.keyStores = __importStar(require("9be656c000e30bfb"));
-__exportStar(require("3ab88f382f4ceb44"), exports);
-__exportStar(require("d046daabcfea0576"), exports);
-require("7839426a8217c1ea");
-
-},{"9be656c000e30bfb":"aBfSM","3ab88f382f4ceb44":"gtZXS","d046daabcfea0576":"7yTE6","7839426a8217c1ea":"2YFhR"}],"aBfSM":[function(require,module,exports) {
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.MergeKeyStore = exports.BrowserLocalStorageKeyStore = exports.InMemoryKeyStore = exports.KeyStore = void 0;
-/** @hidden @module */ const keystore_1 = require("6e29e94457fcf2ab");
-Object.defineProperty(exports, "KeyStore", {
-    enumerable: true,
-    get: function() {
-        return keystore_1.KeyStore;
-    }
-});
-const in_memory_key_store_1 = require("b8222c4130a04b14");
-Object.defineProperty(exports, "InMemoryKeyStore", {
-    enumerable: true,
-    get: function() {
-        return in_memory_key_store_1.InMemoryKeyStore;
-    }
-});
-const browser_local_storage_key_store_1 = require("201553e3d8c8bca9");
-Object.defineProperty(exports, "BrowserLocalStorageKeyStore", {
-    enumerable: true,
-    get: function() {
-        return browser_local_storage_key_store_1.BrowserLocalStorageKeyStore;
-    }
-});
-const merge_key_store_1 = require("91ca7563f3126bf6");
-Object.defineProperty(exports, "MergeKeyStore", {
-    enumerable: true,
-    get: function() {
-        return merge_key_store_1.MergeKeyStore;
-    }
-});
-
-},{"6e29e94457fcf2ab":"5Moei","b8222c4130a04b14":"fTfs7","201553e3d8c8bca9":"l5Tuv","91ca7563f3126bf6":"kgqhu"}],"5Moei":[function(require,module,exports) {
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.KeyStore = void 0;
-var keystores_1 = require("b5681d1f54d38cf1");
-Object.defineProperty(exports, "KeyStore", {
-    enumerable: true,
-    get: function() {
-        return keystores_1.KeyStore;
-    }
-});
-
-},{"b5681d1f54d38cf1":"91sHL"}],"91sHL":[function(require,module,exports) {
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.MergeKeyStore = exports.KeyStore = exports.InMemoryKeyStore = void 0;
-var in_memory_key_store_1 = require("fd007117385a397a");
-Object.defineProperty(exports, "InMemoryKeyStore", {
-    enumerable: true,
-    get: function() {
-        return in_memory_key_store_1.InMemoryKeyStore;
-    }
-});
-var keystore_1 = require("fda705680a797bc9");
-Object.defineProperty(exports, "KeyStore", {
-    enumerable: true,
-    get: function() {
-        return keystore_1.KeyStore;
-    }
-});
-var merge_key_store_1 = require("65bdef3d94954dec");
-Object.defineProperty(exports, "MergeKeyStore", {
-    enumerable: true,
-    get: function() {
-        return merge_key_store_1.MergeKeyStore;
-    }
-});
-
-},{"fd007117385a397a":"2XFZd","fda705680a797bc9":"596MR","65bdef3d94954dec":"h12dg"}],"2XFZd":[function(require,module,exports) {
-"use strict";
-var __awaiter = this && this.__awaiter || function(thisArg, _arguments, P, generator) {
-    function adopt(value) {
-        return value instanceof P ? value : new P(function(resolve) {
-            resolve(value);
-        });
-    }
-    return new (P || (P = Promise))(function(resolve, reject) {
-        function fulfilled(value) {
-            try {
-                step(generator.next(value));
-            } catch (e) {
-                reject(e);
-            }
-        }
-        function rejected(value) {
-            try {
-                step(generator["throw"](value));
-            } catch (e) {
-                reject(e);
-            }
-        }
-        function step(result) {
-            result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected);
-        }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.InMemoryKeyStore = void 0;
-const crypto_1 = require("770a2073221255ac");
-const keystore_1 = require("d0d22d452e4abf0f");
-/**
- * Simple in-memory keystore for mainly for testing purposes.
- *
- * @see [https://docs.near.org/docs/develop/front-end/naj-quick-reference#key-store](https://docs.near.org/docs/develop/front-end/naj-quick-reference#key-store)
- * @example
- * ```js
- * import { connect, keyStores, utils } from 'near-api-js';
- *
- * const privateKey = '.......';
- * const keyPair = utils.KeyPair.fromString(privateKey);
- *
- * const keyStore = new keyStores.InMemoryKeyStore();
- * keyStore.setKey('testnet', 'example-account.testnet', keyPair);
- *
- * const config = {
- *   keyStore, // instance of InMemoryKeyStore
- *   networkId: 'testnet',
- *   nodeUrl: 'https://rpc.testnet.near.org',
- *   walletUrl: 'https://wallet.testnet.near.org',
- *   helperUrl: 'https://helper.testnet.near.org',
- *   explorerUrl: 'https://explorer.testnet.near.org'
- * };
- *
- * // inside an async function
- * const near = await connect(config)
- * ```
- */ class InMemoryKeyStore extends keystore_1.KeyStore {
-    constructor(){
-        super();
-        this.keys = {};
-    }
-    /**
-     * Stores a {@link utils/key_pair!KeyPair} in in-memory storage item
-     * @param networkId The targeted network. (ex. default, betanet, etc…)
-     * @param accountId The NEAR account tied to the key pair
-     * @param keyPair The key pair to store in local storage
-     */ setKey(networkId, accountId, keyPair) {
-        return __awaiter(this, void 0, void 0, function*() {
-            this.keys[`${accountId}:${networkId}`] = keyPair.toString();
-        });
-    }
-    /**
-     * Gets a {@link utils/key_pair!KeyPair} from in-memory storage
-     * @param networkId The targeted network. (ex. default, betanet, etc…)
-     * @param accountId The NEAR account tied to the key pair
-     * @returns {Promise<KeyPair>}
-     */ getKey(networkId, accountId) {
-        return __awaiter(this, void 0, void 0, function*() {
-            const value = this.keys[`${accountId}:${networkId}`];
-            if (!value) return null;
-            return crypto_1.KeyPair.fromString(value);
-        });
-    }
-    /**
-     * Removes a {@link utils/key_pair!KeyPair} from in-memory storage
-     * @param networkId The targeted network. (ex. default, betanet, etc…)
-     * @param accountId The NEAR account tied to the key pair
-     */ removeKey(networkId, accountId) {
-        return __awaiter(this, void 0, void 0, function*() {
-            delete this.keys[`${accountId}:${networkId}`];
-        });
-    }
-    /**
-     * Removes all {@link utils/key_pair!KeyPair} from in-memory storage
-     */ clear() {
-        return __awaiter(this, void 0, void 0, function*() {
-            this.keys = {};
-        });
-    }
-    /**
-     * Get the network(s) from in-memory storage
-     * @returns {Promise<string[]>}
-     */ getNetworks() {
-        return __awaiter(this, void 0, void 0, function*() {
-            const result = new Set();
-            Object.keys(this.keys).forEach((key)=>{
-                const parts = key.split(":");
-                result.add(parts[1]);
-            });
-            return Array.from(result.values());
-        });
-    }
-    /**
-     * Gets the account(s) from in-memory storage
-     * @param networkId The targeted network. (ex. default, betanet, etc…)
-     */ getAccounts(networkId) {
-        return __awaiter(this, void 0, void 0, function*() {
-            const result = new Array();
-            Object.keys(this.keys).forEach((key)=>{
-                const parts = key.split(":");
-                if (parts[parts.length - 1] === networkId) result.push(parts.slice(0, parts.length - 1).join(":"));
-            });
-            return result;
-        });
-    }
-    /** @hidden */ toString() {
-        return "InMemoryKeyStore";
-    }
-}
-exports.InMemoryKeyStore = InMemoryKeyStore;
-
-},{"770a2073221255ac":"51QAe","d0d22d452e4abf0f":"596MR"}],"51QAe":[function(require,module,exports) {
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.PublicKey = exports.KeyPairEd25519 = exports.KeyPair = exports.KeyType = void 0;
-var constants_1 = require("23406e6f4daf26fa");
-Object.defineProperty(exports, "KeyType", {
-    enumerable: true,
-    get: function() {
-        return constants_1.KeyType;
-    }
-});
-var key_pair_1 = require("e7b3de2cc6509ca5");
-Object.defineProperty(exports, "KeyPair", {
-    enumerable: true,
-    get: function() {
-        return key_pair_1.KeyPair;
-    }
-});
-var key_pair_ed25519_1 = require("64631b2a79254b29");
-Object.defineProperty(exports, "KeyPairEd25519", {
-    enumerable: true,
-    get: function() {
-        return key_pair_ed25519_1.KeyPairEd25519;
-    }
-});
-var public_key_1 = require("d1a8c1e3705754dc");
-Object.defineProperty(exports, "PublicKey", {
-    enumerable: true,
-    get: function() {
-        return public_key_1.PublicKey;
-    }
-});
-
-},{"23406e6f4daf26fa":"jKdYX","e7b3de2cc6509ca5":"98lq4","64631b2a79254b29":"fpzI9","d1a8c1e3705754dc":"1SRGM"}],"jKdYX":[function(require,module,exports) {
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.KeyType = void 0;
-/** All supported key types */ var KeyType;
-(function(KeyType) {
-    KeyType[KeyType["ED25519"] = 0] = "ED25519";
-})(KeyType = exports.KeyType || (exports.KeyType = {}));
-
-},{}],"98lq4":[function(require,module,exports) {
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.KeyPair = void 0;
-const key_pair_base_1 = require("87f48ff75e61ef7a");
-const key_pair_ed25519_1 = require("21a96214583a9315");
-class KeyPair extends key_pair_base_1.KeyPairBase {
-    /**
-     * @param curve Name of elliptical curve, case-insensitive
-     * @returns Random KeyPair based on the curve
-     */ static fromRandom(curve) {
-        switch(curve.toUpperCase()){
-            case "ED25519":
-                return key_pair_ed25519_1.KeyPairEd25519.fromRandom();
-            default:
-                throw new Error(`Unknown curve ${curve}`);
-        }
-    }
-    static fromString(encodedKey) {
-        const parts = encodedKey.split(":");
-        if (parts.length === 1) return new key_pair_ed25519_1.KeyPairEd25519(parts[0]);
-        else if (parts.length === 2) switch(parts[0].toUpperCase()){
-            case "ED25519":
-                return new key_pair_ed25519_1.KeyPairEd25519(parts[1]);
-            default:
-                throw new Error(`Unknown curve: ${parts[0]}`);
-        }
-        else throw new Error("Invalid encoded key format, must be <curve>:<encoded key>");
-    }
-}
-exports.KeyPair = KeyPair;
-
-},{"87f48ff75e61ef7a":"hU8EK","21a96214583a9315":"fpzI9"}],"hU8EK":[function(require,module,exports) {
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.KeyPairBase = void 0;
-class KeyPairBase {
-}
-exports.KeyPairBase = KeyPairBase;
-
-},{}],"fpzI9":[function(require,module,exports) {
-"use strict";
-var __importDefault = this && this.__importDefault || function(mod) {
-    return mod && mod.__esModule ? mod : {
-        "default": mod
-    };
-};
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.KeyPairEd25519 = void 0;
-const borsh_1 = require("f66062c18a40fe28");
-const tweetnacl_1 = __importDefault(require("8d5b1db7e805f60c"));
-const constants_1 = require("d9bf9cd33b990706");
-const key_pair_base_1 = require("ead508dde7f6667d");
-const public_key_1 = require("f2d1b21f7b515d46");
-/**
- * This class provides key pair functionality for Ed25519 curve:
- * generating key pairs, encoding key pairs, signing and verifying.
- */ class KeyPairEd25519 extends key_pair_base_1.KeyPairBase {
-    /**
-     * Construct an instance of key pair given a secret key.
-     * It's generally assumed that these are encoded in base58.
-     * @param {string} secretKey
-     */ constructor(secretKey){
-        super();
-        const keyPair = tweetnacl_1.default.sign.keyPair.fromSecretKey((0, borsh_1.baseDecode)(secretKey));
-        this.publicKey = new public_key_1.PublicKey({
-            keyType: constants_1.KeyType.ED25519,
-            data: keyPair.publicKey
-        });
-        this.secretKey = secretKey;
-    }
-    /**
-     * Generate a new random keypair.
-     * @example
-     * const keyRandom = KeyPair.fromRandom();
-     * keyRandom.publicKey
-     * // returns [PUBLIC_KEY]
-     *
-     * keyRandom.secretKey
-     * // returns [SECRET_KEY]
-     */ static fromRandom() {
-        const newKeyPair = tweetnacl_1.default.sign.keyPair();
-        return new KeyPairEd25519((0, borsh_1.baseEncode)(newKeyPair.secretKey));
-    }
-    sign(message) {
-        const signature = tweetnacl_1.default.sign.detached(message, (0, borsh_1.baseDecode)(this.secretKey));
-        return {
-            signature,
-            publicKey: this.publicKey
-        };
-    }
-    verify(message, signature) {
-        return this.publicKey.verify(message, signature);
-    }
-    toString() {
-        return `ed25519:${this.secretKey}`;
-    }
-    getPublicKey() {
-        return this.publicKey;
-    }
-}
-exports.KeyPairEd25519 = KeyPairEd25519;
-
-},{"f66062c18a40fe28":"4JCmN","8d5b1db7e805f60c":"3J9rh","d9bf9cd33b990706":"jKdYX","ead508dde7f6667d":"hU8EK","f2d1b21f7b515d46":"1SRGM"}],"4JCmN":[function(require,module,exports) {
-var Buffer = require("699c164eb7aea5db").Buffer;
-"use strict";
-var __createBinding = this && this.__createBinding || (Object.create ? function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, {
-        enumerable: true,
-        get: function() {
-            return m[k];
-        }
-    });
-} : function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-});
-var __setModuleDefault = this && this.__setModuleDefault || (Object.create ? function(o, v) {
-    Object.defineProperty(o, "default", {
-        enumerable: true,
-        value: v
-    });
-} : function(o, v) {
-    o["default"] = v;
-});
-var __decorate = this && this.__decorate || function(decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for(var i = decorators.length - 1; i >= 0; i--)if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __importStar = this && this.__importStar || function(mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) {
-        for(var k in mod)if (k !== "default" && Object.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
-    }
-    __setModuleDefault(result, mod);
-    return result;
-};
-var __importDefault = this && this.__importDefault || function(mod) {
-    return mod && mod.__esModule ? mod : {
-        "default": mod
-    };
-};
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.deserializeUnchecked = exports.deserialize = exports.serialize = exports.BinaryReader = exports.BinaryWriter = exports.BorshError = exports.baseDecode = exports.baseEncode = void 0;
-const bn_js_1 = __importDefault(require("17e7c0a10366aaf7"));
-const bs58_1 = __importDefault(require("d1e02929d3f43eae"));
-// TODO: Make sure this polyfill not included when not required
-const encoding = __importStar(require("b378096fead01c9a"));
-const ResolvedTextDecoder = typeof TextDecoder !== "function" ? encoding.TextDecoder : TextDecoder;
-const textDecoder = new ResolvedTextDecoder("utf-8", {
-    fatal: true
-});
-function baseEncode(value) {
-    if (typeof value === "string") value = Buffer.from(value, "utf8");
-    return bs58_1.default.encode(Buffer.from(value));
-}
-exports.baseEncode = baseEncode;
-function baseDecode(value) {
-    return Buffer.from(bs58_1.default.decode(value));
-}
-exports.baseDecode = baseDecode;
-const INITIAL_LENGTH = 1024;
-class BorshError extends Error {
-    constructor(message){
-        super(message);
-        this.fieldPath = [];
-        this.originalMessage = message;
-    }
-    addToFieldPath(fieldName) {
-        this.fieldPath.splice(0, 0, fieldName);
-        // NOTE: Modifying message directly as jest doesn't use .toString()
-        this.message = this.originalMessage + ": " + this.fieldPath.join(".");
-    }
-}
-exports.BorshError = BorshError;
-/// Binary encoder.
-class BinaryWriter {
-    constructor(){
-        this.buf = Buffer.alloc(INITIAL_LENGTH);
-        this.length = 0;
-    }
-    maybeResize() {
-        if (this.buf.length < 16 + this.length) this.buf = Buffer.concat([
-            this.buf,
-            Buffer.alloc(INITIAL_LENGTH)
-        ]);
-    }
-    writeU8(value) {
-        this.maybeResize();
-        this.buf.writeUInt8(value, this.length);
-        this.length += 1;
-    }
-    writeU16(value) {
-        this.maybeResize();
-        this.buf.writeUInt16LE(value, this.length);
-        this.length += 2;
-    }
-    writeU32(value) {
-        this.maybeResize();
-        this.buf.writeUInt32LE(value, this.length);
-        this.length += 4;
-    }
-    writeU64(value) {
-        this.maybeResize();
-        this.writeBuffer(Buffer.from(new bn_js_1.default(value).toArray("le", 8)));
-    }
-    writeU128(value) {
-        this.maybeResize();
-        this.writeBuffer(Buffer.from(new bn_js_1.default(value).toArray("le", 16)));
-    }
-    writeU256(value) {
-        this.maybeResize();
-        this.writeBuffer(Buffer.from(new bn_js_1.default(value).toArray("le", 32)));
-    }
-    writeU512(value) {
-        this.maybeResize();
-        this.writeBuffer(Buffer.from(new bn_js_1.default(value).toArray("le", 64)));
-    }
-    writeBuffer(buffer) {
-        // Buffer.from is needed as this.buf.subarray can return plain Uint8Array in browser
-        this.buf = Buffer.concat([
-            Buffer.from(this.buf.subarray(0, this.length)),
-            buffer,
-            Buffer.alloc(INITIAL_LENGTH)
-        ]);
-        this.length += buffer.length;
-    }
-    writeString(str) {
-        this.maybeResize();
-        const b = Buffer.from(str, "utf8");
-        this.writeU32(b.length);
-        this.writeBuffer(b);
-    }
-    writeFixedArray(array) {
-        this.writeBuffer(Buffer.from(array));
-    }
-    writeArray(array, fn) {
-        this.maybeResize();
-        this.writeU32(array.length);
-        for (const elem of array){
-            this.maybeResize();
-            fn(elem);
-        }
-    }
-    toArray() {
-        return this.buf.subarray(0, this.length);
-    }
-}
-exports.BinaryWriter = BinaryWriter;
-function handlingRangeError(target, propertyKey, propertyDescriptor) {
-    const originalMethod = propertyDescriptor.value;
-    propertyDescriptor.value = function(...args) {
-        try {
-            return originalMethod.apply(this, args);
-        } catch (e) {
-            if (e instanceof RangeError) {
-                const code = e.code;
-                if ([
-                    "ERR_BUFFER_OUT_OF_BOUNDS",
-                    "ERR_OUT_OF_RANGE"
-                ].indexOf(code) >= 0) throw new BorshError("Reached the end of buffer when deserializing");
-            }
-            throw e;
-        }
-    };
-}
-class BinaryReader {
-    constructor(buf){
-        this.buf = buf;
-        this.offset = 0;
-    }
-    readU8() {
-        const value = this.buf.readUInt8(this.offset);
-        this.offset += 1;
-        return value;
-    }
-    readU16() {
-        const value = this.buf.readUInt16LE(this.offset);
-        this.offset += 2;
-        return value;
-    }
-    readU32() {
-        const value = this.buf.readUInt32LE(this.offset);
-        this.offset += 4;
-        return value;
-    }
-    readU64() {
-        const buf = this.readBuffer(8);
-        return new bn_js_1.default(buf, "le");
-    }
-    readU128() {
-        const buf = this.readBuffer(16);
-        return new bn_js_1.default(buf, "le");
-    }
-    readU256() {
-        const buf = this.readBuffer(32);
-        return new bn_js_1.default(buf, "le");
-    }
-    readU512() {
-        const buf = this.readBuffer(64);
-        return new bn_js_1.default(buf, "le");
-    }
-    readBuffer(len) {
-        if (this.offset + len > this.buf.length) throw new BorshError(`Expected buffer length ${len} isn't within bounds`);
-        const result = this.buf.slice(this.offset, this.offset + len);
-        this.offset += len;
-        return result;
-    }
-    readString() {
-        const len = this.readU32();
-        const buf = this.readBuffer(len);
-        try {
-            // NOTE: Using TextDecoder to fail on invalid UTF-8
-            return textDecoder.decode(buf);
-        } catch (e) {
-            throw new BorshError(`Error decoding UTF-8 string: ${e}`);
-        }
-    }
-    readFixedArray(len) {
-        return new Uint8Array(this.readBuffer(len));
-    }
-    readArray(fn) {
-        const len = this.readU32();
-        const result = Array();
-        for(let i = 0; i < len; ++i)result.push(fn());
-        return result;
-    }
-}
-__decorate([
-    handlingRangeError
-], BinaryReader.prototype, "readU8", null);
-__decorate([
-    handlingRangeError
-], BinaryReader.prototype, "readU16", null);
-__decorate([
-    handlingRangeError
-], BinaryReader.prototype, "readU32", null);
-__decorate([
-    handlingRangeError
-], BinaryReader.prototype, "readU64", null);
-__decorate([
-    handlingRangeError
-], BinaryReader.prototype, "readU128", null);
-__decorate([
-    handlingRangeError
-], BinaryReader.prototype, "readU256", null);
-__decorate([
-    handlingRangeError
-], BinaryReader.prototype, "readU512", null);
-__decorate([
-    handlingRangeError
-], BinaryReader.prototype, "readString", null);
-__decorate([
-    handlingRangeError
-], BinaryReader.prototype, "readFixedArray", null);
-__decorate([
-    handlingRangeError
-], BinaryReader.prototype, "readArray", null);
-exports.BinaryReader = BinaryReader;
-function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
-}
-function serializeField(schema, fieldName, value, fieldType, writer) {
-    try {
-        // TODO: Handle missing values properly (make sure they never result in just skipped write)
-        if (typeof fieldType === "string") writer[`write${capitalizeFirstLetter(fieldType)}`](value);
-        else if (fieldType instanceof Array) {
-            if (typeof fieldType[0] === "number") {
-                if (value.length !== fieldType[0]) throw new BorshError(`Expecting byte array of length ${fieldType[0]}, but got ${value.length} bytes`);
-                writer.writeFixedArray(value);
-            } else if (fieldType.length === 2 && typeof fieldType[1] === "number") {
-                if (value.length !== fieldType[1]) throw new BorshError(`Expecting byte array of length ${fieldType[1]}, but got ${value.length} bytes`);
-                for(let i = 0; i < fieldType[1]; i++)serializeField(schema, null, value[i], fieldType[0], writer);
-            } else writer.writeArray(value, (item)=>{
-                serializeField(schema, fieldName, item, fieldType[0], writer);
-            });
-        } else if (fieldType.kind !== undefined) switch(fieldType.kind){
-            case "option":
-                if (value === null || value === undefined) writer.writeU8(0);
-                else {
-                    writer.writeU8(1);
-                    serializeField(schema, fieldName, value, fieldType.type, writer);
-                }
-                break;
-            case "map":
-                writer.writeU32(value.size);
-                value.forEach((val, key)=>{
-                    serializeField(schema, fieldName, key, fieldType.key, writer);
-                    serializeField(schema, fieldName, val, fieldType.value, writer);
-                });
-                break;
-            default:
-                throw new BorshError(`FieldType ${fieldType} unrecognized`);
-        }
-        else serializeStruct(schema, value, writer);
-    } catch (error) {
-        if (error instanceof BorshError) error.addToFieldPath(fieldName);
-        throw error;
-    }
-}
-function serializeStruct(schema, obj, writer) {
-    if (typeof obj.borshSerialize === "function") {
-        obj.borshSerialize(writer);
-        return;
-    }
-    const structSchema = schema.get(obj.constructor);
-    if (!structSchema) throw new BorshError(`Class ${obj.constructor.name} is missing in schema`);
-    if (structSchema.kind === "struct") structSchema.fields.map(([fieldName, fieldType])=>{
-        serializeField(schema, fieldName, obj[fieldName], fieldType, writer);
-    });
-    else if (structSchema.kind === "enum") {
-        const name = obj[structSchema.field];
-        for(let idx = 0; idx < structSchema.values.length; ++idx){
-            const [fieldName, fieldType] = structSchema.values[idx];
-            if (fieldName === name) {
-                writer.writeU8(idx);
-                serializeField(schema, fieldName, obj[fieldName], fieldType, writer);
-                break;
-            }
-        }
-    } else throw new BorshError(`Unexpected schema kind: ${structSchema.kind} for ${obj.constructor.name}`);
-}
-/// Serialize given object using schema of the form:
-/// { class_name -> [ [field_name, field_type], .. ], .. }
-function serialize(schema, obj, Writer = BinaryWriter) {
-    const writer = new Writer();
-    serializeStruct(schema, obj, writer);
-    return writer.toArray();
-}
-exports.serialize = serialize;
-function deserializeField(schema, fieldName, fieldType, reader) {
-    try {
-        if (typeof fieldType === "string") return reader[`read${capitalizeFirstLetter(fieldType)}`]();
-        if (fieldType instanceof Array) {
-            if (typeof fieldType[0] === "number") return reader.readFixedArray(fieldType[0]);
-            else if (typeof fieldType[1] === "number") {
-                const arr = [];
-                for(let i = 0; i < fieldType[1]; i++)arr.push(deserializeField(schema, null, fieldType[0], reader));
-                return arr;
-            } else return reader.readArray(()=>deserializeField(schema, fieldName, fieldType[0], reader));
-        }
-        if (fieldType.kind === "option") {
-            const option = reader.readU8();
-            if (option) return deserializeField(schema, fieldName, fieldType.type, reader);
-            return undefined;
-        }
-        if (fieldType.kind === "map") {
-            let map = new Map();
-            const length = reader.readU32();
-            for(let i = 0; i < length; i++){
-                const key = deserializeField(schema, fieldName, fieldType.key, reader);
-                const val = deserializeField(schema, fieldName, fieldType.value, reader);
-                map.set(key, val);
-            }
-            return map;
-        }
-        return deserializeStruct(schema, fieldType, reader);
-    } catch (error) {
-        if (error instanceof BorshError) error.addToFieldPath(fieldName);
-        throw error;
-    }
-}
-function deserializeStruct(schema, classType, reader) {
-    if (typeof classType.borshDeserialize === "function") return classType.borshDeserialize(reader);
-    const structSchema = schema.get(classType);
-    if (!structSchema) throw new BorshError(`Class ${classType.name} is missing in schema`);
-    if (structSchema.kind === "struct") {
-        const result = {};
-        for (const [fieldName, fieldType] of schema.get(classType).fields)result[fieldName] = deserializeField(schema, fieldName, fieldType, reader);
-        return new classType(result);
-    }
-    if (structSchema.kind === "enum") {
-        const idx = reader.readU8();
-        if (idx >= structSchema.values.length) throw new BorshError(`Enum index: ${idx} is out of range`);
-        const [fieldName, fieldType] = structSchema.values[idx];
-        const fieldValue = deserializeField(schema, fieldName, fieldType, reader);
-        return new classType({
-            [fieldName]: fieldValue
-        });
-    }
-    throw new BorshError(`Unexpected schema kind: ${structSchema.kind} for ${classType.constructor.name}`);
-}
-/// Deserializes object from bytes using schema.
-function deserialize(schema, classType, buffer, Reader = BinaryReader) {
-    const reader = new Reader(buffer);
-    const result = deserializeStruct(schema, classType, reader);
-    if (reader.offset < buffer.length) throw new BorshError(`Unexpected ${buffer.length - reader.offset} bytes after deserialized data`);
-    return result;
-}
-exports.deserialize = deserialize;
-/// Deserializes object from bytes using schema, without checking the length read
-function deserializeUnchecked(schema, classType, buffer, Reader = BinaryReader) {
-    const reader = new Reader(buffer);
-    return deserializeStruct(schema, classType, reader);
-}
-exports.deserializeUnchecked = deserializeUnchecked;
-
-},{"699c164eb7aea5db":"fCgem","17e7c0a10366aaf7":"VopIn","d1e02929d3f43eae":"4ji3p","b378096fead01c9a":"feCA6"}],"VopIn":[function(require,module,exports) {
+},{}],"VopIn":[function(require,module,exports) {
 (function(module1, exports) {
     "use strict";
     // Utils
@@ -43090,7 +43034,7 @@ exports.deserializeUnchecked = deserializeUnchecked;
     };
 })(module, this);
 
-},{"bd440367abe2ded7":"bv0bl"}],"bv0bl":[function(require,module,exports) {
+},{"bd440367abe2ded7":"jhUEF"}],"jhUEF":[function(require,module,exports) {
 "use strict";
 
 },{}],"4ji3p":[function(require,module,exports) {
@@ -46120,7 +46064,7 @@ exports.TextDecoder = TextDecoder;
     })();
 })((0, module.exports) ? module.exports : self.nacl = self.nacl || {});
 
-},{"64deaebb838d47b8":"bv0bl"}],"1SRGM":[function(require,module,exports) {
+},{"64deaebb838d47b8":"jhUEF"}],"1SRGM":[function(require,module,exports) {
 "use strict";
 var __importDefault = this && this.__importDefault || function(mod) {
     return mod && mod.__esModule ? mod : {
@@ -49996,7 +49940,7 @@ function fetchJson(connectionInfoOrUrl, json) {
 }
 exports.fetchJson = fetchJson;
 
-},{"1cf7b5a6fc3fcbc5":"8V9k6","b67182bc4df93de":"a3NQ3","31af50c783fd52d9":"bwIOA","b3f2e26d8d7b883c":"2yKZn"}],"a3NQ3":[function(require,module,exports) {
+},{"1cf7b5a6fc3fcbc5":"8V9k6","b67182bc4df93de":"a3NQ3","31af50c783fd52d9":"bwIOA","b3f2e26d8d7b883c":"fiBU8"}],"a3NQ3":[function(require,module,exports) {
 /*!
  * http-errors
  * Copyright(c) 2014 Jonathan Ong
@@ -50405,15 +50349,15 @@ module.exports = function inherits(ctor, superCtor) {
     }).join("").replace(/[^ _0-9a-z]/gi, "");
 }
 
-},{}],"2yKZn":[function(require,module,exports) {
-module.exports = require("ba5d359c6e68af47")(require("d2ea842221d15e91").getBundleURL("UckoE") + "fetch.5aa4d3e3.js" + "?" + Date.now()).catch((err)=>{
+},{}],"fiBU8":[function(require,module,exports) {
+module.exports = require("27c10c4bae024bcd")(require("8d12c66405c1cee6").getBundleURL("UckoE") + "fetch.5aa4d3e3.js" + "?" + Date.now()).catch((err)=>{
     delete module.bundle.cache[module.id];
     throw err;
 }).then(()=>module.bundle.root("64owv"));
 
-},{"ba5d359c6e68af47":"fL7rj","d2ea842221d15e91":"cMlBw"}],"fL7rj":[function(require,module,exports) {
+},{"27c10c4bae024bcd":"61B45","8d12c66405c1cee6":"lgJ39"}],"61B45":[function(require,module,exports) {
 "use strict";
-var cacheLoader = require("3228afe6e927b910");
+var cacheLoader = require("ca2a84f7fa4a3bb0");
 module.exports = cacheLoader(function(bundle) {
     return new Promise(function(resolve, reject) {
         // Don't insert the same script twice (e.g. if it was already in the HTML)
@@ -50447,7 +50391,7 @@ module.exports = cacheLoader(function(bundle) {
     });
 });
 
-},{"3228afe6e927b910":"aySNo"}],"aySNo":[function(require,module,exports) {
+},{"ca2a84f7fa4a3bb0":"j49pS"}],"j49pS":[function(require,module,exports) {
 "use strict";
 var cachedBundles = {};
 var cachedPreloads = {};
@@ -60999,7 +60943,173 @@ module.exports = function() {
     };
 };
 
-},{"46d0b21928a01401":"dIyaj","580f3a5f81c5c3bb":"85RZD"}],"b4TAP":[function() {},{}],"1nDKo":[function(require,module,exports) {
+},{"46d0b21928a01401":"dIyaj","580f3a5f81c5c3bb":"85RZD"}],"bSr8D":[function(require,module,exports) {
+const CONTRACT_NAME = "dev-1692813334115-18963243556435";
+function getConfig(env) {
+    switch(env){
+        case "production":
+        case "mainnet":
+            return {
+                networkId: "mainnet",
+                nodeUrl: "https://rpc.mainnet.near.org",
+                contractName: CONTRACT_NAME,
+                walletUrl: "https://wallet.near.org",
+                helperUrl: "https://helper.mainnet.near.org",
+                explorerUrl: "https://explorer.mainnet.near.org"
+            };
+        case "development":
+        case "testnet":
+            return {
+                networkId: "testnet",
+                nodeUrl: "https://rpc.testnet.near.org",
+                contractName: CONTRACT_NAME,
+                walletUrl: "https://wallet.testnet.near.org",
+                helperUrl: "https://helper.testnet.near.org",
+                explorerUrl: "https://explorer.testnet.near.org"
+            };
+        case "betanet":
+            return {
+                networkId: "betanet",
+                nodeUrl: "https://rpc.betanet.near.org",
+                contractName: CONTRACT_NAME,
+                walletUrl: "https://wallet.betanet.near.org",
+                helperUrl: "https://helper.betanet.near.org",
+                explorerUrl: "https://explorer.betanet.near.org"
+            };
+        case "local":
+            return {
+                networkId: "local",
+                nodeUrl: "http://localhost:3030",
+                keyPath: `${"/Users/juliencarbonnell"}/.near/validator_key.json`,
+                walletUrl: "http://localhost:4000/wallet",
+                contractName: CONTRACT_NAME
+            };
+        case "test":
+        case "ci":
+            return {
+                networkId: "shared-test",
+                nodeUrl: "https://rpc.ci-testnet.near.org",
+                contractName: CONTRACT_NAME,
+                masterAccount: "test.near"
+            };
+        case "ci-betanet":
+            return {
+                networkId: "shared-test-staging",
+                nodeUrl: "https://rpc.ci-betanet.near.org",
+                contractName: CONTRACT_NAME,
+                masterAccount: "test.near"
+            };
+        default:
+            throw Error(`Unconfigured environment '${env}'. Can be configured in src/config.js.`);
+    }
+}
+module.exports = getConfig;
+
+},{}],"dg9wB":[function(require,module,exports) {
+/* A helper file that simplifies using the wallet selector */ // near api js
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+// Wallet that simplifies using the wallet selector
+parcelHelpers.export(exports, "Wallet", ()=>Wallet);
+var _nearApiJs = require("near-api-js");
+// wallet selector
+var _stylesCss = require("@near-wallet-selector/modal-ui/styles.css");
+var _modalUi = require("@near-wallet-selector/modal-ui");
+var _core = require("@near-wallet-selector/core");
+var _myNearWallet = require("@near-wallet-selector/my-near-wallet");
+var Buffer = require("f82bc9c169fd1dff").Buffer;
+const THIRTY_TGAS = "30000000000000";
+const NO_DEPOSIT = "0";
+class Wallet {
+    walletSelector;
+    wallet;
+    network;
+    createAccessKeyFor;
+    constructor({ createAccessKeyFor, network = "testnet" }){
+        // Login to a wallet passing a contractId will create a local
+        // key, so the user skips signing non-payable transactions.
+        // Omitting the accountId will result in the user being
+        // asked to sign all transactions.
+        this.createAccessKeyFor = createAccessKeyFor;
+        this.network = "testnet";
+    }
+    // To be called when the website loads
+    async startUp() {
+        this.walletSelector = await (0, _core.setupWalletSelector)({
+            network: this.network,
+            modules: [
+                (0, _myNearWallet.setupMyNearWallet)()
+            ]
+        });
+        const isSignedIn = this.walletSelector.isSignedIn();
+        if (isSignedIn) {
+            this.wallet = await this.walletSelector.wallet();
+            this.accountId = this.walletSelector.store.getState().accounts[0].accountId;
+        }
+        return isSignedIn;
+    }
+    // Sign-in method
+    signIn() {
+        const description = "Please select a wallet to sign in.";
+        const modal = (0, _modalUi.setupModal)(this.walletSelector, {
+            contractId: this.createAccessKeyFor,
+            description
+        });
+        modal.show();
+    }
+    // Sign-out method
+    signOut() {
+        this.wallet.signOut();
+        this.wallet = this.accountId = this.createAccessKeyFor = null;
+        window.location.replace(window.location.origin + window.location.pathname);
+    }
+    // Make a read-only call to retrieve information from the network
+    async viewMethod({ contractId, method, args = {} }) {
+        const { network } = this.walletSelector.options;
+        const provider = new (0, _nearApiJs.providers).JsonRpcProvider({
+            url: network.nodeUrl
+        });
+        let res = await provider.query({
+            request_type: "call_function",
+            account_id: contractId,
+            method_name: method,
+            args_base64: Buffer.from(JSON.stringify(args)).toString("base64"),
+            finality: "optimistic"
+        });
+        return JSON.parse(Buffer.from(res.result).toString());
+    }
+    // Call a method that changes the contract's state
+    async callMethod({ contractId, method, args = {}, gas = THIRTY_TGAS, deposit = NO_DEPOSIT }) {
+        // Sign a transaction with the "FunctionCall" action
+        return await this.wallet.signAndSendTransaction({
+            signerId: this.accountId,
+            receiverId: contractId,
+            actions: [
+                {
+                    type: "FunctionCall",
+                    params: {
+                        methodName: method,
+                        args,
+                        gas,
+                        deposit
+                    }
+                }
+            ]
+        });
+    }
+    // Get transaction result from the network
+    async getTransactionResult(txhash) {
+        const { network } = this.walletSelector.options;
+        const provider = new (0, _nearApiJs.providers).JsonRpcProvider({
+            url: network.nodeUrl
+        });
+        // Retrieve transaction result from the network
+        const transaction = await provider.txStatus(txhash, "unnused");
+        return (0, _nearApiJs.providers).getTransactionLastResult(transaction);
+    }
+}
+
+},{"f82bc9c169fd1dff":"fCgem","near-api-js":"ohc3m","@near-wallet-selector/modal-ui/styles.css":"b4TAP","@near-wallet-selector/modal-ui":"1nDKo","@near-wallet-selector/core":"eEY3a","@near-wallet-selector/my-near-wallet":"bYYGG","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"b4TAP":[function() {},{}],"1nDKo":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "setupModal", ()=>setupModal);
@@ -65889,7 +65999,7 @@ let modalInstance = null;
     return modalInstance;
 };
 
-},{"react/jsx-runtime":"6AEwr","react-dom/client":"lOjBx","react":"21dqq","@near-wallet-selector/core":"eEY3a","qrcode":"lB7MY","copy-to-clipboard":"fLPFI","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"6AEwr":[function(require,module,exports) {
+},{"react/jsx-runtime":"6AEwr","react-dom/client":"lOjBx","react":"21dqq","@near-wallet-selector/core":"eEY3a","qrcode":"lB7MY","copy-to-clipboard":"fLPFI","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6AEwr":[function(require,module,exports) {
 "use strict";
 module.exports = require("c4c10cbba9862d5f");
 
@@ -72879,7 +72989,7 @@ const translate = (path)=>{
     return text && typeof text === "string" ? text : path;
 };
 
-},{"a96a7d50dbb8a81e":"fCgem","near-api-js":"ohc3m","events":"1VQLm","rxjs":"lLy7s","borsh":"4JCmN","js-sha256":"ahVaM","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"1VQLm":[function(require,module,exports) {
+},{"a96a7d50dbb8a81e":"fCgem","near-api-js":"ohc3m","events":"1VQLm","rxjs":"lLy7s","borsh":"4JCmN","js-sha256":"ahVaM","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1VQLm":[function(require,module,exports) {
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -73577,7 +73687,7 @@ var _withLatestFrom = require("./internal/operators/withLatestFrom");
 var _zipAll = require("./internal/operators/zipAll");
 var _zipWith = require("./internal/operators/zipWith");
 
-},{"./internal/Observable":false,"./internal/observable/ConnectableObservable":false,"./internal/symbol/observable":false,"./internal/observable/dom/animationFrames":false,"./internal/Subject":"94RSe","./internal/BehaviorSubject":"4s6yS","./internal/ReplaySubject":false,"./internal/AsyncSubject":false,"./internal/scheduler/asap":false,"./internal/scheduler/async":false,"./internal/scheduler/queue":false,"./internal/scheduler/animationFrame":false,"./internal/scheduler/VirtualTimeScheduler":false,"./internal/Scheduler":false,"./internal/Subscription":false,"./internal/Subscriber":false,"./internal/Notification":false,"./internal/util/pipe":false,"./internal/util/noop":false,"./internal/util/identity":false,"./internal/util/isObservable":false,"./internal/lastValueFrom":false,"./internal/firstValueFrom":false,"./internal/util/ArgumentOutOfRangeError":false,"./internal/util/EmptyError":false,"./internal/util/NotFoundError":false,"./internal/util/ObjectUnsubscribedError":false,"./internal/util/SequenceError":false,"./internal/operators/timeout":false,"./internal/util/UnsubscriptionError":false,"./internal/observable/bindCallback":false,"./internal/observable/bindNodeCallback":false,"./internal/observable/combineLatest":false,"./internal/observable/concat":false,"./internal/observable/connectable":false,"./internal/observable/defer":false,"./internal/observable/empty":false,"./internal/observable/forkJoin":false,"./internal/observable/from":false,"./internal/observable/fromEvent":false,"./internal/observable/fromEventPattern":false,"./internal/observable/generate":false,"./internal/observable/iif":false,"./internal/observable/interval":false,"./internal/observable/merge":false,"./internal/observable/never":false,"./internal/observable/of":false,"./internal/observable/onErrorResumeNext":false,"./internal/observable/pairs":false,"./internal/observable/partition":false,"./internal/observable/race":false,"./internal/observable/range":false,"./internal/observable/throwError":false,"./internal/observable/timer":false,"./internal/observable/using":false,"./internal/observable/zip":false,"./internal/scheduled/scheduled":false,"./internal/types":false,"./internal/config":false,"./internal/operators/audit":false,"./internal/operators/auditTime":false,"./internal/operators/buffer":false,"./internal/operators/bufferCount":false,"./internal/operators/bufferTime":false,"./internal/operators/bufferToggle":false,"./internal/operators/bufferWhen":false,"./internal/operators/catchError":false,"./internal/operators/combineAll":false,"./internal/operators/combineLatestAll":false,"./internal/operators/combineLatestWith":false,"./internal/operators/concatAll":false,"./internal/operators/concatMap":false,"./internal/operators/concatMapTo":false,"./internal/operators/concatWith":false,"./internal/operators/connect":false,"./internal/operators/count":false,"./internal/operators/debounce":false,"./internal/operators/debounceTime":false,"./internal/operators/defaultIfEmpty":false,"./internal/operators/delay":false,"./internal/operators/delayWhen":false,"./internal/operators/dematerialize":false,"./internal/operators/distinct":false,"./internal/operators/distinctUntilChanged":false,"./internal/operators/distinctUntilKeyChanged":false,"./internal/operators/elementAt":false,"./internal/operators/endWith":false,"./internal/operators/every":false,"./internal/operators/exhaust":false,"./internal/operators/exhaustAll":false,"./internal/operators/exhaustMap":false,"./internal/operators/expand":false,"./internal/operators/filter":false,"./internal/operators/finalize":false,"./internal/operators/find":false,"./internal/operators/findIndex":false,"./internal/operators/first":false,"./internal/operators/groupBy":false,"./internal/operators/ignoreElements":false,"./internal/operators/isEmpty":false,"./internal/operators/last":false,"./internal/operators/map":false,"./internal/operators/mapTo":false,"./internal/operators/materialize":false,"./internal/operators/max":false,"./internal/operators/mergeAll":false,"./internal/operators/flatMap":false,"./internal/operators/mergeMap":false,"./internal/operators/mergeMapTo":false,"./internal/operators/mergeScan":false,"./internal/operators/mergeWith":false,"./internal/operators/min":false,"./internal/operators/multicast":false,"./internal/operators/observeOn":false,"./internal/operators/onErrorResumeNextWith":false,"./internal/operators/pairwise":false,"./internal/operators/pluck":false,"./internal/operators/publish":false,"./internal/operators/publishBehavior":false,"./internal/operators/publishLast":false,"./internal/operators/publishReplay":false,"./internal/operators/raceWith":false,"./internal/operators/reduce":false,"./internal/operators/repeat":false,"./internal/operators/repeatWhen":false,"./internal/operators/retry":false,"./internal/operators/retryWhen":false,"./internal/operators/refCount":false,"./internal/operators/sample":false,"./internal/operators/sampleTime":false,"./internal/operators/scan":"efPFC","./internal/operators/sequenceEqual":false,"./internal/operators/share":false,"./internal/operators/shareReplay":false,"./internal/operators/single":false,"./internal/operators/skip":false,"./internal/operators/skipLast":false,"./internal/operators/skipUntil":false,"./internal/operators/skipWhile":false,"./internal/operators/startWith":false,"./internal/operators/subscribeOn":false,"./internal/operators/switchAll":false,"./internal/operators/switchMap":false,"./internal/operators/switchMapTo":false,"./internal/operators/switchScan":false,"./internal/operators/take":false,"./internal/operators/takeLast":false,"./internal/operators/takeUntil":false,"./internal/operators/takeWhile":false,"./internal/operators/tap":false,"./internal/operators/throttle":false,"./internal/operators/throttleTime":false,"./internal/operators/throwIfEmpty":false,"./internal/operators/timeInterval":false,"./internal/operators/timeoutWith":false,"./internal/operators/timestamp":false,"./internal/operators/toArray":false,"./internal/operators/window":false,"./internal/operators/windowCount":false,"./internal/operators/windowTime":false,"./internal/operators/windowToggle":false,"./internal/operators/windowWhen":false,"./internal/operators/withLatestFrom":false,"./internal/operators/zipAll":false,"./internal/operators/zipWith":false,"@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"4Jvxr":[function(require,module,exports) {
+},{"./internal/Observable":false,"./internal/observable/ConnectableObservable":false,"./internal/symbol/observable":false,"./internal/observable/dom/animationFrames":false,"./internal/Subject":"94RSe","./internal/BehaviorSubject":"4s6yS","./internal/ReplaySubject":false,"./internal/AsyncSubject":false,"./internal/scheduler/asap":false,"./internal/scheduler/async":false,"./internal/scheduler/queue":false,"./internal/scheduler/animationFrame":false,"./internal/scheduler/VirtualTimeScheduler":false,"./internal/Scheduler":false,"./internal/Subscription":false,"./internal/Subscriber":false,"./internal/Notification":false,"./internal/util/pipe":false,"./internal/util/noop":false,"./internal/util/identity":false,"./internal/util/isObservable":false,"./internal/lastValueFrom":false,"./internal/firstValueFrom":false,"./internal/util/ArgumentOutOfRangeError":false,"./internal/util/EmptyError":false,"./internal/util/NotFoundError":false,"./internal/util/ObjectUnsubscribedError":false,"./internal/util/SequenceError":false,"./internal/operators/timeout":false,"./internal/util/UnsubscriptionError":false,"./internal/observable/bindCallback":false,"./internal/observable/bindNodeCallback":false,"./internal/observable/combineLatest":false,"./internal/observable/concat":false,"./internal/observable/connectable":false,"./internal/observable/defer":false,"./internal/observable/empty":false,"./internal/observable/forkJoin":false,"./internal/observable/from":false,"./internal/observable/fromEvent":false,"./internal/observable/fromEventPattern":false,"./internal/observable/generate":false,"./internal/observable/iif":false,"./internal/observable/interval":false,"./internal/observable/merge":false,"./internal/observable/never":false,"./internal/observable/of":false,"./internal/observable/onErrorResumeNext":false,"./internal/observable/pairs":false,"./internal/observable/partition":false,"./internal/observable/race":false,"./internal/observable/range":false,"./internal/observable/throwError":false,"./internal/observable/timer":false,"./internal/observable/using":false,"./internal/observable/zip":false,"./internal/scheduled/scheduled":false,"./internal/types":false,"./internal/config":false,"./internal/operators/audit":false,"./internal/operators/auditTime":false,"./internal/operators/buffer":false,"./internal/operators/bufferCount":false,"./internal/operators/bufferTime":false,"./internal/operators/bufferToggle":false,"./internal/operators/bufferWhen":false,"./internal/operators/catchError":false,"./internal/operators/combineAll":false,"./internal/operators/combineLatestAll":false,"./internal/operators/combineLatestWith":false,"./internal/operators/concatAll":false,"./internal/operators/concatMap":false,"./internal/operators/concatMapTo":false,"./internal/operators/concatWith":false,"./internal/operators/connect":false,"./internal/operators/count":false,"./internal/operators/debounce":false,"./internal/operators/debounceTime":false,"./internal/operators/defaultIfEmpty":false,"./internal/operators/delay":false,"./internal/operators/delayWhen":false,"./internal/operators/dematerialize":false,"./internal/operators/distinct":false,"./internal/operators/distinctUntilChanged":false,"./internal/operators/distinctUntilKeyChanged":false,"./internal/operators/elementAt":false,"./internal/operators/endWith":false,"./internal/operators/every":false,"./internal/operators/exhaust":false,"./internal/operators/exhaustAll":false,"./internal/operators/exhaustMap":false,"./internal/operators/expand":false,"./internal/operators/filter":false,"./internal/operators/finalize":false,"./internal/operators/find":false,"./internal/operators/findIndex":false,"./internal/operators/first":false,"./internal/operators/groupBy":false,"./internal/operators/ignoreElements":false,"./internal/operators/isEmpty":false,"./internal/operators/last":false,"./internal/operators/map":false,"./internal/operators/mapTo":false,"./internal/operators/materialize":false,"./internal/operators/max":false,"./internal/operators/mergeAll":false,"./internal/operators/flatMap":false,"./internal/operators/mergeMap":false,"./internal/operators/mergeMapTo":false,"./internal/operators/mergeScan":false,"./internal/operators/mergeWith":false,"./internal/operators/min":false,"./internal/operators/multicast":false,"./internal/operators/observeOn":false,"./internal/operators/onErrorResumeNextWith":false,"./internal/operators/pairwise":false,"./internal/operators/pluck":false,"./internal/operators/publish":false,"./internal/operators/publishBehavior":false,"./internal/operators/publishLast":false,"./internal/operators/publishReplay":false,"./internal/operators/raceWith":false,"./internal/operators/reduce":false,"./internal/operators/repeat":false,"./internal/operators/repeatWhen":false,"./internal/operators/retry":false,"./internal/operators/retryWhen":false,"./internal/operators/refCount":false,"./internal/operators/sample":false,"./internal/operators/sampleTime":false,"./internal/operators/scan":"efPFC","./internal/operators/sequenceEqual":false,"./internal/operators/share":false,"./internal/operators/shareReplay":false,"./internal/operators/single":false,"./internal/operators/skip":false,"./internal/operators/skipLast":false,"./internal/operators/skipUntil":false,"./internal/operators/skipWhile":false,"./internal/operators/startWith":false,"./internal/operators/subscribeOn":false,"./internal/operators/switchAll":false,"./internal/operators/switchMap":false,"./internal/operators/switchMapTo":false,"./internal/operators/switchScan":false,"./internal/operators/take":false,"./internal/operators/takeLast":false,"./internal/operators/takeUntil":false,"./internal/operators/takeWhile":false,"./internal/operators/tap":false,"./internal/operators/throttle":false,"./internal/operators/throttleTime":false,"./internal/operators/throwIfEmpty":false,"./internal/operators/timeInterval":false,"./internal/operators/timeoutWith":false,"./internal/operators/timestamp":false,"./internal/operators/toArray":false,"./internal/operators/window":false,"./internal/operators/windowCount":false,"./internal/operators/windowTime":false,"./internal/operators/windowToggle":false,"./internal/operators/windowWhen":false,"./internal/operators/withLatestFrom":false,"./internal/operators/zipAll":false,"./internal/operators/zipWith":false,"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4Jvxr":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Observable", ()=>Observable);
@@ -73675,7 +73785,7 @@ function isSubscriber(value) {
     return value && value instanceof (0, _subscriber.Subscriber) || isObserver(value) && (0, _subscription.isSubscription)(value);
 }
 
-},{"./Subscriber":"1VFFQ","./Subscription":"lFyhg","./symbol/observable":"byHtV","./util/pipe":"1GN6U","./config":"fX0gC","./util/isFunction":"dEyyK","./util/errorContext":"gU38l","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"1VFFQ":[function(require,module,exports) {
+},{"./Subscriber":"1VFFQ","./Subscription":"lFyhg","./symbol/observable":"byHtV","./util/pipe":"1GN6U","./config":"fX0gC","./util/isFunction":"dEyyK","./util/errorContext":"gU38l","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1VFFQ":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Subscriber", ()=>Subscriber);
@@ -73832,7 +73942,7 @@ var EMPTY_OBSERVER = {
     complete: (0, _noop.noop)
 };
 
-},{"tslib":"lRdW5","./util/isFunction":"dEyyK","./Subscription":"lFyhg","./config":"fX0gC","./util/reportUnhandledError":"aVM3K","./util/noop":"l8uEm","./NotificationFactories":"hwqFj","./scheduler/timeoutProvider":"1FR9J","./util/errorContext":"gU38l","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"lRdW5":[function(require,module,exports) {
+},{"tslib":"lRdW5","./util/isFunction":"dEyyK","./Subscription":"lFyhg","./config":"fX0gC","./util/reportUnhandledError":"aVM3K","./util/noop":"l8uEm","./NotificationFactories":"hwqFj","./scheduler/timeoutProvider":"1FR9J","./util/errorContext":"gU38l","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lRdW5":[function(require,module,exports) {
 /******************************************************************************
 Copyright (c) Microsoft Corporation.
 
@@ -74371,7 +74481,7 @@ exports.default = {
     __disposeResources: __disposeResources
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"dEyyK":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dEyyK":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "isFunction", ()=>isFunction);
@@ -74379,7 +74489,7 @@ function isFunction(value) {
     return typeof value === "function";
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"lFyhg":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lFyhg":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Subscription", ()=>Subscription);
@@ -74509,7 +74619,7 @@ function execFinalizer(finalizer) {
     else finalizer.unsubscribe();
 }
 
-},{"tslib":"lRdW5","./util/isFunction":"dEyyK","./util/UnsubscriptionError":"GSF7Z","./util/arrRemove":"dLHeW","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"GSF7Z":[function(require,module,exports) {
+},{"tslib":"lRdW5","./util/isFunction":"dEyyK","./util/UnsubscriptionError":"GSF7Z","./util/arrRemove":"dLHeW","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"GSF7Z":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "UnsubscriptionError", ()=>UnsubscriptionError);
@@ -74525,7 +74635,7 @@ var UnsubscriptionError = (0, _createErrorClass.createErrorClass)(function(_supe
     };
 });
 
-},{"./createErrorClass":"i1v8Q","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"i1v8Q":[function(require,module,exports) {
+},{"./createErrorClass":"i1v8Q","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"i1v8Q":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "createErrorClass", ()=>createErrorClass);
@@ -74540,7 +74650,7 @@ function createErrorClass(createImpl) {
     return ctorFunc;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"dLHeW":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"dLHeW":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "arrRemove", ()=>arrRemove);
@@ -74551,7 +74661,7 @@ function arrRemove(arr, item) {
     }
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"fX0gC":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fX0gC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "config", ()=>config);
@@ -74563,7 +74673,7 @@ var config = {
     useDeprecatedNextContext: false
 };
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"aVM3K":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aVM3K":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "reportUnhandledError", ()=>reportUnhandledError);
@@ -74577,7 +74687,7 @@ function reportUnhandledError(err) {
     });
 }
 
-},{"../config":"fX0gC","../scheduler/timeoutProvider":"1FR9J","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"1FR9J":[function(require,module,exports) {
+},{"../config":"fX0gC","../scheduler/timeoutProvider":"1FR9J","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1FR9J":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "timeoutProvider", ()=>timeoutProvider);
@@ -74603,13 +74713,13 @@ var timeoutProvider = {
     delegate: undefined
 };
 
-},{"tslib":"lRdW5","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"l8uEm":[function(require,module,exports) {
+},{"tslib":"lRdW5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"l8uEm":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "noop", ()=>noop);
 function noop() {}
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"hwqFj":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hwqFj":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "COMPLETE_NOTIFICATION", ()=>COMPLETE_NOTIFICATION);
@@ -74633,7 +74743,7 @@ function createNotification(kind, value, error) {
     };
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"gU38l":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gU38l":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "errorContext", ()=>errorContext);
@@ -74662,7 +74772,7 @@ function captureError(err) {
     }
 }
 
-},{"../config":"fX0gC","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"byHtV":[function(require,module,exports) {
+},{"../config":"fX0gC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"byHtV":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "observable", ()=>observable);
@@ -74670,7 +74780,7 @@ var observable = function() {
     return typeof Symbol === "function" && Symbol.observable || "@@observable";
 }();
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"1GN6U":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1GN6U":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "pipe", ()=>pipe);
@@ -74691,7 +74801,7 @@ function pipeFromArray(fns) {
     };
 }
 
-},{"./identity":"8Xfg6","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"8Xfg6":[function(require,module,exports) {
+},{"./identity":"8Xfg6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8Xfg6":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "identity", ()=>identity);
@@ -74699,7 +74809,7 @@ function identity(x) {
     return x;
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"94RSe":[function(require,module,exports) {
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"94RSe":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Subject", ()=>Subject);
@@ -74853,7 +74963,7 @@ var AnonymousSubject = function(_super) {
     return AnonymousSubject;
 }(Subject);
 
-},{"tslib":"lRdW5","./Observable":"4Jvxr","./Subscription":"lFyhg","./util/ObjectUnsubscribedError":"6Gcwa","./util/arrRemove":"dLHeW","./util/errorContext":"gU38l","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"6Gcwa":[function(require,module,exports) {
+},{"tslib":"lRdW5","./Observable":"4Jvxr","./Subscription":"lFyhg","./util/ObjectUnsubscribedError":"6Gcwa","./util/arrRemove":"dLHeW","./util/errorContext":"gU38l","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6Gcwa":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "ObjectUnsubscribedError", ()=>ObjectUnsubscribedError);
@@ -74866,7 +74976,7 @@ var ObjectUnsubscribedError = (0, _createErrorClass.createErrorClass)(function(_
     };
 });
 
-},{"./createErrorClass":"i1v8Q","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"4s6yS":[function(require,module,exports) {
+},{"./createErrorClass":"i1v8Q","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4s6yS":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "BehaviorSubject", ()=>BehaviorSubject);
@@ -74903,7 +75013,7 @@ var BehaviorSubject = function(_super) {
     return BehaviorSubject;
 }((0, _subject.Subject));
 
-},{"tslib":"lRdW5","./Subject":"94RSe","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"efPFC":[function(require,module,exports) {
+},{"tslib":"lRdW5","./Subject":"94RSe","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"efPFC":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "scan", ()=>scan);
@@ -74913,7 +75023,7 @@ function scan(accumulator, seed) {
     return (0, _lift.operate)((0, _scanInternals.scanInternals)(accumulator, seed, arguments.length >= 2, true));
 }
 
-},{"../util/lift":"7CiSs","./scanInternals":"7fn6o","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"7CiSs":[function(require,module,exports) {
+},{"../util/lift":"7CiSs","./scanInternals":"7fn6o","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7CiSs":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "hasLift", ()=>hasLift);
@@ -74935,7 +75045,7 @@ function operate(init) {
     };
 }
 
-},{"./isFunction":"dEyyK","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"7fn6o":[function(require,module,exports) {
+},{"./isFunction":"dEyyK","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"7fn6o":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "scanInternals", ()=>scanInternals);
@@ -74956,7 +75066,7 @@ function scanInternals(accumulator, seed, hasSeed, emitOnNext, emitBeforeComplet
     };
 }
 
-},{"./OperatorSubscriber":"96z9b","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"96z9b":[function(require,module,exports) {
+},{"./OperatorSubscriber":"96z9b","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"96z9b":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "createOperatorSubscriber", ()=>createOperatorSubscriber);
@@ -75010,7 +75120,7 @@ var OperatorSubscriber = function(_super) {
     return OperatorSubscriber;
 }((0, _subscriber.Subscriber));
 
-},{"tslib":"lRdW5","../Subscriber":"1VFFQ","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"lB7MY":[function(require,module,exports) {
+},{"tslib":"lRdW5","../Subscriber":"1VFFQ","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lB7MY":[function(require,module,exports) {
 const canPromise = require("da1f68cc1fc16077");
 const QRCode = require("8c6cf49ef2287430");
 const CanvasRenderer = require("8a60cf7722cc14ce");
@@ -80293,7 +80403,7 @@ function setupMyNearWallet({ walletUrl, iconUrl = icon, deprecated = false, succ
         });
 }
 
-},{"near-api-js":"ohc3m","@near-wallet-selector/wallet-utils":"5gEB8","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}],"5gEB8":[function(require,module,exports) {
+},{"near-api-js":"ohc3m","@near-wallet-selector/wallet-utils":"5gEB8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"5gEB8":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "createAction", ()=>createAction);
@@ -82729,6 +82839,6 @@ const signTransactions = (transactions, signer, network)=>__awaiter(void 0, void
         return signedTransactions;
     });
 
-},{"bn.js":"VopIn","near-api-js":"ohc3m","@parcel/transformer-js/src/esmodule-helpers.js":"1OlAz"}]},["4jANy","7md93","bB7Pu"], "bB7Pu", "parcelRequiref931")
+},{"bn.js":"VopIn","near-api-js":"ohc3m","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["2UeK4","1xC6H","bB7Pu"], "bB7Pu", "parcelRequire726c")
 
 //# sourceMappingURL=index.3d214d75.js.map

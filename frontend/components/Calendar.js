@@ -45,7 +45,7 @@ function Calendar() {
   const handleEmailChange = (event) => {
     setEmail(event.target.value);
   };
-
+  
   const handleBuyClick = () => {
     // to Show the PinDisplay component
     setTimeout(() => {
@@ -124,7 +124,6 @@ function Calendar() {
                 <p>Total Price: {amountToPay} NEAR</p>
               </div>
             )}
-
             <div className="date-inputs">
               <label htmlFor="email">Email:</label>
               <input
@@ -139,6 +138,7 @@ function Calendar() {
               <button onClick={handleBuyClick}>Buy</button>
             </div>
           </div>
+
         </div>
       )}
     </section>
