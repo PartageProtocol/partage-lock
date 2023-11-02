@@ -1,5 +1,6 @@
 import "regenerator-runtime/runtime";
 import React, { useState, useEffect } from "react";
+import { useHistory } from "react-router-dom";
 
 import About from "./components/About"
 import Calendar from "./components/Calendar";
@@ -7,7 +8,7 @@ import Contact from "./components/contact";
 import Footer from "./components/footer";
 import Header from "./components/header";
 import Services from "./components/Services";
-
+import Connectedhead from "./components/Connectedhead";
 import GLightbox from "glightbox";
 import Swiper from "swiper";
 import Isotope from "isotope-layout";
@@ -24,6 +25,8 @@ import "./assets/vendor/swiper/swiper-bundle.min.css";
 
 
 const App = ({ isSignedIn, lockCalendar, wallet }) => {
+  
+
   AOS.init({
     duration: 1000,
     easing: "ease-in-out",
@@ -66,6 +69,7 @@ const App = ({ isSignedIn, lockCalendar, wallet }) => {
     totalPrice.focus();
     description.focus();
     pin.focus();
+
   };
 
   // If user not signed-in show landingpage
@@ -85,7 +89,7 @@ const App = ({ isSignedIn, lockCalendar, wallet }) => {
   // If user signed-in show booking calendar
   return (
     <main>
-      <Header onClick={() => wallet.signOut()} />
+      <Connectedhead onClick={() => wallet.signOut()} />
       <Calendar onSubmit={addBooking} currentAccountId={wallet.accountId} />
       { !!bookings.length && <Bookings bookings={bookings}/> }
       <Footer />
