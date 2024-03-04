@@ -43,7 +43,7 @@ const Header = ({ onClick, accountId }) => {
               <li>
                 <a
                   className="getstarted scrollto"
-                  href="https://lock.hellopartage.xyz/apk/PartageLock.apk"
+                  href="https://app.hellopartage.xyz/apk/PartageLock.apk"
                   target="_blank"
                 >
                   Download App
@@ -57,7 +57,7 @@ const Header = ({ onClick, accountId }) => {
             ></i> */}
             <a
               className="getstarted scrollto custom-hidden-on-large"
-              href="https://lock.hellopartage.xyz/apk/PartageLock.apk"
+              href="https://app.hellopartage.xyz/apk/PartageLock.apk"
               target="_blank"
             >
               Download App
